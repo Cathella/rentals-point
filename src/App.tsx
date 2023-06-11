@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <h1>New App Here</h1>
       <Nav />
       <Header />
       <Choose />
