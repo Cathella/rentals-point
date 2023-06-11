@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Outfit&display=swap');
+
+* {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 35px;
+}
+
+h1, h3, h4 {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 76px;
+  line-height: 80px;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+h4 {
+  font-size: 25px;
+  line-height: 37px;
+}
+
+.custom-light-green {
+  background: #EBF2F0;
+}
+
+.custom-dark-green {
+  background: #53A0B1;
+}
+
+.custom-button {
+  height: 55px;
+  border-radius: 30px;
+  line-height: 55px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.light-bordered {
+  border: 4px solid #EBF2F0;
+  border-radius: 35px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-content {
+  display: flex;
+  gap: 15px;
+}

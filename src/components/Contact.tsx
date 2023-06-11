@@ -13,8 +13,8 @@ function Contact() {
         </div>
         <div className="row">
           <div className="col-lg-3">
-            <div className="border border-info-subtle border-3 rounded-5 p-3">
-            <div className="d-flex">
+            <div className="light-bordered rounded-5 px-4 py-4 contact">
+              <div className="contact-content">
                 <span>Icon</span>
                 <div>
                   <h4>Call</h4>
@@ -22,7 +22,7 @@ function Contact() {
                 </div>
               </div>
               <div>
-                <a href="#" className="btn btn-info d-block rounded-pill">Call Now</a>
+                <a href="#" className="custom-button d-block custom-dark-green">Call Now</a>
               </div>
             </div>
           </div>

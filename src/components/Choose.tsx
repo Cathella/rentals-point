@@ -12,28 +12,28 @@ function Choose() {
         </div>
         <div className="row">
           <div className="col-lg-3">
-            <div className="text-center bg-light border-3 rounded-5 p-3">
+            <div className="text-center custom-light-green border-3 rounded-5 p-3">
               <span>Icon</span>
               <h4>Communication</h4>
               <div>We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
           <div className="col-lg-3">
-            <div className="text-center bg-light border-3 rounded-5 p-3">
+            <div className="text-center custom-light-green border-3 rounded-5 p-3">
               <span>Icon</span>
               <h4>Satisfaction</h4>
               <div>We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
           <div className="col-lg-3">
-            <div className="text-center bg-light border-3 rounded-5 p-3">
+            <div className="text-center custom-light-green border-3 rounded-5 p-3">
               <span>Icon</span>
               <h4>Reliability</h4>
               <div>We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
           <div className="col-lg-3">
-            <div className="text-center bg-light border-3 rounded-5 p-3">
+            <div className="text-center custom-light-green border-3 rounded-5 p-3">
               <span>Icon</span>
               <h4>Quality First</h4>
               <div>We make sure that we are in contact with you every step of the process.</div>

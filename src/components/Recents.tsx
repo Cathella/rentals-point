@@ -1,6 +1,6 @@
 function Recents() {
   return (
-    <div className="bg-light py-5">
+    <div className="custom-light-green py-5">
       <div className="container">
         <h3 className="text-center">Recently Added Properties</h3>
         <div className="row">

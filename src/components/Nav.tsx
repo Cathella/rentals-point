@@ -12,7 +12,13 @@ function Nav() {
               <a className="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Properties</a>
+              <a className="nav-link" href="#">Rent</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Sell</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Buy</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">For Landlords</a>
