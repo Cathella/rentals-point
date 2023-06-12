@@ -178,16 +178,42 @@ h4 {
 }
 
 .house-two {
-  background: url(../public/housetwo.jpg);
+  background: url(./housetwo.jpg);
   background-size: cover;
 }
 
 .house-three {
-  background: url(../public/housethree.jpg);
+  background: url(./housethree.jpg);
   background-size: cover;
 }
 
 .house-four {
-  background: url(../public/housefour.jpg);
+  background: url(./housefour.jpg);
   background-size: cover;
+}
+
+.price {
+  display: flex;
+}
+
+.price h4 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .price {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .price h4 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .house-entry {
+    margin-bottom: 30px;
+  }
 }
