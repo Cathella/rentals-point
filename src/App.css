@@ -48,9 +48,22 @@ h4 {
   font-size: 18px;
 }
 
+.icon-container {
+  width: 85px;
+  height: 79px;
+  line-height: 79px;
+  display: inline-block;
+  box-shadow: 2px 9px 27px -2px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+}
+
 .light-bordered {
   border: 4px solid #EBF2F0;
   border-radius: 35px;
+}
+
+.phone {
+  font-size: 18px;
 }
 
 .contact {
@@ -64,6 +77,12 @@ h4 {
   gap: 15px;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .footer-links {
   display: flex;
   gap: 30px;
@@ -71,20 +90,19 @@ h4 {
 
 .footer-links a,
 .rights {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 25px;
   color: #8F8C8C;
   text-decoration: none;
 }
 
 .rights a,
-.location {
+#greened {
   color: #53A0B1;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .custom-text-muted,
-.location,
 .times {
   color: #8F8C8C;
 }
@@ -94,7 +112,25 @@ h4 {
   margin-left: 5px;
 }
 
+.location {
+  display: flex;
+  gap: 7px;
+  color: #8F8C8C;
+  font-size: 18px;
+}
+
 .choice-desc {
   font-size: 20px;
   line-height: 30px;
+}
+
+.categories-button {
+  height: 55px;
+  border: 2px solid #53A0B1;
+  border-radius: 30px;
+  color: #53A0B1;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 55px;
+  font-size: 20px;
 }

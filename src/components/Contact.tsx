@@ -1,3 +1,8 @@
+import CallIcon from '../../public/call.svg';
+import ChatIcon from '../../public/chat.svg';
+import VideoIcon from '../../public/video.svg';
+import MessageIcon from '../../public/message.svg';
+
 function Contact() {
   return (
     <div className="bg-white py-5">
@@ -13,12 +18,14 @@ function Contact() {
         </div>
         <div className="row">
           <div className="col-lg-3">
-            <div className="light-bordered rounded-5 px-4 py-4 contact">
+            <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
-                <span>Icon</span>
+                <span className='icon-container text-center custom-light-green'>
+                  <img src={CallIcon} alt="Icon" />
+                </span>
                 <div>
                   <h4>Call</h4>
-                  <div className="custom-text-muted">+256-782-016-535</div>
+                  <div className="custom-text-muted phone">+256-782-016-535</div>
                 </div>
               </div>
               <div>
@@ -27,12 +34,14 @@ function Contact() {
             </div>
           </div>
           <div className="col-lg-3">
-            <div className="light-bordered rounded-5 px-4 py-4 contact">
+            <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
-                <span>Icon</span>
+                <span className='icon-container text-center custom-light-green'>
+                  <img src={ChatIcon} alt="Icon" />
+                </span>
                 <div>
                   <h4>Chat</h4>
-                  <div className="custom-text-muted">+256-782-016-535</div>
+                  <div className="custom-text-muted phone">+256-782-016-535</div>
                 </div>
               </div>
               <div>
@@ -41,12 +50,14 @@ function Contact() {
             </div>  
           </div>
           <div className="col-lg-3">
-            <div className="light-bordered rounded-5 px-4 py-4 contact">
+            <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
-                <span>Icon</span>
+                <span className='icon-container text-center custom-light-green'>
+                  <img src={VideoIcon} alt="Icon" />
+                </span>
                 <div>
                   <h4>Video Call</h4>
-                  <div className="custom-text-muted">+256-782-016-535</div>
+                  <div className="custom-text-muted phone">+256-782-016-535</div>
                 </div>
               </div>
               <div>
@@ -55,12 +66,14 @@ function Contact() {
             </div>  
           </div>
           <div className="col-lg-3">
-            <div className="light-bordered rounded-5 px-4 py-4 contact">
+            <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
-                <span>Icon</span>
+                <span className='icon-container text-center custom-light-green'>
+                  <img src={MessageIcon} alt="Icon" />
+                </span>
                 <div>
                   <h4>Message</h4>
-                  <div className="custom-text-muted">+256-782-016-535</div>
+                  <div className="custom-text-muted phone">+256-782-016-535</div>
                 </div>
               </div>
               <div>

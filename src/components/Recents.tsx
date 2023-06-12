@@ -1,3 +1,5 @@
+import LocationIcon from '../../public/location.svg';
+
 function Recents() {
   return (
     <div className="custom-light-green py-5">
@@ -11,7 +13,10 @@ function Recents() {
                 <h4>UGX. 750,000</h4>
                 <span className="times">(per month)</span>
               </div>
-              <div className="location">Kiwatule</div>
+              <div className="location">
+                <img src={LocationIcon} alt="Icon" />
+                <span>Kiwatule</span>
+              </div>
             </div>
           </div>
           <div className="col-lg-3">
@@ -21,7 +26,10 @@ function Recents() {
                 <h4>UGX. 500,000</h4>
                 <span className="times">(per month)</span>
               </div>
-              <div className="location">Namugongo</div>
+              <div className="location">
+                <img src={LocationIcon} alt="Icon" />
+                <span>Namugongo</span>
+              </div>
             </div>
           </div>
           <div className="col-lg-3">
@@ -31,7 +39,10 @@ function Recents() {
                 <h4>UGX. 370,000</h4>
                 <span className="times">(per month)</span>
               </div>
-              <div className="location">Makerere</div>
+              <div className="location">
+                <img src={LocationIcon} alt="Icon" />
+                <span>Makerere</span>
+              </div>
             </div>
           </div>
           <div className="col-lg-3">
@@ -41,7 +52,10 @@ function Recents() {
                 <h4>UGX. 900,000</h4>
                 <span className="times">(per month)</span>
               </div>
-              <div className="location">Wakiso</div>
+              <div className="location">
+                <img src={LocationIcon} alt="Icon" />
+                <span>Wakiso</span>
+              </div>
             </div>
           </div>
         </div>

@@ -8,21 +8,21 @@ function Categories() {
             <div className="bg-dark py-5 mb-3"></div>
             <h4 className="mb-3">Apartments</h4>
             <div>
-              <a href="#" className="btn btn-outline-info rounded-pill px-4">100+ Properties</a>
+              <a href="#" className="categories-button px-3">100+ Properties</a>
             </div>
           </div>
           <div className="text-center col-lg-4">
             <div className="bg-dark py-5 mb-3"></div>
             <h4 className="mb-3">Houses</h4>
             <div>
-              <a href="#" className="btn btn-outline-info rounded-pill px-4">900+ Properties</a>
+              <a href="#" className="categories-button px-3">900+ Properties</a>
             </div>
           </div>
           <div className="text-center col-lg-4">
             <div className="bg-dark py-5 mb-3"></div>
             <h4 className="mb-3">Commercial</h4>
             <div>
-              <a href="#" className="btn btn-outline-info rounded-pill px-4">400+ Properties</a>
+              <a href="#" className="categories-button px-3">400+ Properties</a>
             </div>
           </div>
         </div>

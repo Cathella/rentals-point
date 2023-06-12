@@ -1,3 +1,8 @@
+import CommunicationIcon from '../../public/communication.svg';
+import SatisfiedIcon from '../../public/satisfaction.svg';
+import ReliabilityIcon from '../../public/reliability.svg';
+import QualityIcon from '../../public/quality.svg';
+
 function Choose() {
   return (
     <div className="bg-white py-5">
@@ -13,29 +18,37 @@ function Choose() {
         <div className="row">
           <div className="col-lg-3">
             <div className="text-center custom-light-green border-3 rounded-5 px-4 py-4">
-              <span>Icon</span>
-              <h4>Communication</h4>
+              <span className='icon-container custom-dark-green'>
+                <img src={CommunicationIcon} alt="Icon" />
+              </span>
+              <h4 className='mt-3'>Communication</h4>
               <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
           <div className="col-lg-3">
             <div className="text-center custom-light-green border-3 rounded-5 px-4 py-4">
-              <span>Icon</span>
-              <h4>Satisfaction</h4>
+              <span className='icon-container custom-dark-green'>
+                <img src={SatisfiedIcon} alt="Icon" />
+              </span>
+              <h4 className='mt-3'>Satisfaction</h4>
               <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
           <div className="col-lg-3">
             <div className="text-center custom-light-green border-3 rounded-5 px-4 py-4">
-              <span>Icon</span>
-              <h4>Reliability</h4>
+              <span className='icon-container custom-dark-green'> 
+                <img src={ReliabilityIcon} alt="Icon" />
+              </span>
+              <h4 className='mt-3'>Reliability</h4>
               <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
           <div className="col-lg-3">
             <div className="text-center custom-light-green border-3 rounded-5 px-4 py-4">
-              <span>Icon</span>
-              <h4>Quality First</h4>
+              <span className='icon-container custom-dark-green'>
+                <img src={QualityIcon} alt="Icon" />
+              </span>
+              <h4 className='mt-3'>Quality First</h4>
               <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
