@@ -26,6 +26,10 @@ h4 {
   line-height: 37px;
 }
 
+.nav-link {
+  font-size: 20px;
+}
+
 .custom-light-green {
   background: #EBF2F0;
 }
@@ -41,6 +45,7 @@ h4 {
   text-align: center;
   text-decoration: none;
   color: #FFFFFF;
+  font-size: 18px;
 }
 
 .light-bordered {
@@ -57,4 +62,39 @@ h4 {
 .contact-content {
   display: flex;
   gap: 15px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links a,
+.rights {
+  font-size: 20px;
+  line-height: 25px;
+  color: #8F8C8C;
+  text-decoration: none;
+}
+
+.rights a,
+.location {
+  color: #53A0B1;
+  font-size: 20px;
+}
+
+.custom-text-muted,
+.location,
+.times {
+  color: #8F8C8C;
+}
+
+.times {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.choice-desc {
+  font-size: 20px;
+  line-height: 30px;
 }
