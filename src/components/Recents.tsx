@@ -8,7 +8,7 @@ function Recents() {
         <div className="row">
           <div className="col-lg-3">
             <div className="bg-white p-3 border-3 rounded-5">
-              <div className="bg-dark py-3"></div>
+              <div className="house-one"></div>
               <div className="d-flex">
                 <h4>UGX. 750,000</h4>
                 <span className="times">(per month)</span>
@@ -21,7 +21,7 @@ function Recents() {
           </div>
           <div className="col-lg-3">
             <div className="bg-white p-3 border-3 rounded-5">
-              <div className="bg-dark py-3"></div>
+              <div className="house-two"></div>
               <div className="d-flex">
                 <h4>UGX. 500,000</h4>
                 <span className="times">(per month)</span>
@@ -34,7 +34,7 @@ function Recents() {
           </div>
           <div className="col-lg-3">
             <div className="bg-white p-3 border-3 rounded-5">
-              <div className="bg-dark py-3"></div>
+              <div className="house-three"></div>
               <div className="d-flex">
                 <h4>UGX. 370,000</h4>
                 <span className="times">(per month)</span>
@@ -47,7 +47,7 @@ function Recents() {
           </div>
           <div className="col-lg-3">
             <div className="bg-white p-3 border-3 rounded-5">
-              <div className="bg-dark py-3"></div>
+              <div className="house-four"></div>
               <div className="d-flex">
                 <h4>UGX. 900,000</h4>
                 <span className="times">(per month)</span>
