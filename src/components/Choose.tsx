@@ -16,8 +16,8 @@ function Choose() {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 px-4 py-4">
+          <div className="col-md-6 col-lg-3">
+            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
               <span className='icon-container custom-dark-green'>
                 <img src={CommunicationIcon} alt="Icon" />
               </span>
@@ -25,8 +25,8 @@ function Choose() {
               <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
-          <div className="col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 px-4 py-4">
+          <div className="col-md-6 col-lg-3">
+            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
               <span className='icon-container custom-dark-green'>
                 <img src={SatisfiedIcon} alt="Icon" />
               </span>
@@ -34,8 +34,8 @@ function Choose() {
               <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
-          <div className="col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 px-4 py-4">
+          <div className="col-md-6 col-lg-3">
+            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
               <span className='icon-container custom-dark-green'> 
                 <img src={ReliabilityIcon} alt="Icon" />
               </span>
@@ -43,8 +43,8 @@ function Choose() {
               <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
             </div>
           </div>
-          <div className="col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 px-4 py-4">
+          <div className="col-md-6 col-lg-3">
+            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
               <span className='icon-container custom-dark-green'>
                 <img src={QualityIcon} alt="Icon" />
               </span>

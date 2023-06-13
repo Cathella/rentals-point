@@ -17,7 +17,7 @@ function Contact() {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-3">
+          <div className="col-md-6 col-lg-3">
             <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
                 <span className='icon-container text-center custom-light-green'>
@@ -33,7 +33,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="col-lg-3">
+          <div className="col-md-6 col-lg-3">
             <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
                 <span className='icon-container text-center custom-light-green'>
@@ -49,7 +49,7 @@ function Contact() {
               </div>
             </div>  
           </div>
-          <div className="col-lg-3">
+          <div className="col-md-6 col-lg-3">
             <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
                 <span className='icon-container text-center custom-light-green'>
@@ -65,7 +65,7 @@ function Contact() {
               </div>
             </div>  
           </div>
-          <div className="col-lg-3">
+          <div className="col-md-6 col-lg-3">
             <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
                 <span className='icon-container text-center custom-light-green'>
