@@ -151,17 +151,17 @@ h4 {
 .commercial-img {
   height: 500px;
   border-radius: 30px;
-  background-image: url(./apartment.jpg);
+  background-image: url(../public/apartment.jpg);
   background-size: cover;
   background-position: center;
 }
 
 .houses-img {
-  background-image: url(./house.jpg);
+  background-image: url(../public/house.jpg);
 }
 
 .commercial-img {
-  background-image: url(./commercial.jpg);
+  background-image: url(../public/commercial.jpg);
 }
 
 .house-one,
@@ -169,7 +169,7 @@ h4 {
 .house-three,
 .house-four {
   height: 208px;
-  background: url(./houseone.jpg);
+  background: url(../public/houseone.jpg);
   background-size: cover;
   background-position: center;
   box-shadow: 2px 9px 27px -2px rgba(0, 0, 0, 0.04);
@@ -178,17 +178,17 @@ h4 {
 }
 
 .house-two {
-  background: url(./housetwo.jpg);
+  background: url(../public/housetwo.jpg);
   background-size: cover;
 }
 
 .house-three {
-  background: url(./housethree.jpg);
+  background: url(../public/housethree.jpg);
   background-size: cover;
 }
 
 .house-four {
-  background: url(./housefour.jpg);
+  background: url(../public/housefour.jpg);
   background-size: cover;
 }
 
@@ -233,6 +233,7 @@ h4 {
   .footer-content {
     flex-direction: column;
     gap: 20px;
+    text-align: center;
   }
 }
 
