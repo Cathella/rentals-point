@@ -1,42 +1,243 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Outfit&display=swap');
+
+* {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 35px;
+}
+
+h1, h3, h4 {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 76px;
+  line-height: 80px;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+h4 {
+  font-size: 25px;
+  line-height: 37px;
+}
+
+.nav-link {
+  font-size: 20px;
+}
+
+.header-bg {
+  background: linear-gradient(180deg, #EBF2F0 0%, rgba(255, 255, 255, 0) 168.53%), url(../public/hero.jpg);
+  border-radius: 75px;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+
+.custom-light-green {
+  background: #EBF2F0;
+}
+
+.custom-dark-green {
+  background: #53A0B1;
+}
+
+.custom-button {
+  height: 55px;
+  border-radius: 30px;
+  line-height: 55px;
   text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 18px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.icon-container {
+  width: 85px;
+  height: 79px;
+  line-height: 79px;
+  display: inline-block;
+  box-shadow: 2px 9px 27px -2px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.light-bordered {
+  border: 4px solid #EBF2F0;
+  border-radius: 35px;
+}
+
+.phone {
+  font-size: 18px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-content {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links a,
+.rights {
+  font-size: 18px;
+  line-height: 25px;
+  color: #8F8C8C;
+  text-decoration: none;
+}
+
+.rights a,
+#greened {
+  color: #53A0B1;
+  font-size: 18px;
+}
+
+.custom-text-muted,
+.times {
+  color: #8F8C8C;
+}
+
+.times {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.location {
+  display: flex;
+  gap: 7px;
+  color: #8F8C8C;
+}
+
+.location span {
+  font-size: 18px;
+}
+
+.choice-desc {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.categories-button {
+  height: 55px;
+  border: 2px solid #53A0B1;
+  border-radius: 30px;
+  color: #53A0B1;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 55px;
+  font-size: 20px;
+}
+
+.apartments-img,
+.houses-img,
+.commercial-img {
+  height: 500px;
+  border-radius: 30px;
+  background-image: url(./apartment.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.houses-img {
+  background-image: url(./house.jpg);
+}
+
+.commercial-img {
+  background-image: url(./commercial.jpg);
+}
+
+.house-one,
+.house-two,
+.house-three,
+.house-four {
+  height: 208px;
+  background: url(./houseone.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 2px 9px 27px -2px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.house-two {
+  background: url(./housetwo.jpg);
+  background-size: cover;
+}
+
+.house-three {
+  background: url(./housethree.jpg);
+  background-size: cover;
+}
+
+.house-four {
+  background: url(./housefour.jpg);
+  background-size: cover;
+}
+
+.price {
+  display: flex;
+}
+
+.price h4 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .price {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .contact-content {
+    flex-direction: column;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media screen and (max-width: 1200px) {
+  .price h4 {
+    font-size: 20px;
   }
 }
 
-.card {
-  padding: 2em;
+@media screen and (max-width: 992px) {
+  .house-entry,
+  .contact,
+  .categories-button,
+  .why {
+    margin-bottom: 30px;
+  }
+
+  .apartments-img,
+  .houses-img,
+  .commercial-img {
+    height: 350px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 55px;
+  }
 }
