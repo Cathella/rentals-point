@@ -1,7 +1,9 @@
-import CallIcon from '../../public/call.svg';
-import ChatIcon from '../../public/chat.svg';
-import VideoIcon from '../../public/video.svg';
-import MessageIcon from '../../public/message.svg';
+// import CallIcon from '../../public/call.svg';
+// import ChatIcon from '../../public/chat.svg';
+// import VideoIcon from '../../public/video.svg';
+// import MessageIcon from '../../public/message.svg';
+import Social from "./Social";
+
 
 function Contact() {
   return (
@@ -17,23 +19,11 @@ function Contact() {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-6 col-lg-3">
-            <div className="light-bordered rounded-5 px-3 py-4 contact">
-              <div className="contact-content">
-                <span className='icon-container text-center custom-light-green'>
-                  <img src={CallIcon} alt="Icon" />
-                </span>
-                <div>
-                  <h4>Call</h4>
-                  <div className="custom-text-muted phone">+256-782-016-535</div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="custom-button d-block custom-dark-green">Call Now</a>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3">
+          <Social />
+          <Social />
+          <Social />
+          <Social />
+          {/* <div className="col-md-6 col-lg-3">
             <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
                 <span className='icon-container text-center custom-light-green'>
@@ -48,8 +38,8 @@ function Contact() {
                 <a href="#" className="custom-button d-block custom-dark-green">Chat Now</a>
               </div>
             </div>  
-          </div>
-          <div className="col-md-6 col-lg-3">
+          </div> */}
+          {/* <div className="col-md-6 col-lg-3">
             <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
                 <span className='icon-container text-center custom-light-green'>
@@ -64,8 +54,8 @@ function Contact() {
                 <a href="#" className="custom-button d-block custom-dark-green">Video Call Now</a>
               </div>
             </div>  
-          </div>
-          <div className="col-md-6 col-lg-3">
+          </div> */}
+          {/* <div className="col-md-6 col-lg-3">
             <div className="light-bordered rounded-5 px-3 py-4 contact">
               <div className="contact-content">
                 <span className='icon-container text-center custom-light-green'>
@@ -80,7 +70,7 @@ function Contact() {
                 <a href="#" className="custom-button d-block custom-dark-green">Message Now</a>
               </div>
             </div> 
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
