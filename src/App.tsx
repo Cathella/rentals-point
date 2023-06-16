@@ -1,22 +1,25 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav';
-import Header from './components/Header';
-import Choose from './components/Choose';
-import Categories from './components/Categories';
-import Recents from './components/Recents';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Home from './Home';
+import Properties from './Properties';
+import ForLandlords from './ForLandlords';
+import Login from './Login';
+import SignUp from './SignUp';
 
 function App() {
   return (
-    <>
-      <Nav />
-      <Header />
-      <Choose />
-      <Categories />
-      <Recents />
-      <Contact />
-      <Footer />
-    </>
+    <Router>
+      <div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/properties" element={<Properties />} />
+          <Route path="/landlords" element={<ForLandlords />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import TopLogo from '../../public/logowhite.svg';
 
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg bg-white">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img src={TopLogo} alt="RentalsPoint" />
-        </a>
+        </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -18,27 +19,21 @@ function Nav() {
           <div className="offcanvas-body"> 
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Properties</a>
+                <Link className="nav-link" to="/properties">Properties</Link>
               </li>
-              {/* <li className="nav-item">
-                <a className="nav-link" href="#">Sell</a>
-              </li> */}
-              {/* <li className="nav-item">
-                <a className="nav-link" href="#">Buy</a>
-              </li> */}
               <li className="nav-item">
-                <a className="nav-link" href="#">For Landlords</a>
+                <Link className="nav-link" to="/landlords">For Landlords</Link>
               </li>
             </ul>
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#" id="greened">Login</a>
+                <Link className="nav-link" to="/login" id="greened">Login</Link>
               </li>
               <li className="nav-item">
-                <a className="px-3 py-2 custom-button custom-dark-green" href="#">Sign Up</a>
+                <Link className="px-3 py-2 custom-button custom-dark-green" to="/signup">Sign Up</Link>
               </li>
             </ul>
           </div>
