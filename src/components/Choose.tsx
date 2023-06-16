@@ -9,22 +9,22 @@ interface ChoiceData {
 function Choose() {
   const choices: ChoiceData[] = [
     {
-      icon: '../../public/communication.svg',
+      icon: './communication.svg',
       title: 'Communication',
       description: 'Stay connected and informed throughout the process for a seamless home experience.'
     },
     {
-      icon: '../../public/reliability.svg',
+      icon: './reliability.svg',
       title: 'Reliability',
       description: 'Count on our trustworthy service to guide you towards your perfect home.'
     },
     {
-      icon: '../../public/quality.svg',
+      icon: './quality.svg',
       title: 'Quality',
       description: 'Experience top-notch service and exceptional attention to detail for a superior home search.'
     },
     {
-      icon: '../../public/satisfaction.svg',
+      icon: './satisfaction.svg',
       title: 'Satisfaction',
       description: 'Discover a service that goes above and beyond to ensure your complete satisfaction.'
     },
