@@ -1,8 +1,14 @@
+import Footer from "./components/Footer";
+
 function Login() {
   return (
     <div>
-      <h1>Login Page</h1>
-      {/* Add your home page content here */}
+      <div>
+        <div className="container py-5">
+          <h1 className="text-center">Login Page</h1>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }

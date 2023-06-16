@@ -1,8 +1,14 @@
+import Footer from "./components/Footer";
+
 function SignUp() {
   return (
     <div>
-      <h1>SignUp Page</h1>
-      {/* Add your home page content here */}
+      <div>
+        <div className="container py-5">
+          <h1 className="text-center">SignUp Page</h1>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }

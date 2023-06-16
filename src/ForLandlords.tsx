@@ -1,8 +1,16 @@
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
 function ForLandlords() {
   return (
     <div>
-      <h1>ForLandlords Page</h1>
-      {/* Add your home page content here */}
+      <div>
+        <div className="container py-5">
+          <h1 className="text-center">ForLandlords Page</h1>
+        </div>
+      </div>
+      <Contact />
+      <Footer />
     </div>
   );
 }
