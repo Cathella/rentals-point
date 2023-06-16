@@ -1,11 +1,35 @@
-// import CommunicationIcon from '../../public/communication.svg';
-// import SatisfiedIcon from '../../public/satisfaction.svg';
-// import ReliabilityIcon from '../../public/reliability.svg';
-// import QualityIcon from '../../public/quality.svg';
-
 import Choice from "./Choice";
 
+interface ChoiceData {
+  icon: string;
+  title: string;
+  description: string;
+}
+
 function Choose() {
+  const choices: ChoiceData[] = [
+    {
+      icon: '../../public/communication.svg',
+      title: 'Communication',
+      description: 'We make sure that we are in contact with you every step of the process.'
+    },
+    {
+      icon: '../../public/reliability.svg',
+      title: 'Reliability',
+      description: 'We make sure that we are in contact with you every step of the process.'
+    },
+    {
+      icon: '../../public/quality.svg',
+      title: 'Quality',
+      description: 'We make sure that we are in contact with you every step of the process.'
+    },
+    {
+      icon: '../../public/satisfaction.svg',
+      title: 'Satisfaction',
+      description: 'We make sure that we are in contact with you every step of the process.'
+    },
+  ];
+
   return (
     <div className="bg-white py-5">
       <div className="container">
@@ -18,37 +42,9 @@ function Choose() {
           </div>
         </div>
         <div className="row">
-          <Choice />
-          <Choice />
-          <Choice />
-          <Choice />
-          {/* <div className="col-md-6 col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
-              <span className='icon-container custom-dark-green'>
-                <img src={SatisfiedIcon} alt="Icon" />
-              </span>
-              <h4 className='mt-3'>Satisfaction</h4>
-              <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
-            </div>
-          </div> */}
-          {/* <div className="col-md-6 col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
-              <span className='icon-container custom-dark-green'> 
-                <img src={ReliabilityIcon} alt="Icon" />
-              </span>
-              <h4 className='mt-3'>Reliability</h4>
-              <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
-            </div>
-          </div> */}
-          {/* <div className="col-md-6 col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
-              <span className='icon-container custom-dark-green'>
-                <img src={QualityIcon} alt="Icon" />
-              </span>
-              <h4 className='mt-3'>Quality First</h4>
-              <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
-            </div>
-          </div> */}
+          {choices.map((choice, index) => (
+            <Choice key={index} {...choice} />
+          ))}
         </div>
       </div>
     </div>

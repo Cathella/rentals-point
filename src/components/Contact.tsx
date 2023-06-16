@@ -1,11 +1,35 @@
-// import CallIcon from '../../public/call.svg';
-// import ChatIcon from '../../public/chat.svg';
-// import VideoIcon from '../../public/video.svg';
-// import MessageIcon from '../../public/message.svg';
 import Social from "./Social";
 
+interface SocialData {
+  icon: string;
+  title: string;
+  phone: string;
+}
 
 function Contact() {
+  const contacts: SocialData[] = [
+    {
+      icon: '../../public/call.svg',
+      title: 'Call',
+      phone: '+256-782-016-535',
+    },
+    {
+      icon: '../../public/chat.svg',
+      title: 'Chat',
+      phone: '+256-782-016-535',
+    },
+    {
+      icon: '../../public/video.svg',
+      title: 'Video Call',
+      phone: '+256-782-016-535',
+    },
+    {
+      icon: '../../public/message.svg',
+      title: 'Message',
+      phone: '+256-782-016-535',
+    },
+  ];
+
   return (
     <div className="bg-white py-5">
       <div className="container">
@@ -19,58 +43,9 @@ function Contact() {
           </div>
         </div>
         <div className="row">
-          <Social />
-          <Social />
-          <Social />
-          <Social />
-          {/* <div className="col-md-6 col-lg-3">
-            <div className="light-bordered rounded-5 px-3 py-4 contact">
-              <div className="contact-content">
-                <span className='icon-container text-center custom-light-green'>
-                  <img src={ChatIcon} alt="Icon" />
-                </span>
-                <div>
-                  <h4>Chat</h4>
-                  <div className="custom-text-muted phone">+256-782-016-535</div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="custom-button d-block custom-dark-green">Chat Now</a>
-              </div>
-            </div>  
-          </div> */}
-          {/* <div className="col-md-6 col-lg-3">
-            <div className="light-bordered rounded-5 px-3 py-4 contact">
-              <div className="contact-content">
-                <span className='icon-container text-center custom-light-green'>
-                  <img src={VideoIcon} alt="Icon" />
-                </span>
-                <div>
-                  <h4>Video Call</h4>
-                  <div className="custom-text-muted phone">+256-782-016-535</div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="custom-button d-block custom-dark-green">Video Call Now</a>
-              </div>
-            </div>  
-          </div> */}
-          {/* <div className="col-md-6 col-lg-3">
-            <div className="light-bordered rounded-5 px-3 py-4 contact">
-              <div className="contact-content">
-                <span className='icon-container text-center custom-light-green'>
-                  <img src={MessageIcon} alt="Icon" />
-                </span>
-                <div>
-                  <h4>Message</h4>
-                  <div className="custom-text-muted phone">+256-782-016-535</div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="custom-button d-block custom-dark-green">Message Now</a>
-              </div>
-            </div> 
-          </div> */}
+          {contacts.map((contact, index) => (
+            <Social key={index} {...contact} />
+          ))}
         </div>
       </div>
     </div>

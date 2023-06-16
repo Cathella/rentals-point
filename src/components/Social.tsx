@@ -1,25 +1,27 @@
-import CallIcon from '../../public/call.svg';
+interface SocialProps {
+  icon: string;
+  title: string;
+  phone: string;
+}
 
-function Social() {
+const Social: React.FC<SocialProps> = ({ icon, title, phone }) => {
   return (
-    <>
-      <div className="col-md-6 col-lg-3">
-        <div className="light-bordered rounded-5 px-3 py-4 contact">
-          <div className="contact-content">
-            <span className='icon-container text-center custom-light-green'>
-              <img src={CallIcon} alt="Icon" />
-            </span>
-            <div>
-              <h4>Call</h4>
-              <div className="custom-text-muted phone">+256-782-016-535</div>
-            </div>
-          </div>
+    <div className="col-md-6 col-lg-3">
+      <div className="light-bordered rounded-5 px-3 py-4 contact">
+        <div className="contact-content">
+          <span className='icon-container text-center custom-light-green'>
+            <img src={icon} alt="Icon" />
+          </span>
           <div>
-            <a href="#" className="custom-button d-block custom-dark-green">Call Now</a>
+            <h4>{title}</h4>
+            <div className="custom-text-muted phone">{phone}</div>
           </div>
         </div>
+        <div>
+          <a href="#" className="custom-button d-block custom-dark-green">{title} Now</a>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

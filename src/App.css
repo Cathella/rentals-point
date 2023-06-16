@@ -169,10 +169,6 @@ h4 {
 }
 
 @media screen and (max-width: 1400px) {
-  .price {
-    flex-direction: column;
-  }
-
   .contact-content {
     flex-direction: column;
   }
