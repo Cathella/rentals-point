@@ -21,14 +21,14 @@ function Nav() {
                 <a className="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Rent</a>
+                <a className="nav-link" href="#">Properties</a>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="#">Sell</a>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <a className="nav-link" href="#">Buy</a>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a className="nav-link" href="#">For Landlords</a>
               </li>

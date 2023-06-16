@@ -37,8 +37,7 @@ function Contact() {
         <div className="text-center pt-4 pb-5">
           <div className="row">
             <div className="col-lg-7 mx-auto custom-text-muted">
-              Is there a problem finding your dream home? Need a guide in finding a comfortable space that suites you?
-              Or need a consultation on residential issues? Feel free to consult us.
+              Struggling to find your dream home? Seeking expert guidance in discovering a comfortable space that suits you? Or require consultation on residential matters? Look no further. Consult with us today.
             </div>
           </div>
         </div>
