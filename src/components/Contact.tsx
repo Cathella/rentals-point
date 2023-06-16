@@ -9,22 +9,22 @@ interface SocialData {
 function Contact() {
   const contacts: SocialData[] = [
     {
-      icon: '../../public/call.svg',
+      icon: './call.svg',
       title: 'Call',
       phone: '+256-782-016-535',
     },
     {
-      icon: '../../public/chat.svg',
+      icon: './chat.svg',
       title: 'Chat',
       phone: '+256-782-016-535',
     },
     {
-      icon: '../../public/video.svg',
+      icon: './video.svg',
       title: 'Video Call',
       phone: '+256-782-016-535',
     },
     {
-      icon: '../../public/message.svg',
+      icon: './message.svg',
       title: 'Message',
       phone: '+256-782-016-535',
     },
