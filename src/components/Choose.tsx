@@ -1,9 +1,35 @@
-import CommunicationIcon from '../../public/communication.svg';
-import SatisfiedIcon from '../../public/satisfaction.svg';
-import ReliabilityIcon from '../../public/reliability.svg';
-import QualityIcon from '../../public/quality.svg';
+import Choice from "./Choice";
+
+interface ChoiceData {
+  icon: string;
+  title: string;
+  description: string;
+}
 
 function Choose() {
+  const choices: ChoiceData[] = [
+    {
+      icon: '../../public/communication.svg',
+      title: 'Communication',
+      description: 'Stay connected and informed throughout the process for a seamless home experience.'
+    },
+    {
+      icon: '../../public/reliability.svg',
+      title: 'Reliability',
+      description: 'Count on our trustworthy service to guide you towards your perfect home.'
+    },
+    {
+      icon: '../../public/quality.svg',
+      title: 'Quality',
+      description: 'Experience top-notch service and exceptional attention to detail for a superior home search.'
+    },
+    {
+      icon: '../../public/satisfaction.svg',
+      title: 'Satisfaction',
+      description: 'Discover a service that goes above and beyond to ensure your complete satisfaction.'
+    },
+  ];
+
   return (
     <div className="bg-white py-5">
       <div className="container">
@@ -11,47 +37,14 @@ function Choose() {
         <div className="text-center pt-4 pb-5">
           <div className="row">
             <div className="col-lg-6 mx-auto custom-text-muted">
-              Trustable Full-service brokers making use of modern technology.
+              Reliable full-service brokers integrating modern technology to ensure a trustworthy experience.
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-6 col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
-              <span className='icon-container custom-dark-green'>
-                <img src={CommunicationIcon} alt="Icon" />
-              </span>
-              <h4 className='mt-3'>Communication</h4>
-              <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
-              <span className='icon-container custom-dark-green'>
-                <img src={SatisfiedIcon} alt="Icon" />
-              </span>
-              <h4 className='mt-3'>Satisfaction</h4>
-              <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
-              <span className='icon-container custom-dark-green'> 
-                <img src={ReliabilityIcon} alt="Icon" />
-              </span>
-              <h4 className='mt-3'>Reliability</h4>
-              <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="text-center custom-light-green border-3 rounded-5 p-4 why">
-              <span className='icon-container custom-dark-green'>
-                <img src={QualityIcon} alt="Icon" />
-              </span>
-              <h4 className='mt-3'>Quality First</h4>
-              <div className="choice-desc">We make sure that we are in contact with you every step of the process.</div>
-            </div>
-          </div>
+          {choices.map((choice, index) => (
+            <Choice key={index} {...choice} />
+          ))}
         </div>
       </div>
     </div>

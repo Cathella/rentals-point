@@ -146,54 +146,22 @@ h4 {
   font-size: 20px;
 }
 
-.apartments-img,
-.houses-img,
-.commercial-img {
-  height: 500px;
+.apartments-img {
+  height: 400px;
+  width: 100%;
   border-radius: 30px;
-  background-image: url(../public/apartment.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
-.houses-img {
-  background-image: url(../public/house.jpg);
-}
-
-.commercial-img {
-  background-image: url(../public/commercial.jpg);
-}
-
-.house-one,
-.house-two,
-.house-three,
-.house-four {
-  height: 208px;
-  background: url(../public/houseone.jpg);
-  background-size: cover;
-  background-position: center;
+.house-one {
+  height: 200px;
   box-shadow: 2px 9px 27px -2px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
   margin-bottom: 15px;
 }
 
-.house-two {
-  background: url(../public/housetwo.jpg);
-  background-size: cover;
-}
-
-.house-three {
-  background: url(../public/housethree.jpg);
-  background-size: cover;
-}
-
-.house-four {
-  background: url(../public/housefour.jpg);
-  background-size: cover;
-}
-
 .price {
   display: flex;
+  flex-direction: column;
 }
 
 .price h4 {
@@ -201,10 +169,6 @@ h4 {
 }
 
 @media screen and (max-width: 1400px) {
-  .price {
-    flex-direction: column;
-  }
-
   .contact-content {
     flex-direction: column;
   }

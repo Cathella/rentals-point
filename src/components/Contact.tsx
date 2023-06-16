@@ -1,9 +1,35 @@
-import CallIcon from '../../public/call.svg';
-import ChatIcon from '../../public/chat.svg';
-import VideoIcon from '../../public/video.svg';
-import MessageIcon from '../../public/message.svg';
+import Social from "./Social";
+
+interface SocialData {
+  icon: string;
+  title: string;
+  phone: string;
+}
 
 function Contact() {
+  const contacts: SocialData[] = [
+    {
+      icon: '../../public/call.svg',
+      title: 'Call',
+      phone: '+256-782-016-535',
+    },
+    {
+      icon: '../../public/chat.svg',
+      title: 'Chat',
+      phone: '+256-782-016-535',
+    },
+    {
+      icon: '../../public/video.svg',
+      title: 'Video Call',
+      phone: '+256-782-016-535',
+    },
+    {
+      icon: '../../public/message.svg',
+      title: 'Message',
+      phone: '+256-782-016-535',
+    },
+  ];
+
   return (
     <div className="bg-white py-5">
       <div className="container">
@@ -11,76 +37,14 @@ function Contact() {
         <div className="text-center pt-4 pb-5">
           <div className="row">
             <div className="col-lg-7 mx-auto custom-text-muted">
-              Is there a problem finding your dream home? Need a guide in finding a comfortable space that suites you?
-              Or need a consultation on residential issues? Feel free to consult us.
+              Struggling to find your dream home? Seeking expert guidance in discovering a comfortable space that suits you? Or require consultation on residential matters? Look no further. Consult with us today.
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-6 col-lg-3">
-            <div className="light-bordered rounded-5 px-3 py-4 contact">
-              <div className="contact-content">
-                <span className='icon-container text-center custom-light-green'>
-                  <img src={CallIcon} alt="Icon" />
-                </span>
-                <div>
-                  <h4>Call</h4>
-                  <div className="custom-text-muted phone">+256-782-016-535</div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="custom-button d-block custom-dark-green">Call Now</a>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="light-bordered rounded-5 px-3 py-4 contact">
-              <div className="contact-content">
-                <span className='icon-container text-center custom-light-green'>
-                  <img src={ChatIcon} alt="Icon" />
-                </span>
-                <div>
-                  <h4>Chat</h4>
-                  <div className="custom-text-muted phone">+256-782-016-535</div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="custom-button d-block custom-dark-green">Chat Now</a>
-              </div>
-            </div>  
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="light-bordered rounded-5 px-3 py-4 contact">
-              <div className="contact-content">
-                <span className='icon-container text-center custom-light-green'>
-                  <img src={VideoIcon} alt="Icon" />
-                </span>
-                <div>
-                  <h4>Video Call</h4>
-                  <div className="custom-text-muted phone">+256-782-016-535</div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="custom-button d-block custom-dark-green">Video Call Now</a>
-              </div>
-            </div>  
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="light-bordered rounded-5 px-3 py-4 contact">
-              <div className="contact-content">
-                <span className='icon-container text-center custom-light-green'>
-                  <img src={MessageIcon} alt="Icon" />
-                </span>
-                <div>
-                  <h4>Message</h4>
-                  <div className="custom-text-muted phone">+256-782-016-535</div>
-                </div>
-              </div>
-              <div>
-                <a href="#" className="custom-button d-block custom-dark-green">Message Now</a>
-              </div>
-            </div> 
-          </div>
+          {contacts.map((contact, index) => (
+            <Social key={index} {...contact} />
+          ))}
         </div>
       </div>
     </div>

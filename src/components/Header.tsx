@@ -5,7 +5,9 @@ function Header() {
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <h1>Let us find a Home that’s perfect for you.</h1>
-            <div className="mt-4">Search confidently with your trusted source of spaces for sale or rent.</div>
+            <div className="mt-4">
+              Discover with confidence through your reliable destination for buying or renting exceptional spaces.
+            </div>
           </div>
         </div>
       </div>
