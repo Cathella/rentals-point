@@ -23,7 +23,7 @@ function Login() {
       <div className="custom-light-green py-5">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 mx-auto">
+            <div className="col-md-8 col-lg-5 mx-auto">
               <h3 className="text-center mt-4">Welcome Back</h3>
               <div className="text-center desc-ft-size mt-3">Sign in to your Rentals Point Account.</div>
               <div className="mt-5">

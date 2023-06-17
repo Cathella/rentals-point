@@ -5,7 +5,7 @@ function ForLandlords() {
     <>
       <div className="custom-light-green py-5">
         <div className="container">
-          <h1 className="text-center">ForLandlords Page</h1>
+          <h1 className="text-center">Landlords Page</h1>
         </div>
       </div>
       <Footer />
