@@ -14,8 +14,8 @@ interface PropertyProps {
 const Property: React.FC<PropertyProps> = ({ title, price, location, image }) => {
   return (
     <div className="col-md-6 col-lg-3">
-      <div className="house-entry bg-white p-3 border-3 rounded-5">
-        <div className="">
+      <div className="house-entry mb-4 bg-white p-3 border-3 rounded-5">
+        <div className="house-image">
           <img src={image} alt={title} className='img-fluid house-one' />
         </div>
         <div className="price">
@@ -26,6 +26,7 @@ const Property: React.FC<PropertyProps> = ({ title, price, location, image }) =>
           <img src={LocationIcon} alt="Icon" />
           <span>{location}</span>
         </div>
+        <a href="#" className='mt-2 custom-button d-block dark-green-border custom-light-green green-txt'>See Details</a>
       </div>
     </div>
   );
