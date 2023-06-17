@@ -18,7 +18,7 @@ const Social: React.FC<SocialProps> = ({ icon, title, phone }) => {
           </div>
         </div>
         <div>
-          <a href="#" className="custom-button d-block custom-dark-green">{title} Now</a>
+          <a href="#" className="custom-button d-block custom-dark-green text-white">{title} Now</a>
         </div>
       </div>
     </div>

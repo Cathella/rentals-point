@@ -26,6 +26,7 @@ const Property: React.FC<PropertyProps> = ({ title, price, location, image }) =>
           <img src={LocationIcon} alt="Icon" />
           <span>{location}</span>
         </div>
+        <a href="#" className='mt-2 custom-button d-block dark-green-border custom-light-green green-txt'>See Details</a>
       </div>
     </div>
   );

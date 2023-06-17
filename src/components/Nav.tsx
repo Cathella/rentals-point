@@ -17,7 +17,7 @@ function Nav() {
             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div className="offcanvas-body"> 
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav mx-auto mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link" to="/">Home</Link>
               </li>
@@ -28,12 +28,12 @@ function Nav() {
                 <Link className="nav-link" to="/landlords">For Landlords</Link>
               </li>
             </ul>
-            <ul className="navbar-nav mb-2 mb-lg-0">
+            <ul className="navbar-nav mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/login" id="greened">Login</Link>
+                <Link className="nav-link me-3" to="/login" id="">Login</Link>
               </li>
               <li className="nav-item">
-                <Link className="px-3 py-2 custom-button custom-dark-green" to="/signup">Sign Up</Link>
+                <Link className="px-5 custom-button d-inline-block text-white custom-dark-green" to="/signup">Sign Up</Link>
               </li>
             </ul>
           </div>

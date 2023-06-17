@@ -36,7 +36,7 @@ function Choose() {
         <h3 className="text-center">What we do</h3>
         <div className="text-center pt-4 pb-5">
           <div className="row">
-            <div className="col-lg-6 mx-auto custom-text-muted">
+            <div className="col-lg-6 mx-auto custom-text-muted desc-ft-size mb-4">
               Reliable full-service brokers integrating modern technology to ensure a trustworthy experience.
             </div>
           </div>

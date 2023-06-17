@@ -12,7 +12,7 @@ const Category: React.FC<CategoryProps> = ({ title, total, image }) => {
       </div>
       <h4 className="mb-3">{title}</h4>
         <div>
-          <a href="#" className="categories-button px-3">{total} Properties</a>
+          <a href="#" className="categories-button px-5">{total} Properties</a>
         </div>
     </div>
   );
