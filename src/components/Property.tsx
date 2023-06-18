@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import LocationIcon from '../../public/location.svg';
 
 interface PropertyProps {
-  index: number,
+  id: number,
   title: string;
   price: number;
   location: string;
@@ -13,7 +13,7 @@ interface PropertyProps {
   parking?: string;
 }
 
-const Property: React.FC<PropertyProps> = ({ index, title, price, location, image }) => {
+const Property: React.FC<PropertyProps> = ({ id, title, price, location, image }) => {
   return (
     <div className="col-md-6 col-lg-3">
       <div className="house-entry mb-4 bg-white p-3 border-3 rounded-5">
@@ -28,7 +28,7 @@ const Property: React.FC<PropertyProps> = ({ index, title, price, location, imag
           <img src={LocationIcon} alt="Icon" />
           <span>{location}</span>
         </div>
-        <Link to={`/properties/${index}`} className='mt-2 custom-button d-block dark-green-border custom-light-green green-txt'>See Details</Link>
+        <Link to={`/properties/${id}`} className='mt-2 custom-button d-block dark-green-border custom-light-green green-txt'>See Details</Link>
       </div>
     </div>
   );

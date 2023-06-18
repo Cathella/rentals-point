@@ -1,17 +1,26 @@
 import { useParams } from 'react-router-dom';
+import addedPropertiesData from './addedProperties.json';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function Details() {
-  const { propertyIndex } = useParams();
+  const { id } = useParams<{ id?: string }>();
 
-  // Fetch the property details using the propertyIndex from an API or data source
-  // You can use the propertyIndex to retrieve the specific property's information
+  const property = addedPropertiesData.find(property => property.id === parseInt(id ?? ''));
+
+  if (!property) {
+    return <div>Property not found.</div>;
+  }
 
   return (
-    <div>
-      <h2>Property Details</h2>
-      <p>Property Index: {propertyIndex}</p>
-      {/* Display the rest of the property details */}
-    </div>
+    <>
+      <div className='custom-light-green py-5'>
+        <div className="container">
+          <h3 className='text-center'>{property.title}</h3>
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 
