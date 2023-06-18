@@ -36,8 +36,16 @@ function Details() {
               </div>
               <div className='mt-4'>
                 <h4 className='mb-4'>Description</h4>
-                <div className='desc-ft-size custom-text-muted'>
+                <div className='desc-ft-size custom-text-muted mb-5'>
                   {property.description}
+                </div>
+              </div>
+              <div className='custom-dark-green px-5 py-5 mb-5'>
+                <h4 className='text-white mb-4'>In Love with this Property?</h4>
+                <div className='d-flex inline-contact'>
+                  <a href="#" className="px-5 custom-button d-block custom-light-green green-txt">WhatsApp Now</a>
+                  <a href="#" className="px-5 custom-button d-block custom-light-green green-txt">Message Now</a>
+                  <a href="#" className="px-5 custom-button d-block custom-light-green green-txt">Call Now</a>
                 </div>
               </div>
             </div>
@@ -47,23 +55,23 @@ function Details() {
                 <div className='mb-4 custom-light-green py-4 px-5 rounded-5 green-txt'>
                   <span className='fw-bold'>Per month</span>
                   <div className="d-flex flex-column">
-                    <h3 className='me-2'>UGX. {property.price}</h3>
+                    <h3 className='me-2' id='detail-price'>UGX. {property.price}</h3>
                   </div>
                 </div>
-                <div className='mb-4 light-bordered py-2 px-2'>
-                  <span className='me-3 icon-container text-center custom-light-green'>
+                <div className='d-flex align-items-center mb-4 light-bordered px-2 amnenity'>
+                  <span className='icon-container text-center custom-light-green'>
                     <img src={BedIcon} alt="Icon" />
                   </span>
                   <span className='desc-ft-size custom-text-muted'>{property.bedrooms} Bedrooms</span>
                 </div>
-                <div className='mb-4 light-bordered py-2 px-2'>
-                  <span className='me-3 icon-container text-center custom-light-green'>
+                <div className='d-flex align-items-center mb-4 light-bordered px-2 amnenity'>
+                  <span className='icon-container text-center custom-light-green'>
                     <img src={BathIcon} alt="Icon" />
                   </span>
                   <span className='desc-ft-size custom-text-muted'>{property.baths} Baths</span>
                 </div>
-                <div className='mb-4 light-bordered py-2 px-2'>
-                  <span className='me-3 icon-container text-center custom-light-green'>
+                <div className='d-flex align-items-center mb-4 light-bordered px-2 amnenity'>
+                  <span className='icon-container text-center custom-light-green'>
                     <img src={ParkingIcon} alt="Icon" />
                   </span>
                   <span className='desc-ft-size custom-text-muted'>Parking {property.parking}</span>

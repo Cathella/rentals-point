@@ -55,8 +55,18 @@ h4 {
   background: #53A0B1;
 }
 
+.inline-contact {
+  gap: 20px;
+}
+
 .dark-green-border {
   border: 2px solid #53A0B1;
+}
+
+.amnenity {
+  gap: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .custom-button {
@@ -234,11 +244,23 @@ input[type=password] {
   .contact-content {
     flex-direction: column;
   }
+
+  #detail-price {
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
   .price h4 {
     font-size: 20px;
+  }
+
+  .amnenity {
+    flex-direction: column;
+  }
+
+  .inline-contact {
+    flex-direction: column;
   }
 }
 
@@ -266,5 +288,10 @@ input[type=password] {
 @media screen and (max-width: 767px) {
   h1 {
     font-size: 55px;
+  }
+
+  .display-img-container,
+  .display-img-container img {
+    height: 350px;
   }
 }
