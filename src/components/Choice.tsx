@@ -12,7 +12,7 @@ const Choice: React.FC<ChoiceProps> = ({ icon, title, description }) => {
             <img src={icon} alt="Icon" />
           </span>
           <h4 className='mt-3'>{title}</h4>
-          <div className="choice-desc">{description}</div>
+          <div className="choice-desc custom-text-muted mb-3">{description}</div>
         </div>
       </div>
   );
