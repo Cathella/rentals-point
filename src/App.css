@@ -4,26 +4,24 @@
   font-family: 'Outfit';
   font-style: normal;
   font-weight: 400;
-  /* font-size: 22px;
-  line-height: 35px; */
 }
 
 h1, h3, h4 {
   font-family: 'Kanit';
   font-style: normal;
   font-weight: 600;
-  font-size: 76px;
+  font-size: 80px;
   line-height: 80px;
 }
 
 h3 {
   font-size: 40px;
-  line-height: 60px;
+  line-height: 56px;
 }
 
 h4 {
-  font-size: 25px;
-  line-height: 37px;
+  font-size: 24px;
+  line-height: 36px;
 }
 
 .nav-link {
@@ -47,8 +45,8 @@ h4 {
 }
 
 .desc-ft-size {
-  font-size: 22px;
-  line-height: 35px;
+  font-size: 24px;
+  line-height: 32px;
 }
 
 .custom-dark-green {
@@ -75,7 +73,7 @@ h4 {
   line-height: 55px;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .icon-container {
@@ -93,7 +91,7 @@ h4 {
 }
 
 .phone {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .contact {
@@ -119,9 +117,10 @@ h4 {
 }
 
 .footer-links a,
-.rights {
-  font-size: 18px;
-  line-height: 25px;
+.rights,
+.rights a {
+  font-size: 16px;
+  line-height: 24px;
   color: #8F8C8C;
   text-decoration: none;
 }
@@ -129,7 +128,6 @@ h4 {
 .rights a,
 #greened {
   color: #53A0B1;
-  font-size: 18px;
 }
 
 .custom-text-muted,
@@ -162,12 +160,12 @@ input[type=password] {
 }
 
 .location span {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .choice-desc {
-  font-size: 22px;
-  line-height: 35px;
+  font-size: 20px;
+  line-height: 32px;
 }
 
 .categories-button {

@@ -36,7 +36,7 @@ function Contact() {
         <h3 className="text-center">Contact Us</h3>
         <div className="text-center pt-4 pb-5">
           <div className="row">
-            <div className="col-lg-7 mx-auto custom-text-muted desc-ft-size mb-4">
+            <div className="col-lg-8 mx-auto custom-text-muted desc-ft-size mb-4">
               Struggling to find your dream home? Seeking expert guidance in discovering a comfortable space that suits you? Or require consultation on residential matters? Look no further. Consult with us today.
             </div>
           </div>

@@ -8,7 +8,6 @@ import ParkingIcon from '../public/car.svg';
 
 function Details() {
   const { id } = useParams<{ id?: string }>();
-
   const property = addedPropertiesData.find(property => property.id === parseInt(id ?? ''));
 
   if (!property) {
