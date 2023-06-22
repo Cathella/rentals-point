@@ -246,6 +246,12 @@ input[type=password] {
   font-size: 16px;
 }
 
+#seeDetails {
+  color: #53A0B1;
+  font-size: 16px;
+  border: 1px solid #ddd;
+}
+
 .summary {
   border-radius: 35px;
 }

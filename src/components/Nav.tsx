@@ -19,10 +19,10 @@ function Nav() {
           <div className="offcanvas-body"> 
             <ul className="navbar-nav mx-auto mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link me-4" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/properties">Properties</Link>
+                <Link className="nav-link me-4" to="/properties">Properties</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/landlords">For Landlords</Link>

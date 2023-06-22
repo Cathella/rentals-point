@@ -32,7 +32,7 @@ const Property: React.FC<PropertyProps> = ({ id, title, price, location, image, 
           <span>{bedrooms} Bedrooms</span>
           <span>{baths} Baths</span>
         </div>
-        <Link to={`/properties/${id}`} className='mt-2 custom-button d-block dark-green-border custom-light-green green-txt'>See Details</Link>
+        <Link to={`/properties/${id}`} className='mt-4 custom-button d-block' id='seeDetails'>See Details</Link>
       </div>
     </div>
   );
