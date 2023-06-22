@@ -159,6 +159,24 @@ input[type=password] {
   color: #8F8C8C;
 }
 
+.house-image .location {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 14px 4px 8px;
+  border-radius: 15px;
+  top: 8px;
+  left: 8px;
+}
+
+.house-image .location img {
+  width: 20px;
+}
+
+.house-image .location span {
+  font-size: 16px;
+  color: #000000;
+}
+
 .location span {
   font-size: 20px;
 }
@@ -193,6 +211,7 @@ input[type=password] {
   box-shadow: 2px 9px 27px -2px rgba(0, 0, 0, 0.04);
   color: #FFFFFF;
   text-align: center;
+  position: relative;
 }
 
 .house-one {
@@ -205,11 +224,26 @@ input[type=password] {
 
 .price {
   display: flex;
-  flex-direction: column;
+  gap: 5px;
+  /* flex-direction: column; */
 }
 
-.price h4 {
+.price h5 {
   margin-bottom: 0;
+  font-size: 20px;
+  font-family: 'Kanit';
+}
+
+.more {
+  display: flex;
+  gap: 10px;
+}
+
+.more span {
+  background: #EBF2F0;
+  border-radius: 15px;
+  padding: 4px 14px;
+  font-size: 16px;
 }
 
 .summary {

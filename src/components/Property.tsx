@@ -13,20 +13,24 @@ interface PropertyProps {
   parking?: string;
 }
 
-const Property: React.FC<PropertyProps> = ({ id, title, price, location, image }) => {
+const Property: React.FC<PropertyProps> = ({ id, title, price, location, image, bedrooms, baths }) => {
   return (
-    <div className="col-md-6 col-lg-3">
+    <div className="col-md-6 col-lg-4 col-xl-3">
       <div className="house-entry mb-4 bg-white p-3 border-3 rounded-5">
         <div className="house-image">
+          <div className="location">
+            <img src={LocationIcon} alt="Icon" />
+            <span>{location}</span>
+          </div>
           <img src={image} alt={title} className='img-fluid house-one' />
         </div>
         <div className="price">
-          <h4>UGX. {price}</h4>
-          <span className="times">(per month)</span>    
+          <h5 className='fw-bold green-txt'>UGX. {price}</h5>
+          <span className="times">| per month</span>    
         </div>
-        <div className="location">
-          <img src={LocationIcon} alt="Icon" />
-          <span>{location}</span>
+        <div className="more mb-3">
+          <span>{bedrooms} Bedrooms</span>
+          <span>{baths} Baths</span>
         </div>
         <Link to={`/properties/${id}`} className='mt-2 custom-button d-block dark-green-border custom-light-green green-txt'>See Details</Link>
       </div>
