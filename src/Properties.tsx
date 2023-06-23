@@ -6,7 +6,7 @@ import addedPropertiesData from './addedProperties.json';
 function Properties() {   
   return (
     <>
-      <div className="custom-light-green py-5">
+      <div className="pt-4 pb-5">
         <div className="container">
           <div className="row">
             {addedPropertiesData.map((property) => (

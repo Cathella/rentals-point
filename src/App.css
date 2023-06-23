@@ -24,8 +24,12 @@ h4 {
   line-height: 36px;
 }
 
+nav {
+  border-bottom: 1px solid #efefef;
+}
+
 .nav-link {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .header-bg {
@@ -68,12 +72,16 @@ h4 {
 }
 
 .custom-button {
-  height: 55px;
+  height: 50px;
   border-radius: 30px;
-  line-height: 55px;
+  line-height: 50px;
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+#logo img {
+  width: 70%;
 }
 
 .icon-container {
@@ -159,6 +167,10 @@ input[type=password] {
   color: #8F8C8C;
 }
 
+.house-entry {
+  border: 1px solid #efefef;
+}
+
 .house-image .location {
   position: absolute;
   background: rgba(255, 255, 255, 0.8);
@@ -173,7 +185,7 @@ input[type=password] {
 }
 
 .house-image .location span {
-  font-size: 16px;
+  font-size: 14px;
   color: #000000;
 }
 
@@ -224,14 +236,11 @@ input[type=password] {
 
 .price {
   display: flex;
-  gap: 5px;
-  /* flex-direction: column; */
 }
 
 .price h5 {
   margin-bottom: 0;
-  font-size: 20px;
-  font-family: 'Kanit';
+  font-size: 18px;
 }
 
 .more {
@@ -240,10 +249,11 @@ input[type=password] {
 }
 
 .more span {
-  background: #EBF2F0;
+  background: #f7f7f7;
   border-radius: 15px;
   padding: 4px 14px;
-  font-size: 16px;
+  font-size: 14px;
+  color: #8F8C8C;
 }
 
 #seeDetails {
