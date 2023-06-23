@@ -30,7 +30,6 @@ function Login() {
                   <img src={TopLogo} alt="RentalsPoint" />
                 </Link>
               </div>
-              {/* <h4 className="text-center mt-5">Welcome Back</h4> */}
               <div className="text-center desc-ft-size custom-text-muted mt-5">Sign in to your Rentals Point Account.</div>
               <div className="mt-5 login-links">
                 <a href="#">Login with Email</a>
@@ -38,7 +37,7 @@ function Login() {
                 <a href="#">Login with Facebook</a>
               </div>
               <div className="border-top text-center mt-5 pt-4">
-                Are you new here? <a href="#" className="green-txt">Create Account</a>
+                Are you new here? <Link className="green-txt" to="/signup">Create Account</Link>
               </div>
               {/* <div className="mt-5">
                 <form onSubmit={handleSubmit}>

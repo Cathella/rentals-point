@@ -18,64 +18,71 @@ function Details() {
   return (
     <>
       <Nav />
-      <div className='custom-light-green py-5'>
+      <div className='pt-4 pb-5'>
         <div className="container">
+          <h3 className='mb-3'>{property.title}</h3>
+          <div className="location mb-4">
+            <img src={LocationIcon} alt="Icon" />
+            <span>{property.location}</span>
+          </div>
           <div className="row mb-5">
-            <div className='col-lg-12'>
-              <div className='display-img-container mb-5 position-relative'>
+            <div className='col-lg-6'>
+              <div className='display-img-container mb-4 position-relative'>
                 <img className='img-fluid' src={property.image} alt={property.title} />
-                <Link className="d-inline-block text-white more-img-btn" to="/signup">See all 10 Photos</Link>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="row">
+                <div className='col-lg-6'>
+                  <div className='display-img-container-2 mb-4 position-relative'>
+                    <img className='img-fluid' src={property.image} alt={property.title} />
+                  </div>
+                </div>
+                <div className='col-lg-6'>
+                  <div className='display-img-container-2 mb-4 position-relative'>
+                    <img className='img-fluid' src={property.image} alt={property.title} />
+                  </div>
+                </div>
+                <div className='col-lg-6'>
+                  <div className='display-img-container-2 mb-4 position-relative'>
+                    <img className='img-fluid' src={property.image} alt={property.title} />
+                  </div>
+                </div>
+                <div className='col-lg-6'>
+                  <div className='display-img-container-2 mb-4 position-relative'>
+                    <img className='img-fluid' src={property.image} alt={property.title} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-7">
-              <h3 className=''>{property.title}</h3>
-              <div className="location mt-3">
-                <img src={LocationIcon} alt="Icon" />
-                <span>{property.location}</span>
-              </div>
               <div className='mt-4'>
-                <h4 className='mb-4'>Description</h4>
+                <h5 className='fw-bold mb-4'>More About the Property</h5>
+                <div className="more mb-4">
+                  <span>{property.bedrooms} Bedrooms</span>
+                  <span>{property.baths} Baths</span>
+                  <span>Parking: {property.parking}</span>
+                </div>
+                <div className='mb-3 green-txt fw-bold text-decoration-underline'>Ugx. {property.price} / month</div>
                 <div className='desc-ft-size custom-text-muted mb-5'>
                   {property.description}
                 </div>
               </div>
-              <div className='custom-dark-green px-5 py-5 mb-5'>
-                <h4 className='text-white mb-4'>In Love with this Property?</h4>
-                <div className='d-flex inline-contact'>
-                  <a href="#" className="px-5 custom-button d-block custom-light-green green-txt">WhatsApp Now</a>
-                  <a href="#" className="px-5 custom-button d-block custom-light-green green-txt">Message Now</a>
-                  <a href="#" className="px-5 custom-button d-block custom-light-green green-txt">Call Now</a>
-                </div>
-              </div>
             </div>
             <div className="col-lg-4 ms-auto bg-white summary">
-              <div className="p-4">
-                <h4 className='mb-4'>Brief Summary</h4>
-                <div className='mb-4 custom-light-green py-4 px-5 rounded-5 green-txt'>
-                  <span className='fw-bold'>Per month</span>
-                  <div className="d-flex flex-column">
-                    <h3 className='me-2' id='detail-price'>UGX. {property.price}</h3>
-                  </div>
+              <div className="border rounded-5 p-4 shadow-sm">
+                <h5 className='fw-bold mb-4 mt-3'>What this property Offers</h5>
+                <div className='details-amenities'>
+                  <span>Kitchen</span>
+                  <span>Store room</span>
+                  <span>Water</span>
+                  <span>Electricity</span>
+                  <span>Security</span>
                 </div>
-                <div className='d-flex align-items-center mb-4 light-bordered px-2 amnenity'>
-                  <span className='icon-container text-center custom-light-green'>
-                    <img src={BedIcon} alt="Icon" />
-                  </span>
-                  <span className='desc-ft-size custom-text-muted'>{property.bedrooms} Bedrooms</span>
-                </div>
-                <div className='d-flex align-items-center mb-4 light-bordered px-2 amnenity'>
-                  <span className='icon-container text-center custom-light-green'>
-                    <img src={BathIcon} alt="Icon" />
-                  </span>
-                  <span className='desc-ft-size custom-text-muted'>{property.baths} Baths</span>
-                </div>
-                <div className='d-flex align-items-center mb-4 light-bordered px-2 amnenity'>
-                  <span className='icon-container text-center custom-light-green'>
-                    <img src={ParkingIcon} alt="Icon" />
-                  </span>
-                  <span className='desc-ft-size custom-text-muted'>Parking {property.parking}</span>
+                <div className="border-top mt-4 pt-4">
+                  <a href="#" className='custom-button d-block custom-dark-green text-white'>Book to Visit</a>
                 </div>
               </div>
             </div>

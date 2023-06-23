@@ -28,7 +28,7 @@ const Property: React.FC<PropertyProps> = ({ id, title, price, location, image, 
         </Link>
         <div className="price">
           <h5 className='fw-bold'>Ugx {price}</h5>
-          <span className="times">/per month</span>    
+          <span className="times">/month</span>    
         </div>
         <div className="more mb-2">
           <span>{bedrooms} Bedrooms</span>
