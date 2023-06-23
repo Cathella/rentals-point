@@ -176,7 +176,8 @@ form, input {
   font-size: 16px;
 }
 
-input[type=text] {
+input[type=text],
+input[type=number] {
   border-radius: 13px;
 }
 

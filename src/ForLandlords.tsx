@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 
 function ForLandlords() {
+  const [selectedOption, setSelectedOption] = useState('');
   const [title, setTitle] = useState('');
+  const [imgUrl1, setImgUrl1] = useState('');
+  const [imgUrl2, setImgUrl2] = useState('');
+  const [imgUrl3, setImgUrl3] = useState('');
+  const [imgUrl4, setImgUrl4] = useState('');
+  const [imgUrl5, setImgUrl5] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [bedrooms, setBedrooms] = useState('');
@@ -14,8 +20,19 @@ function ForLandlords() {
   const [electricity, setElectricity] = useState(false);
   const [security, setSecurity] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
     setTitle('');
+    setImgUrl1('');
+    setImgUrl2('');
+    setImgUrl3('');
+    setImgUrl4('');
+    setImgUrl5('');
     setDescription('');
     setPrice('');
     setBedrooms('');
@@ -50,14 +67,19 @@ function ForLandlords() {
                     <label htmlFor="title">Property Title</label>
                   </div>
                   <div className="form-floating mb-4">
-                    <select className="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select 
+                      className="form-select" 
+                      id="propertyType" 
+                      value={selectedOption}
+                      onChange={handleSelectChange}
+                    >
                       <option selected value="Rental">Rental</option>
                       <option value="House">House</option>
                       <option value="Office">Office</option>
                       <option value="Shop">Shop</option>
                       <option value="Apartment">Apartment</option>
                     </select>
-                    <label htmlFor="floatingSelect">Property Type</label>
+                    <label htmlFor="propertyType">Property Type</label>
                   </div>
                   <div className="form-floating mb-4">
                     <input
@@ -71,7 +93,12 @@ function ForLandlords() {
                     <label htmlFor="price">Property Price</label>
                   </div>
                   <div className="form-floating mb-4">
-                    <select className="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select 
+                      className="form-select" 
+                      id="paymentFreq" 
+                      value={selectedOption}
+                      onChange={handleSelectChange}
+                    >
                       <option value="night">Per Night</option>
                       <option selected value="month">Per Month</option>
                       <option value="week">Per Week</option>
@@ -79,16 +106,21 @@ function ForLandlords() {
                       <option value="6 months">Per 6 Months</option>
                       <option value="year">Per Year</option>
                     </select>
-                    <label htmlFor="floatingSelect">Payment Frequency</label>
+                    <label htmlFor="paymentFreq">Payment Frequency</label>
                   </div>
                   <div className="form-floating mb-4">
-                    <select className="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select 
+                      className="form-select" 
+                      id="location" 
+                      value={selectedOption}
+                      onChange={handleSelectChange}
+                    >
                       <option selected value="Kampala">Kampala</option>
                       <option value="Masaka">Masaka</option>
                       <option value="Namugongo">Namugongo</option>
                       <option value="kira">Kira</option>
                     </select>
-                    <label htmlFor="floatingSelect">Location</label>
+                    <label htmlFor="location">Location</label>
                   </div>
                   <div className="form-floating mb-5">
                     <textarea 
@@ -104,11 +136,16 @@ function ForLandlords() {
                   
                   <h5 className="border-top pt-5 green-txt mb-4">Amenities</h5>
                   <div className="form-floating mb-4">
-                    <select className="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select 
+                      className="form-select" 
+                      id="parking" 
+                      value={selectedOption}
+                      onChange={handleSelectChange}
+                    >
                       <option selected value="Available">Available</option>
                       <option value="Not Available">Not Available</option>
                     </select>
-                    <label htmlFor="floatingSelect">Parking</label>
+                    <label htmlFor="parking">Parking</label>
                   </div>
                   <div className="form-floating mb-4">
                     <input
@@ -194,60 +231,60 @@ function ForLandlords() {
                   <div className="form-floating mb-4">
                     <input
                       type="text"
-                      id="title"
+                      id="imgUrl1"
                       placeholder=""
                       className="form-control"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
+                      value={imgUrl1}
+                      onChange={(e) => setImgUrl1(e.target.value)}
                     />
                     <label htmlFor="title">Featured photo URL</label>
                   </div>
                   <div className="form-floating mb-4">
                     <input
                       type="text"
-                      id="title"
+                      id="imgUrl2"
                       placeholder=""
                       className="form-control"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
+                      value={imgUrl2}
+                      onChange={(e) => setImgUrl2(e.target.value)}
                     />
                     <label htmlFor="title">Property photo 2 URL</label>
                   </div>
                   <div className="form-floating mb-4">
                     <input
                       type="text"
-                      id="title"
+                      id="imgUrl3"
                       placeholder=""
                       className="form-control"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
+                      value={imgUrl3}
+                      onChange={(e) => setImgUrl3(e.target.value)}
                     />
                     <label htmlFor="title">Property photo 3 URL</label>
                   </div>
                   <div className="form-floating mb-4">
                     <input
                       type="text"
-                      id="title"
+                      id="imgUrl4"
                       placeholder=""
                       className="form-control"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
+                      value={imgUrl4}
+                      onChange={(e) => setImgUrl4(e.target.value)}
                     />
                     <label htmlFor="title">Property photo 4 URL</label>
                   </div>
                   <div className="form-floating mb-4">
                     <input
                       type="text"
-                      id="title"
+                      id="imgUrl5"
                       placeholder=""
                       className="form-control"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
+                      value={imgUrl5}
+                      onChange={(e) => setImgUrl5(e.target.value)}
                     />
                     <label htmlFor="title">Property photo 5 URL</label>
                   </div>
 
-                  <button id="login-submit" className="custom-button form-control custom-dark-green text-white" type="submit">Submit</button>
+                  <button id="login-submit" className="mb-4 custom-button form-control custom-dark-green text-white" type="submit">Submit</button>
                 </form>
               </div>
             </div>
