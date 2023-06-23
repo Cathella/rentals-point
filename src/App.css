@@ -29,7 +29,11 @@ nav {
 }
 
 .nav-link {
-  font-size: 18px;
+  font-size: 16px;
+}
+
+#list-alert {
+  margin-bottom: 0;
 }
 
 .header-bg {
@@ -49,8 +53,29 @@ nav {
 }
 
 .desc-ft-size {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
+}
+
+.login-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.login-links a {
+  border: 1px solid #efefef;
+  display: block;
+  width: 100%;
+  background: #f7f7f7;
+  height: 50px;
+  text-decoration: none;
+  color: #8F8C8C;
+  line-height: 50px;
+  font-size: 16px;
+  border-radius: 35px;
 }
 
 .custom-dark-green {
@@ -99,7 +124,7 @@ nav {
 }
 
 .phone {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .contact {
@@ -191,11 +216,6 @@ input[type=password] {
 
 .location span {
   font-size: 20px;
-}
-
-.choice-desc {
-  font-size: 20px;
-  line-height: 32px;
 }
 
 .categories-button {

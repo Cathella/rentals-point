@@ -1,5 +1,6 @@
-import Footer from "./components/Footer";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
+import TopLogo from '../public/logowhite.svg';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -20,13 +21,26 @@ function Login() {
 
   return (
     <>
-      <div className="custom-light-green py-5">
+      <div className="py-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-lg-5 mx-auto">
-              <h3 className="text-center mt-4">Welcome Back</h3>
-              <div className="text-center desc-ft-size mt-3">Sign in to your Rentals Point Account.</div>
-              <div className="mt-5">
+            <div className="col-md-6 col-lg-4 mx-auto">
+              <div className="text-center">
+                <Link id='loginLogo' className="navbar-brand" to="/">
+                  <img src={TopLogo} alt="RentalsPoint" />
+                </Link>
+              </div>
+              {/* <h4 className="text-center mt-5">Welcome Back</h4> */}
+              <div className="text-center desc-ft-size custom-text-muted mt-5">Sign in to your Rentals Point Account.</div>
+              <div className="mt-5 login-links">
+                <a href="#">Login with Email</a>
+                <a href="#">Login with Google</a>
+                <a href="#">Login with Facebook</a>
+              </div>
+              <div className="border-top text-center mt-5 pt-4">
+                Are you new here? <a href="#" className="green-txt">Create Account</a>
+              </div>
+              {/* <div className="mt-5">
                 <form onSubmit={handleSubmit}>
                   <div className="form-floating mb-4" id="yuyuyu">
                     <input
@@ -63,15 +77,14 @@ function Login() {
                   </div>
                   <button id="login-submit" className="custom-button form-control custom-dark-green text-white" type="submit">Submit</button>
                 </form>
-              </div>
-              <div className="text-center mt-3 mb-5">
+              </div> */}
+              {/* <div className="text-center mt-3 mb-5">
                 <a href="#" id="greened">Forgot Password?</a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

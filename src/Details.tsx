@@ -5,6 +5,7 @@ import LocationIcon from '../public/location.svg';
 import BedIcon from '../public/bed.svg';
 import BathIcon from '../public/bath.svg';
 import ParkingIcon from '../public/car.svg';
+import Nav from './components/Nav';
 
 function Details() {
   const { id } = useParams<{ id?: string }>();
@@ -16,6 +17,7 @@ function Details() {
 
   return (
     <>
+      <Nav />
       <div className='custom-light-green py-5'>
         <div className="container">
           <div className="row mb-5">

@@ -5,7 +5,7 @@ function Footer() {
     <footer className="bg-black text-white py-4">
       <div className="container">
         <div className="footer-content">
-          <a className="navbar-brand" href="#">
+          <a id='logo' className="navbar-brand" href="#">
             <img src={BotLogo} alt="RentalsPoint" />
           </a>
           <div className="d-flex footer-links">
