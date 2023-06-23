@@ -1,10 +1,7 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import addedPropertiesData from './addedProperties.json';
 import Footer from './components/Footer';
 import LocationIcon from '../public/location.svg';
-import BedIcon from '../public/bed.svg';
-import BathIcon from '../public/bath.svg';
-import ParkingIcon from '../public/car.svg';
 import Nav from './components/Nav';
 
 function Details() {

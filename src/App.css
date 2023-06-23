@@ -173,11 +173,10 @@ nav {
 }
 
 form, input {
-  font-size: 18px;
+  font-size: 16px;
 }
 
-input[type=email],
-input[type=password] {
+input[type=text] {
   border-radius: 13px;
 }
 
