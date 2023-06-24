@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import TopLogo from '../../public/logowhite.svg';
+import TopLogo from '../assets/logowhite.svg';
 
 function Nav() {
   return (
@@ -27,19 +27,19 @@ function Nav() {
                   <Link className="nav-link me-4" to="/properties">Houses</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/properties">Apartments</Link>
+                  <Link className="nav-link me-4" to="/">Apartments</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/properties">Rentals</Link>
+                  <Link className="nav-link me-4" to="/">Rentals</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/properties">Shops</Link>
+                  <Link className="nav-link me-4" to="/">Shops</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/properties">Offices</Link>
+                  <Link className="nav-link me-4" to="/">Offices</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/properties">Filter</Link>
+                  <Link className="nav-link" to="/">Filter</Link>
                 </li>
               </ul>
               <ul className="navbar-nav mb-lg-0">

@@ -1,24 +1,7 @@
-import { useState } from "react";
 import { Link } from 'react-router-dom';
-import TopLogo from '../public/logowhite.svg';
+import TopLogo from './assets/logowhite.svg';
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
-
-  const handleSubmit = () => {
-    // e.preventDefault();
-
-    // Perform login logic with username, password, and rememberMe state
-    // You can handle the login functionality here or call a separate login function
-
-    // Reset the form fields after submission
-    setUsername('');
-    setPassword('');
-    setRememberMe(false);
-  };
-
   return (
     <>
       <div className="py-5">

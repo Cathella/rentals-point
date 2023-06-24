@@ -1,4 +1,4 @@
-import BotLogo from '../../public/logoblack.svg';
+import BotLogo from '../assets/logoblack.svg';
 
 function Footer() {
   return (

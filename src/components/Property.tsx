@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import LocationIcon from '../../public/location.svg';
+import LocationIcon from '../assets/location.svg';
 
 interface PropertyProps {
   id: number,

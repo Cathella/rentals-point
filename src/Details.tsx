@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import addedPropertiesData from './addedProperties.json';
 import Footer from './components/Footer';
-import LocationIcon from '../public/location.svg';
+import LocationIcon from './assets/location.svg';
 import Nav from './components/Nav';
 
 function Details() {

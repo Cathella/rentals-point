@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import TopLogo from '../public/logowhite.svg';
+import TopLogo from './assets/logowhite.svg';
 
 function SignUp() {
   return (
