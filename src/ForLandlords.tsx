@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import axios from "axios";
 
 function ForLandlords() {
   const [selectedOption, setSelectedOption] = useState('');
@@ -24,24 +25,53 @@ function ForLandlords() {
     setSelectedOption(event.target.value);
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
-    setTitle('');
-    setImgUrl1('');
-    setImgUrl2('');
-    setImgUrl3('');
-    setImgUrl4('');
-    setImgUrl5('');
-    setDescription('');
-    setPrice('');
-    setBedrooms('');
-    setBaths('');
-    setKitchen(false);
-    setStore(false);
-    setWater(false);
-    setElectricity(false);
-    setSecurity(false);
+    const data = {
+      selectedOption,
+      title,
+      imgUrl1,
+      imgUrl2,
+      imgUrl3,
+      imgUrl4,
+      imgUrl5,
+      description,
+      price,
+      bedrooms,
+      baths,
+      kitchen,
+      store,
+      water,
+      electricity,
+      security
+    };
+
+    try {
+      // Make a POST request to the Rails API endpoint
+      const response = await axios.post("<API_ENDPOINT_URL>", data);
+      console.log(response.data); // Handle the response as needed
+
+      // Reset the form fields after successful submission
+      setTitle('');
+      setImgUrl1('');
+      setImgUrl2('');
+      setImgUrl3('');
+      setImgUrl4('');
+      setImgUrl5('');
+      setDescription('');
+      setPrice('');
+      setBedrooms('');
+      setBaths('');
+      setKitchen(false);
+      setStore(false);
+      setWater(false);
+      setElectricity(false);
+      setSecurity(false);
+    } catch (error) {
+      console.error(error);
+      // Handle any errors during the API request
+    }
   };
 
   return (
@@ -73,7 +103,7 @@ function ForLandlords() {
                       value={selectedOption}
                       onChange={handleSelectChange}
                     >
-                      <option selected value="Rental">Rental</option>
+                      <option value="Rental">Rental</option>
                       <option value="House">House</option>
                       <option value="Office">Office</option>
                       <option value="Shop">Shop</option>
@@ -99,8 +129,8 @@ function ForLandlords() {
                       value={selectedOption}
                       onChange={handleSelectChange}
                     >
+                      <option value="month">Per Month</option>
                       <option value="night">Per Night</option>
-                      <option selected value="month">Per Month</option>
                       <option value="week">Per Week</option>
                       <option value="3 months">Per 3 Months</option>
                       <option value="6 months">Per 6 Months</option>
@@ -142,7 +172,7 @@ function ForLandlords() {
                       value={selectedOption}
                       onChange={handleSelectChange}
                     >
-                      <option selected value="Available">Available</option>
+                      <option value="Available">Available</option>
                       <option value="Not Available">Not Available</option>
                     </select>
                     <label htmlFor="parking">Parking</label>

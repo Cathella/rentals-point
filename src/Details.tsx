@@ -24,29 +24,29 @@ function Details() {
           </div>
           <div className="row mb-5">
             <div className='col-lg-6'>
-              <div className='display-img-container mb-4 position-relative'>
+              <div id='img1' className='display-img-container mb-4 position-relative'>
                 <img className='img-fluid' src={property.image} alt={property.title} />
               </div>
             </div>
             <div className="col-lg-6">
               <div className="row">
                 <div className='col-md-6 col-lg-6'>
-                  <div className='display-img-container-2 mb-4 position-relative'>
+                  <div id='img2' className='display-img-container-2 mb-4 position-relative'>
                     <img className='img-fluid' src={property.image} alt={property.title} />
                   </div>
                 </div>
                 <div className='col-md-6 col-lg-6'>
-                  <div className='display-img-container-2 mb-4 position-relative'>
+                  <div id='img3' className='display-img-container-2 mb-4 position-relative'>
                     <img className='img-fluid' src={property.image} alt={property.title} />
                   </div>
                 </div>
                 <div className='col-md-6 col-lg-6'>
-                  <div className='display-img-container-2 mb-4 position-relative'>
+                  <div id='img4' className='display-img-container-2 mb-4 position-relative'>
                     <img className='img-fluid' src={property.image} alt={property.title} />
                   </div>
                 </div>
                 <div className='col-md-6 col-lg-6'>
-                  <div className='display-img-container-2 mb-4 position-relative'>
+                  <div id='img5' className='display-img-container-2 mb-4 position-relative'>
                     <img className='img-fluid' src={property.image} alt={property.title} />
                   </div>
                 </div>
