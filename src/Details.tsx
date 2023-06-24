@@ -30,22 +30,22 @@ function Details() {
             </div>
             <div className="col-lg-6">
               <div className="row">
-                <div className='col-lg-6'>
+                <div className='col-md-6 col-lg-6'>
                   <div className='display-img-container-2 mb-4 position-relative'>
                     <img className='img-fluid' src={property.image} alt={property.title} />
                   </div>
                 </div>
-                <div className='col-lg-6'>
+                <div className='col-md-6 col-lg-6'>
                   <div className='display-img-container-2 mb-4 position-relative'>
                     <img className='img-fluid' src={property.image} alt={property.title} />
                   </div>
                 </div>
-                <div className='col-lg-6'>
+                <div className='col-md-6 col-lg-6'>
                   <div className='display-img-container-2 mb-4 position-relative'>
                     <img className='img-fluid' src={property.image} alt={property.title} />
                   </div>
                 </div>
-                <div className='col-lg-6'>
+                <div className='col-md-6 col-lg-6'>
                   <div className='display-img-container-2 mb-4 position-relative'>
                     <img className='img-fluid' src={property.image} alt={property.title} />
                   </div>

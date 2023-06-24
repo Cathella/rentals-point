@@ -1,48 +1,48 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+// import { useState, ChangeEvent, FormEvent } from "react";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 
 function ForLandlords() {
-  const [selectedOption, setSelectedOption] = useState('');
-  const [title, setTitle] = useState('');
-  const [imgUrl1, setImgUrl1] = useState('');
-  const [imgUrl2, setImgUrl2] = useState('');
-  const [imgUrl3, setImgUrl3] = useState('');
-  const [imgUrl4, setImgUrl4] = useState('');
-  const [imgUrl5, setImgUrl5] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
-  const [bedrooms, setBedrooms] = useState('');
-  const [baths, setBaths] = useState('');
-  const [kitchen, setKitchen] = useState(false);
-  const [store, setStore] = useState(false);
-  const [water, setWater] = useState(false);
-  const [electricity, setElectricity] = useState(false);
-  const [security, setSecurity] = useState(false);
+  // const [selectedOption, setSelectedOption] = useState('');
+  // const [title, setTitle] = useState('');
+  // const [imgUrl1, setImgUrl1] = useState('');
+  // const [imgUrl2, setImgUrl2] = useState('');
+  // const [imgUrl3, setImgUrl3] = useState('');
+  // const [imgUrl4, setImgUrl4] = useState('');
+  // const [imgUrl5, setImgUrl5] = useState('');
+  // const [description, setDescription] = useState('');
+  // const [price, setPrice] = useState('');
+  // const [bedrooms, setBedrooms] = useState('');
+  // const [baths, setBaths] = useState('');
+  // const [kitchen, setKitchen] = useState(false);
+  // const [store, setStore] = useState(false);
+  // const [water, setWater] = useState(false);
+  // const [electricity, setElectricity] = useState(false);
+  // const [security, setSecurity] = useState(false);
 
-  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedOption(event.target.value);
-  };
+  // const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+  //   setSelectedOption(event.target.value);
+  // };
 
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
+  // const handleSubmit = (event: FormEvent) => {
+  //   event.preventDefault();
 
-    setTitle('');
-    setImgUrl1('');
-    setImgUrl2('');
-    setImgUrl3('');
-    setImgUrl4('');
-    setImgUrl5('');
-    setDescription('');
-    setPrice('');
-    setBedrooms('');
-    setBaths('');
-    setKitchen(false);
-    setStore(false);
-    setWater(false);
-    setElectricity(false);
-    setSecurity(false);
-  };
+  //   setTitle('');
+  //   setImgUrl1('');
+  //   setImgUrl2('');
+  //   setImgUrl3('');
+  //   setImgUrl4('');
+  //   setImgUrl5('');
+  //   setDescription('');
+  //   setPrice('');
+  //   setBedrooms('');
+  //   setBaths('');
+  //   setKitchen(false);
+  //   setStore(false);
+  //   setWater(false);
+  //   setElectricity(false);
+  //   setSecurity(false);
+  // };
 
   return (
     <>
@@ -54,7 +54,7 @@ function ForLandlords() {
             <div className="col-lg-7 mx-auto">
               <div className="border p-5 rounded-5 shadow-sm">
                 <h5 className="green-txt mb-4">Property Information</h5>
-                <form onSubmit={handleSubmit}>
+                {/* <form onSubmit={handleSubmit}>
                   <div className="form-floating mb-4">
                     <input
                       type="text"
@@ -200,7 +200,7 @@ function ForLandlords() {
                       value=""
                       id="water"
                       checked={water}
-                      onChange={(e) => setStore(e.target.checked)}
+                      onChange={(e) => setWater(e.target.checked)}
                     />
                     <label className="form-check-label" htmlFor="water">Water</label>
                   </div>
@@ -285,7 +285,7 @@ function ForLandlords() {
                   </div>
 
                   <button id="login-submit" className="mb-4 custom-button form-control custom-dark-green text-white" type="submit">Submit</button>
-                </form>
+                </form> */}
               </div>
             </div>
           </div>
