@@ -1,32 +1,28 @@
-import Footer from "./components/Footer";
-import { useState } from "react";
+import { Link } from 'react-router-dom';
+import TopLogo from './assets/logowhite.svg';
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
-
-  const handleSubmit = () => {
-    // e.preventDefault();
-
-    // Perform login logic with username, password, and rememberMe state
-    // You can handle the login functionality here or call a separate login function
-
-    // Reset the form fields after submission
-    setUsername('');
-    setPassword('');
-    setRememberMe(false);
-  };
-
   return (
     <>
-      <div className="custom-light-green py-5">
+      <div className="py-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-lg-5 mx-auto">
-              <h3 className="text-center mt-4">Welcome Back</h3>
-              <div className="text-center desc-ft-size mt-3">Sign in to your Rentals Point Account.</div>
-              <div className="mt-5">
+            <div className="col-md-6 col-lg-4 mx-auto">
+              <div className="text-center">
+                <Link id='loginLogo' className="navbar-brand" to="/">
+                  <img src={TopLogo} alt="RentalsPoint" />
+                </Link>
+              </div>
+              <div className="text-center desc-ft-size custom-text-muted mt-5">Sign in to your Rentals Point Account.</div>
+              <div className="mt-5 login-links">
+                <a href="#">Login with Email</a>
+                <a href="#">Login with Google</a>
+                <a href="#">Login with Facebook</a>
+              </div>
+              <div className="border-top text-center mt-5 pt-4">
+                Are you new here? <Link className="green-txt" to="/signup">Create Account</Link>
+              </div>
+              {/* <div className="mt-5">
                 <form onSubmit={handleSubmit}>
                   <div className="form-floating mb-4" id="yuyuyu">
                     <input
@@ -63,15 +59,14 @@ function Login() {
                   </div>
                   <button id="login-submit" className="custom-button form-control custom-dark-green text-white" type="submit">Submit</button>
                 </form>
-              </div>
-              <div className="text-center mt-3 mb-5">
+              </div> */}
+              {/* <div className="text-center mt-3 mb-5">
                 <a href="#" id="greened">Forgot Password?</a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

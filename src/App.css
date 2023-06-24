@@ -24,12 +24,20 @@ h4 {
   line-height: 36px;
 }
 
+nav {
+  border-bottom: 1px solid #efefef;
+}
+
 .nav-link {
-  font-size: 20px;
+  font-size: 16px;
+}
+
+#list-alert {
+  margin-bottom: 0;
 }
 
 .header-bg {
-  background: linear-gradient(180deg, #EBF2F0 0%, rgba(255, 255, 255, 0) 168.53%), url(../public/hero.jpg);
+  background: linear-gradient(180deg, #EBF2F0 0%, rgba(255, 255, 255, 0) 168.53%), url(./assets/hero.jpg);
   border-radius: 75px;
   background-size: cover;
   background-position: center;
@@ -45,8 +53,29 @@ h4 {
 }
 
 .desc-ft-size {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
+}
+
+.login-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.login-links a {
+  border: 1px solid #efefef;
+  display: block;
+  width: 100%;
+  background: #f7f7f7;
+  height: 50px;
+  text-decoration: none;
+  color: #8F8C8C;
+  line-height: 50px;
+  font-size: 16px;
+  border-radius: 35px;
 }
 
 .custom-dark-green {
@@ -68,12 +97,16 @@ h4 {
 }
 
 .custom-button {
-  height: 55px;
+  height: 50px;
   border-radius: 30px;
-  line-height: 55px;
+  line-height: 50px;
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+#logo img {
+  width: 70%;
 }
 
 .icon-container {
@@ -91,7 +124,7 @@ h4 {
 }
 
 .phone {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .contact {
@@ -140,11 +173,11 @@ h4 {
 }
 
 form, input {
-  font-size: 18px;
+  font-size: 16px;
 }
 
-input[type=email],
-input[type=password] {
+input[type=text],
+input[type=number] {
   border-radius: 13px;
 }
 
@@ -159,13 +192,30 @@ input[type=password] {
   color: #8F8C8C;
 }
 
-.location span {
-  font-size: 20px;
+.house-entry {
+  border: 1px solid #efefef;
 }
 
-.choice-desc {
+.house-image .location {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 14px 4px 8px;
+  border-radius: 15px;
+  top: 8px;
+  left: 8px;
+}
+
+.house-image .location img {
+  width: 20px;
+}
+
+.house-image .location span {
+  font-size: 14px;
+  color: #000000;
+}
+
+.location span {
   font-size: 20px;
-  line-height: 32px;
 }
 
 .categories-button {
@@ -193,6 +243,7 @@ input[type=password] {
   box-shadow: 2px 9px 27px -2px rgba(0, 0, 0, 0.04);
   color: #FFFFFF;
   text-align: center;
+  position: relative;
 }
 
 .house-one {
@@ -205,11 +256,30 @@ input[type=password] {
 
 .price {
   display: flex;
-  flex-direction: column;
 }
 
-.price h4 {
+.price h5 {
   margin-bottom: 0;
+  font-size: 18px;
+}
+
+.more {
+  display: flex;
+  gap: 10px;
+}
+
+.more span {
+  background: #f7f7f7;
+  border-radius: 15px;
+  padding: 4px 14px;
+  font-size: 14px;
+  color: #8F8C8C;
+}
+
+#seeDetails {
+  color: #53A0B1;
+  font-size: 16px;
+  border: 1px solid #ddd;
 }
 
 .summary {
@@ -217,12 +287,23 @@ input[type=password] {
 }
 
 .display-img-container {
-  height: 500px;
+  height: 425px;
+  width: 100%;
+}
+
+.display-img-container-2 {
+  height: 200px;
   width: 100%;
 }
 
 .display-img-container img {
-  height: 500px;
+  height: 425px;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.display-img-container-2 img {
+  height: 200px;
   width: 100%;
   border-radius: 30px;
 }
@@ -236,6 +317,20 @@ input[type=password] {
   padding: 30px 50px;
   border-radius: 30px 0 30px 0;
   font-size: 22px;
+}
+
+.details-amenities {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.details-amenities span {
+  background: #f7f7f7;
+  border-radius: 17px;
+  padding: 8px 20px;
+  font-size: 14px;
+  color: #8F8C8C;
 }
 
 @media screen and (max-width: 1400px) {

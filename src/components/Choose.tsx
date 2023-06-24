@@ -21,7 +21,7 @@ function Choose() {
     {
       icon: './quality.svg',
       title: 'Quality',
-      description: 'Experience top-notch service and exceptional attention to detail for a superior home search.'
+      description: 'Experience top-notch service and exceptional attention to detail for a comfortable search.'
     },
     {
       icon: './satisfaction.svg',
@@ -32,8 +32,8 @@ function Choose() {
 
   return (
     <div className="bg-white py-5">
-      <div className="container">
-        <h3 className="text-center">What we do</h3>
+      <div className="container pb-5">
+        <h3 className="text-center mt-4">What we do</h3>
         <div className="text-center pt-4 pb-5">
           <div className="row">
             <div className="col-lg-6 mx-auto custom-text-muted desc-ft-size mb-4">

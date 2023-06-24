@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Nav from './components/Nav';
 import Home from './Home';
 import Properties from './Properties';
 import Details from './Details';
@@ -11,7 +10,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/properties" element={<Properties />} />
