@@ -17,7 +17,7 @@ const Property: React.FC<PropertyProps> = ({ id, title, price, location, img_url
   return (
     <div className="col-md-6 col-lg-4 col-xl-3">
       <div className="house-entry mb-4 bg-white p-3 rounded-5">
-        <Link to={`/properties/${id}`}>
+        <Link to={`/propertylist/${id}`}>
           <div className="house-image">
             <div className="location">
               <img src={LocationIcon} alt="Icon" />
@@ -27,7 +27,7 @@ const Property: React.FC<PropertyProps> = ({ id, title, price, location, img_url
           </div>
         </Link>
         <div className="price">
-          <h5 className='fw-bold'>Ugx {price}</h5>
+          <h5 className='fw-bold'>Ugx. {price}</h5>
           <span className="times">/{payment_freq}</span>    
         </div>
         <div className="more mb-2">
