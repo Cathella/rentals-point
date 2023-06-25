@@ -51,6 +51,27 @@ const PropertyForm = () => {
     try {
       const response = await axios.post('http://localhost:3000/api/v1/properties', propertyData); // Replace with your API endpoint
       console.log(response.data); // Handle the successful submission, e.g., show a success message or redirect
+
+      // Reset the form fields after successful submission
+      setTitle('');
+      setImgUrl1('');
+      setImgUrl2('');
+      setImgUrl3('');
+      setImgUrl4('');
+      setImgUrl5('');
+      setDescription('');
+      setPrice('');
+      setBedrooms('');
+      setBaths('');
+      setKitchen(false);
+      setStore(false);
+      setWater(false);
+      setElectricity(false);
+      setSecurity(false);
+      setParking('');
+      setLocation('');
+      setPaymentFreq('');
+      setPropertyType('');
     } catch (error) {
       console.error(error); // Handle the error, e.g., display an error message
     }
