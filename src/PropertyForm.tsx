@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 const PropertyForm = () => {
   const [title, setTitle] = useState('');
@@ -283,6 +284,7 @@ const PropertyForm = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
