@@ -391,6 +391,11 @@ input[type=number] {
   gap: 15px;
 }
 
+.other-amenities {
+  display: flex;
+  gap: 30px;
+}
+
 .details-amenities span {
   background: #f7f7f7;
   border-radius: 17px;
