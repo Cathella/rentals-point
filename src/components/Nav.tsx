@@ -5,7 +5,7 @@ function Nav() {
   return (
     <>
       <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
-        Are you a <strong>Landlord</strong>? <Link className="alert-link" to="/landlords">List your property here</Link>
+        Do you own property? <Link className="alert-link" id='top-link' to="/listingform">List it here</Link>
         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       <nav className="navbar navbar-expand-lg bg-white">
@@ -24,7 +24,10 @@ function Nav() {
             <div className="offcanvas-body"> 
               <ul className="navbar-nav mx-auto mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/properties">Houses</Link>
+                  <Link className="nav-link me-4" to="/properties">All</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link me-4" to="/">Houses</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link me-4" to="/">Apartments</Link>
@@ -37,9 +40,6 @@ function Nav() {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link me-4" to="/">Offices</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/">Filter</Link>
                 </li>
               </ul>
               <ul className="navbar-nav mb-lg-0">

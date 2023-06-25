@@ -3,7 +3,7 @@ import addedPropertiesData from '../addedProperties.json';
 
 function Recents() {
   addedPropertiesData.sort((a, b) => b.id - a.id);
-  const recentlyAddedProperties =addedPropertiesData.slice(0, 4);
+  const recentlyAddedProperties =addedPropertiesData.slice(0, 8);
 
   return (
     <div className="custom-light-green py-5">
