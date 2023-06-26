@@ -4,7 +4,7 @@ function SideImage() {
   return (
     <div className='col-lg-6 hero-bg-img'>
       <div className='entry-search'>
-        <Link className="shadow" to="/properties">Continue to Search properties</Link>
+        <Link className="shadow" to="/propertylist">Continue to Search properties</Link>
       </div>
     </div>
   );

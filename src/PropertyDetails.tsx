@@ -18,6 +18,11 @@ interface Property {
   baths: number;
   parking: string;
   price: number;
+  kitchen: boolean;
+  store: boolean;
+  water: boolean;
+  electricity: boolean;
+  security: boolean;
 }
 
 const PropertyDetails = () => {
@@ -105,11 +110,11 @@ const PropertyDetails = () => {
               <div className="border rounded-5 p-4 shadow-sm">
                 <h5 className='fw-bold mb-4 mt-3'>What this property Offers</h5>
                 <div className='details-amenities'>
-                  <span>Kitchen</span>
-                  <span>Store room</span>
-                  <span>Water</span>
-                  <span>Electricity</span>
-                  <span>Security</span>
+                  {property.kitchen && <span>Kitchen</span>}
+                  {property.store && <span>Store Room</span>}
+                  {property.water && <span>Water</span>}
+                  {property.electricity && <span>Electricity</span>}
+                  {property.security && <span>Armed Security</span>}
                 </div>
                 <div className="border-top mt-4 pt-4">
                   <a href="#" className='custom-button d-block custom-dark-green text-white'>Book to Visit</a>
