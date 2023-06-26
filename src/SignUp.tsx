@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import TopLogo from './assets/logowhite.svg';
+import SideImage from './components/SideImage';
 
 function SignUp() {
   return (
@@ -16,9 +17,25 @@ function SignUp() {
             <div className="text-center desc-ft-size custom-text-muted mt-5">Create a New Rentals Point Account.</div>
             <div className="mt-5 login-links">
               <a href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">Signup with Email</a>
-              <div className="collapse" id="collapseExample">
-                <div className="">
-                  A signup form should be placed here.
+              <div className="collapse wid-100" id="collapseExample">
+                <div className="border shadow-sm px-4 py-4 rounded-4">
+                  <form>
+                    <div className="form-floating mb-3">
+                      <input 
+                        type="email"
+                        placeholder='' 
+                        className='form-control' />
+                        <label>Email Address</label>
+                    </div>
+                    <div className="form-floating mb-3">
+                      <input 
+                        type="password"
+                        placeholder='' 
+                        className='form-control' />
+                        <label>Password</label>
+                    </div>
+                    <button id='login-submit' className="custom-button form-control custom-dark-green text-white" type="submit">Create Account</button>
+                  </form>
                 </div>
               </div>
               <a href="#">Signup with Google</a>
@@ -28,11 +45,7 @@ function SignUp() {
               Already have an Account? <Link className="green-txt" to="/login">Login</Link>
             </div>
           </div>
-            <div className='col-lg-6 hero-bg-img'>
-              <div className='entry-search'>
-                <Link className="shadow" to="/properties">Continue to Search properties</Link>
-              </div>
-            </div>
+            <SideImage />
         </div>
       </div>
     </div>
