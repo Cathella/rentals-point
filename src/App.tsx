@@ -13,8 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/propertylist" element={<PropertyList />} />
-          {/* <Route path="/propertylist/:propertyId" element={<PropertyDetails />} /> */}
-          <Route path="/propertylist/:propertyId" render={({ match }) => <PropertyDetails propertyId={match.params.propertyId} />} />
+          <Route path="/propertylist/:propertyId" element={<PropertyDetails />} />
           <Route path='/listingform' element={<PropertyForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
