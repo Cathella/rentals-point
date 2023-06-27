@@ -303,6 +303,10 @@ input[type=number] {
   width: 100%;
 }
 
+.nav-link.active {
+  border-bottom: 2px solid #53A0B1;
+}
+
 .more span {
   background: #f7f7f7;
   border-radius: 15px;

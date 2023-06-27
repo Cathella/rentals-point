@@ -8,7 +8,7 @@ function Header() {
           <div className="col-lg-8 mx-auto">
             <h1>Let us find a Home that’s perfect for you.</h1>
             <div className="mt-5 letsearch">
-              <Link to="/properties" className="custom-button custom-dark-green text-white px-5">Start Searching</Link>
+              <Link to="/propertylist" className="custom-button custom-dark-green text-white px-5">Start Searching</Link>
               <a href="#" className="custom-button custom-light-green green-txt px-4">Get Recommendations</a>
             </div>
           </div>

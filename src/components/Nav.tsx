@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useMatch } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
 
 function Nav() {
+  const isActive = useMatch('/propertylist');
+
   return (
     <>
       <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
@@ -24,7 +26,7 @@ function Nav() {
             <div className="offcanvas-body"> 
               <ul className="navbar-nav mx-auto mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/propertylist">All</Link>
+                  <Link className={`nav-link me-4 ${isActive ? 'active' : ''}`} to="/propertylist">All</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link me-4" to="/">Houses</Link>
