@@ -1,13 +1,23 @@
-import { Link, useMatch, useNavigate } from 'react-router-dom';
+import { Link, useMatch, useNavigate, useLocation } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
 
-
-function Nav() {
-  const navigate = useNavigate();
-  const isActive = useMatch('/propertylist');
+const Nav = () => {
+  // const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const propertyType = queryParams.get('propertyType') || '';
+  // const isActive = useMatch('/propertylist');
 
   const handlePropertyTypeClick = (propertyType: string) => {
-    navigate(`/propertylist/${propertyType}`);
+    let url = '/propertylist';
+
+    if (propertyType !== '') {
+      url += `?propertyType=${propertyType}`;
+    }
+
+    // setSelectedPropertyType(propertyType);
+    // navigate(url);
+    window.location.href = url;
   };
 
   return (
@@ -25,29 +35,25 @@ function Nav() {
               <h5 className="offcanvas-title" id="offcanvasNavbarLabel">RentalsPoint</h5>
               <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div className="offcanvas-body"> 
+            <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto mb-lg-0">
                 <li className="nav-item">
-                  <Link className={`nav-link me-4 ${isActive ? 'active' : ''}`} to="/propertylist">All</Link>
+                  <button className={`nav-link me-4 ${propertyType === '' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('')}>All</button>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('houses')}>Houses</button>
+                  <button className={`nav-link me-4 ${propertyType === 'House' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('House')}>Houses</button>
                 </li>
                 <li className="nav-item">
-                  {/* <Link className="nav-link me-4" to="/">Apartments</Link> */}
-                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('apartments')}>Apartments</button>
+                  <button className={`nav-link me-4 ${propertyType === 'Apartment' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Apartment')}>Apartments</button>
                 </li>
                 <li className="nav-item">
-                  {/* <Link className="nav-link me-4" to="/">Rentals</Link> */}
-                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('rentals')}>Rentals</button>
+                  <button className={`nav-link me-4 ${propertyType === 'Rental' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Rental')}>Rentals</button>
                 </li>
                 <li className="nav-item">
-                  {/* <Link className="nav-link me-4" to="/">Shops</Link> */}
-                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('shops')}>Shops</button>
+                  <button className={`nav-link me-4 ${propertyType === 'Shop' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Shop')}>Shops</button>
                 </li>
                 <li className="nav-item">
-                  {/* <Link className="nav-link me-4" to="/">Offices</Link> */}
-                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('offices')}>Offices</button>
+                  <button className={`nav-link me-4 ${propertyType === 'Office' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Office')}>Offices</button>
                 </li>
               </ul>
               <ul className="navbar-nav mb-lg-0">
@@ -63,7 +69,7 @@ function Nav() {
         </div>
       </nav>
     </>
-  )
+  );
 }
 
 export default Nav;

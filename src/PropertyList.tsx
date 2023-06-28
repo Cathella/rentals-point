@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TopAlert from './components/TopAlert';
+import { useLocation } from 'react-router-dom';
 
 type Property = {
   id: number;
@@ -14,17 +15,27 @@ type Property = {
   bedrooms: number;
   baths: number;
   location: string;
-  payment_freq: string
-}
+  payment_freq: string;
+};
 
 const PropertyList = () => {
   const [properties, setProperties] = useState<Property[]>([]);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const propertyType = queryParams.get('propertyType') || 'all';
 
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/v1/properties');
+        let url = 'http://localhost:3000/api/v1/properties';
+
+        if (propertyType !== 'all') {
+          url += `/${propertyType}`;
+        }
+
+        const response = await fetch(url);
         const data = await response.json();
+        console.log('Fetched properties:', data);
         setProperties(data);
       } catch (error) {
         console.error('Error fetching properties:', error);
@@ -32,15 +43,18 @@ const PropertyList = () => {
     };
 
     fetchProperties();
-  }, []);
+  }, [propertyType]);
+
+  console.log('Properties:', properties); // Add this logging statement
 
   return (
     <>
       <TopAlert />
       <Nav />
-      <div className='pt-4 pb-5'>
+      
+      <div className="pt-4 pb-5">
         <div className="container">
-          <div className='row'>
+          <div className="row">
             {properties.map((property) => (
               <Property key={property.id} {...property} />
             ))}
