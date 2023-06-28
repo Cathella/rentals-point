@@ -3,6 +3,7 @@ import Property from './components/Property';
 import Nav from './components/Nav';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import TopAlert from './components/TopAlert';
 
 type Property = {
   id: number;
@@ -35,6 +36,7 @@ const PropertyList = () => {
 
   return (
     <>
+      <TopAlert />
       <Nav />
       <div className='pt-4 pb-5'>
         <div className="container">

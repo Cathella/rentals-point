@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import TopAlert from './components/TopAlert';
 
 const PropertyForm = () => {
   const [title, setTitle] = useState('');
@@ -80,6 +81,7 @@ const PropertyForm = () => {
 
   return (
     <>
+      <TopAlert />
       <Nav />
       <div className='py-5'>
         <div className="container">

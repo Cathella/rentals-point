@@ -1,15 +1,17 @@
-import { Link, useMatch } from 'react-router-dom';
+import { Link, useMatch, useNavigate } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
 
+
 function Nav() {
+  const navigate = useNavigate();
   const isActive = useMatch('/propertylist');
+
+  const handlePropertyTypeClick = (propertyType: string) => {
+    navigate(`/propertylist/${propertyType}`);
+  };
 
   return (
     <>
-      <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
-        Do you own property? <Link className="alert-link" id='top-link' to="/listingform">List it here</Link>
-        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
       <nav className="navbar navbar-expand-lg bg-white">
         <div className="container">
           <Link id='logo' className="navbar-brand" to="/">
@@ -29,19 +31,23 @@ function Nav() {
                   <Link className={`nav-link me-4 ${isActive ? 'active' : ''}`} to="/propertylist">All</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/">Houses</Link>
+                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('houses')}>Houses</button>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/">Apartments</Link>
+                  {/* <Link className="nav-link me-4" to="/">Apartments</Link> */}
+                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('apartments')}>Apartments</button>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/">Rentals</Link>
+                  {/* <Link className="nav-link me-4" to="/">Rentals</Link> */}
+                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('rentals')}>Rentals</button>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/">Shops</Link>
+                  {/* <Link className="nav-link me-4" to="/">Shops</Link> */}
+                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('shops')}>Shops</button>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link me-4" to="/">Offices</Link>
+                  {/* <Link className="nav-link me-4" to="/">Offices</Link> */}
+                  <button className="nav-link me-4" onClick={() => handlePropertyTypeClick('offices')}>Offices</button>
                 </li>
               </ul>
               <ul className="navbar-nav mb-lg-0">

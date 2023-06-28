@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Nav from './components/Nav';
+import { Link, useParams } from 'react-router-dom';
 import Footer from './components/Footer';
 import LocationIcon from './assets/location.svg';
+import TopAlert from './components/TopAlert';
 
 interface Property {
   id: number;
@@ -52,9 +52,12 @@ const PropertyDetails = () => {
 
   return (
     <>
-      <Nav />
-      <div className='pt-4 pb-5'>
+      <TopAlert />
+      <div className='pb-5'>
         <div className="container">
+          <div className='border-bottom mb-4 py-3'>
+            <Link to='/propertylist' className='custom-button bg-black text-white px-4 py-2'>Back to Listings</Link>
+          </div>
           <h3 className='mb-3'>{property.title}</h3>
           <div className="location mb-4">
             <img src={LocationIcon} alt="Icon" />

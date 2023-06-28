@@ -4,10 +4,12 @@ import Categories from "./components/Categories";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import TopAlert from "./components/TopAlert";
 
 function Home() {
   return (
     <>
+      <TopAlert />
       <Nav />
       <Header />
       <Choose />
