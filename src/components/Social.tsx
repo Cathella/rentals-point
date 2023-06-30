@@ -6,8 +6,8 @@ interface SocialProps {
 
 const Social: React.FC<SocialProps> = ({ icon, title, phone }) => {
   return (
-    <div className="col-md-6 col-lg-3">
-      <div className="light-bordered rounded-5 px-3 py-4 contact">
+    <div className="col-md-6 col-lg-6">
+      <div className="bg-white rounded-5 px-3 py-4 contact">
         <div className="contact-content">
           <span className='icon-container text-center custom-light-green'>
             <img src={icon} alt="Icon" />

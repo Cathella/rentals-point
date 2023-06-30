@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Footer from './components/Footer';
 import LocationIcon from './assets/location.svg';
+import ArrowIcon from './assets/arrow-left.svg';
 import TopAlert from './components/TopAlert';
 
 interface Property {
@@ -55,8 +56,11 @@ const PropertyDetails = () => {
       <TopAlert />
       <div className='pb-5'>
         <div className="container">
-          <div className='border-bottom mb-4 py-3'>
-            <Link to='/propertylist' className='custom-button bg-black text-white px-4 py-2'>Back to Listings</Link>
+          <div className='border-bottom mb-4 py-3 text-center'>
+            <Link id='backbtn' to='/propertylist' className='custom-button bg-black text-white px-4 py-2'>
+              <img src={ArrowIcon} alt="Icon" />
+              Back to Listings
+            </Link>
           </div>
           <h3 className='mb-3'>{property.title}</h3>
           <div className="location mb-4">
@@ -107,6 +111,10 @@ const PropertyDetails = () => {
                 <div className='desc-ft-size custom-text-muted mb-5'>
                   {property.description}
                 </div>
+                <div className='updatelinks mb-4'>
+                  <a href="#" className='green-txt'>Update Listing</a>
+                  <a href="#" className='text-danger'>Delete Listing</a>
+                </div>
               </div>
             </div>
             <div className="col-lg-4 ms-auto bg-white summary">
@@ -120,7 +128,7 @@ const PropertyDetails = () => {
                   {property.security && <span>Armed Security</span>}
                 </div>
                 <div className="border-top mt-4 pt-4">
-                  <a href="#" className='custom-button d-block custom-dark-green text-white'>Book to Visit</a>
+                  <a href="#" className='custom-button d-block custom-dark-green text-white'>Visit Property</a>
                 </div>
               </div>
             </div>

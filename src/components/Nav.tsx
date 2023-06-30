@@ -38,30 +38,33 @@ const Nav = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto mb-lg-0">
                 <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === '' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('')}>All</button>
+                  <button className={`nav-link me-4 ${propertyType === '' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('')}>Listings</button>
                 </li>
                 <li className="nav-item">
+                  <button className={`nav-link me-4 ${propertyType === '' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('')}>Share a Rental</button>
+                </li>
+                {/* <li className="nav-item">
                   <button className={`nav-link me-4 ${propertyType === 'House' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('House')}>Houses</button>
-                </li>
-                <li className="nav-item">
+                </li> */}
+                {/* <li className="nav-item">
                   <button className={`nav-link me-4 ${propertyType === 'Apartment' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Apartment')}>Apartments</button>
-                </li>
-                <li className="nav-item">
+                </li> */}
+                {/* <li className="nav-item">
                   <button className={`nav-link me-4 ${propertyType === 'Rental' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Rental')}>Rentals</button>
-                </li>
-                <li className="nav-item">
+                </li> */}
+                {/* <li className="nav-item">
                   <button className={`nav-link me-4 ${propertyType === 'Shop' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Shop')}>Shops</button>
-                </li>
-                <li className="nav-item">
+                </li> */}
+                {/* <li className="nav-item">
                   <button className={`nav-link me-4 ${propertyType === 'Office' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Office')}>Offices</button>
-                </li>
+                </li> */}
               </ul>
               <ul className="navbar-nav mb-lg-0">
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link me-3" to="/login">Login</Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
-                  <Link className="nav-link green-txt text-decoration-underline" to="/signup">Sign Up</Link>
+                  <Link className="nav-link green-txt text-decoration-underline" to="/signup">My Account</Link>
                 </li>
               </ul>
             </div>

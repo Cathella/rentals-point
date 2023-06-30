@@ -304,7 +304,22 @@ input[type=number] {
 }
 
 .nav-link.active {
-  border-bottom: 2px solid #53A0B1;
+  /* border-bottom: 2px solid #53A0B1; */
+}
+
+#backbtn {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+}
+
+#backbtn img {
+  width: 24px;
+}
+
+.updatelinks {
+  display: flex;
+  gap: 10px;
 }
 
 .more span {

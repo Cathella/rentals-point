@@ -26,7 +26,7 @@ function Categories() {
   ];
 
   return (
-    <div className="py-5 custom-light-green">
+    <div className="py-5 bg-white">
       <div className="container">
         <h3 className="text-center pb-5">Move to what Comforts you</h3>
         <div className="row">
