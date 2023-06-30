@@ -111,10 +111,10 @@ const PropertyDetails = () => {
                 <div className='desc-ft-size custom-text-muted mb-5'>
                   {property.description}
                 </div>
-                <div className='updatelinks mb-4'>
+                {/* <div className='updatelinks mb-4'>
                   <a href="#" className='green-txt'>Update Listing</a>
                   <a href="#" className='text-danger'>Delete Listing</a>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-lg-4 ms-auto bg-white summary">
@@ -128,7 +128,50 @@ const PropertyDetails = () => {
                   {property.security && <span>Armed Security</span>}
                 </div>
                 <div className="border-top mt-4 pt-4">
-                  <a href="#" className='custom-button d-block custom-dark-green text-white'>Visit Property</a>
+                  <a href="#offcanvasExample" role="button" aria-controls="offcanvasExample" className='custom-button d-block custom-dark-green text-white' data-bs-toggle="offcanvas">Visit Property</a>
+                  <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div className="offcanvas-header border-bottom">
+                      <h5 className="offcanvas-title" id="offcanvasExampleLabel">Visiting Property</h5>
+                      <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                      
+                    <div className="offcanvas-body">
+                      <div className='border-bottom pb-3'>
+                        <h4>Availability</h4>
+                        Still Available
+                      </div>
+                      <div className='border-bottom py-3'>
+                        <h4 className='pb-3'>Property Owner</h4>
+                        <p>
+                          <span className='fw-bold'>Name: </span>
+                          <span>Nakitto Catherine</span>
+                        </p>
+                        <p>
+                          <span className='fw-bold'>Gender: </span>
+                          <span>Female</span>
+                        </p>
+                        <p>
+                          <span className='fw-bold'>Lives: </span>
+                          <span>Away from premises</span>
+                        </p>
+                        <p>
+                          <span className='fw-bold'>Contact: </span>
+                          <span>+256-782-016-535</span>
+                        </p>
+                      </div>
+                      <div className='py-3'>
+                        <h4>Broker Fees</h4>
+                        <div className='pt-3'>
+                          <p>I need to take me to the property</p>
+                          <span className='fw-bold'>Ugx. 50,000</span>
+                        </div>
+                        <div className='py-3'>
+                          <p>Direct me to the property</p>
+                          <span className='fw-bold'>Ugx. 20,000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

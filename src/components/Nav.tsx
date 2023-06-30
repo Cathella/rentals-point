@@ -63,8 +63,14 @@ const Nav = () => {
                 {/* <li className="nav-item">
                   <Link className="nav-link me-3" to="/login">Login</Link>
                 </li> */}
-                <li className="nav-item">
-                  <Link className="nav-link green-txt text-decoration-underline" to="/signup">My Account</Link>
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
+                  <ul className="dropdown-menu">
+                    <Link className='dropdown-item' to='/login'>Login</Link>
+                    <li><hr className="dropdown-divider" /></li>
+                    <Link className='dropdown-item' to='/signup'>Create Account</Link>
+                    {/* <li><a className="dropdown-item" href="#">New Account</a></li> */}
+                  </ul>
                 </li>
               </ul>
             </div>
