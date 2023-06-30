@@ -24,6 +24,12 @@ interface Property {
   water: boolean;
   electricity: boolean;
   security: boolean;
+  owner_contact: string;
+  owner_gender: string;
+  lives: string;
+  owner_name: string;
+  property_avail: string;
+  video_url: string;
 }
 
 const PropertyDetails = () => {
@@ -130,7 +136,7 @@ const PropertyDetails = () => {
                 <div className="border-top mt-4 pt-4">
                   <a href="#offcanvasExample" role="button" aria-controls="offcanvasExample" className='custom-button d-block custom-dark-green text-white' data-bs-toggle="offcanvas">Visit Property</a>
                   <div className='mt-3'>
-                    <a href="#" className='custom-button d-block green-txt custom-light-green'>Request Property Video</a>
+                    <Link to={property.video_url} className='custom-button d-block green-txt custom-light-green'>Request Property Video</Link>
                   </div>
                   <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div className="offcanvas-header border-bottom">
@@ -141,25 +147,25 @@ const PropertyDetails = () => {
                     <div className="offcanvas-body">
                       <div className='border-bottom pb-3'>
                         <h4>Availability</h4>
-                        Still Available
+                        {property.property_avail}
                       </div>
                       <div className='border-bottom py-3'>
                         <h4 className='pb-3'>Property Owner</h4>
                         <p>
                           <span className='fw-bold'>Name: </span>
-                          <span>Nakitto Catherine</span>
+                          <span>{property.owner_name}</span>
                         </p>
                         <p>
                           <span className='fw-bold'>Gender: </span>
-                          <span>Female</span>
+                          <span>{property.owner_gender}</span>
                         </p>
                         <p>
                           <span className='fw-bold'>Lives: </span>
-                          <span>Away from premises</span>
+                          <span>{property.lives}</span>
                         </p>
                         <p>
                           <span className='fw-bold'>Contact: </span>
-                          <span>+256-782-016-535</span>
+                          <span>{property.owner_contact}</span>
                         </p>
                       </div>
                       <div className='py-3'>

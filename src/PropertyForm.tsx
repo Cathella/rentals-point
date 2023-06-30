@@ -28,7 +28,7 @@ const PropertyForm = () => {
   const [ownerName, setOwnerName] = useState('');
   const [ownerContact, setOwnerContact] = useState('');
   const [ownerGender, setOwnerGender] = useState('');
-  const [availability, setAvailability] = useState('');
+  const [propertyAvail, setPropertyAvail] = useState('');
   const [lives, setLives] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
 
@@ -58,7 +58,7 @@ const PropertyForm = () => {
       owner_name: ownerName,
       owner_contact: ownerContact,
       owner_gender: ownerGender,
-      availability,
+      property_avail: propertyAvail,
       lives,
       video_url: videoUrl,
     };
@@ -90,7 +90,7 @@ const PropertyForm = () => {
       setOwnerName('');
       setOwnerContact('');
       setOwnerGender('');
-      setAvailability('');
+      setPropertyAvail('');
       setLives('');
       setVideoUrl('');
     } catch (error) {
@@ -326,8 +326,8 @@ const PropertyForm = () => {
                 </div>
                 <div className="form-floating mb-4">
                   <select 
-                    value={availability} 
-                    onChange={(e) => setAvailability(e.target.value)}
+                    value={propertyAvail} 
+                    onChange={(e) => setPropertyAvail(e.target.value)}
                     className="form-select">
                     <option value="">-- Choose Availability --</option>
                     <option value="Available">Available</option>
