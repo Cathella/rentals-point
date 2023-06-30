@@ -129,6 +129,9 @@ const PropertyDetails = () => {
                 </div>
                 <div className="border-top mt-4 pt-4">
                   <a href="#offcanvasExample" role="button" aria-controls="offcanvasExample" className='custom-button d-block custom-dark-green text-white' data-bs-toggle="offcanvas">Visit Property</a>
+                  <div className='mt-3'>
+                    <a href="#" className='custom-button d-block green-txt custom-light-green'>Request Property Video</a>
+                  </div>
                   <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div className="offcanvas-header border-bottom">
                       <h5 className="offcanvas-title" id="offcanvasExampleLabel">Visiting Property</h5>

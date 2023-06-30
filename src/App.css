@@ -303,10 +303,6 @@ input[type=number] {
   width: 100%;
 }
 
-.nav-link.active {
-  /* border-bottom: 2px solid #53A0B1; */
-}
-
 #backbtn {
   display: inline-flex;
   gap: 5px;
@@ -480,6 +476,10 @@ input[type=number] {
   .display-img-container,
   .display-img-container img {
     height: 350px;
+  }
+
+  .other-amenities {
+    flex-direction: column;
   }
 }
 

@@ -34,6 +34,16 @@ function SignUp() {
                         className='form-control' />
                         <label>Password</label>
                     </div>
+                    <div className="form-floating mb-3">
+                      <select 
+                        value='' 
+                        className="form-select">
+                        <option value="">-- Select Account --</option>
+                        <option value="Tenant">I am a Tenant</option>
+                        <option value="Landlord">I am a Landlord</option>
+                      </select>
+                      <label>Choose Account</label>
+                    </div>
                     <button id='login-submit' className="custom-button form-control custom-dark-green text-white" type="submit">Create Account</button>
                   </form>
                 </div>

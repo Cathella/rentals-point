@@ -243,7 +243,7 @@ const PropertyForm = () => {
                 </div>
 
                 <h5 className="border-top pt-5 green-txt text-center mb-5">Other Features</h5>
-                <div className='other-amenities'>
+                <div className='other-amenities mb-4'>
                   <div className="form-check mb-3">
                     <input 
                       type="checkbox" 
@@ -285,6 +285,54 @@ const PropertyForm = () => {
                       onChange={(e) => setSecurity(e.target.checked)} />
                       <label>Security</label>
                   </div>
+                </div>
+
+                <h5 className="border-top pt-5 green-txt text-center mb-5">Owner/Caretaker Details</h5>
+                <div className="form-floating mb-4">
+                  <input 
+                    type="text" 
+                    className='form-control' 
+                    placeholder=''
+                    value='' />
+                    <label>Landlord's Name</label>
+                </div>
+                <div className="form-floating mb-4">
+                  <input 
+                    type="phone" 
+                    className='form-control' 
+                    placeholder=''
+                    value='' />
+                    <label>Landlord's Contact</label>
+                </div>
+                <div className="form-floating mb-4">
+                  <select 
+                    value='' 
+                    className="form-select">
+                    <option value="">-- Property Availability --</option>
+                    <option value="Available">Available</option>
+                    <option value="Not Available">Not Available</option>
+                  </select>
+                  <label>Choose Availability</label>
+                </div>
+                <div className="form-floating mb-4">
+                  <select 
+                    value='' 
+                    className="form-select">
+                    <option value="">-- Where Landlord lives --</option>
+                    <option value="On-premises">On Premises</option>
+                    <option value="Off-premises">Off Premises</option>
+                  </select>
+                  <label>Select Landlord lives</label>
+                </div>
+                <div className="form-floating mb-5">
+                  <select 
+                    value='' 
+                    className="form-select">
+                    <option value="">-- Gender --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <label>Choose Gender</label>
                 </div>
 
                 <button id='login-submit' className="my-4 custom-button form-control custom-dark-green text-white" type="submit">Submit</button>
