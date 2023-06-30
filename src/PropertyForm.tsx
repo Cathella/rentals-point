@@ -25,6 +25,12 @@ const PropertyForm = () => {
   const [location, setLocation] = useState('');
   const [paymentFreq, setPaymentFreq] = useState('');
   const [propertyType, setPropertyType] = useState('');
+  const [ownerName, setOwnerName] = useState('');
+  const [ownerContact, setOwnerContact] = useState('');
+  const [ownerGender, setOwnerGender] = useState('');
+  const [availability, setAvailability] = useState('');
+  const [lives, setLives] = useState('');
+  const [videoUrl, setVideoUrl] = useState('');
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -49,6 +55,12 @@ const PropertyForm = () => {
       location,
       payment_freq: paymentFreq,
       property_type: propertyType,
+      owner_name: ownerName,
+      owner_contact: ownerContact,
+      owner_gender: ownerGender,
+      availability,
+      lives,
+      video_url: videoUrl,
     };
 
     try {
@@ -75,6 +87,12 @@ const PropertyForm = () => {
       setLocation('');
       setPaymentFreq('');
       setPropertyType('');
+      setOwnerName('');
+      setOwnerContact('');
+      setOwnerGender('');
+      setAvailability('');
+      setLives('');
+      setVideoUrl('');
     } catch (error) {
       console.error(error); // Handle the error, e.g., display an error message
     }
@@ -293,7 +311,8 @@ const PropertyForm = () => {
                     type="text" 
                     className='form-control' 
                     placeholder=''
-                    value='' />
+                    value={ownerName}
+                    onChange={(e) => setOwnerName(e.target.value)} />
                     <label>Landlord's Name</label>
                 </div>
                 <div className="form-floating mb-4">
@@ -301,38 +320,53 @@ const PropertyForm = () => {
                     type="phone" 
                     className='form-control' 
                     placeholder=''
-                    value='' />
+                    value={ownerContact}
+                    onChange={(e) => setOwnerContact(e.target.value)} />
                     <label>Landlord's Contact</label>
                 </div>
                 <div className="form-floating mb-4">
                   <select 
-                    value='' 
+                    value={availability} 
+                    onChange={(e) => setAvailability(e.target.value)}
                     className="form-select">
-                    <option value="">-- Property Availability --</option>
+                    <option value="">-- Choose Availability --</option>
                     <option value="Available">Available</option>
                     <option value="Not Available">Not Available</option>
                   </select>
-                  <label>Choose Availability</label>
+                  <label>Availability</label>
                 </div>
                 <div className="form-floating mb-4">
                   <select 
-                    value='' 
+                    value={lives}
+                    onChange={(e) => setLives(e.target.value)} 
                     className="form-select">
-                    <option value="">-- Where Landlord lives --</option>
+                    <option value="">-- Choose where Landlord stays --</option>
                     <option value="On-premises">On Premises</option>
                     <option value="Off-premises">Off Premises</option>
                   </select>
-                  <label>Select Landlord lives</label>
+                  <label>Landlord Stays</label>
                 </div>
                 <div className="form-floating mb-5">
                   <select 
-                    value='' 
+                    value={ownerGender} 
+                    onChange={(e) => setOwnerGender(e.target.value)}
                     className="form-select">
-                    <option value="">-- Gender --</option>
+                    <option value="">-- Choose Gender --</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
-                  <label>Choose Gender</label>
+                  <label>Gender</label>
+                </div>
+
+                <h5 className="border-top pt-5 green-txt text-center mb-5">Property Video</h5>
+                <div className="form-floating mb-4">
+                  <input 
+                    type="text"
+                    className='form-control' 
+                    placeholder='' 
+                    value={videoUrl} 
+                    onChange={(e) => setVideoUrl(e.target.value)} />
+                    <label>Video URL</label>
                 </div>
 
                 <button id='login-submit' className="my-4 custom-button form-control custom-dark-green text-white" type="submit">Submit</button>
