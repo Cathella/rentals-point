@@ -5,6 +5,7 @@ import SignUp from './SignUp';
 import PropertyForm from './PropertyForm';
 import PropertyList from './PropertyList';
 import PropertyDetails from './PropertyDetails';
+import Dashboard from './Dashboard';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/listingform' element={<PropertyForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </div>
     </Router>

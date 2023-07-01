@@ -1,30 +1,28 @@
 import { Link, useNavigate } from 'react-router-dom';
 import TopLogo from './assets/logowhite.svg';
 import SideImage from './components/SideImage';
-import { useState, FormEvent, useEffect } from 'react';
+import { useState, FormEvent } from 'react';
 import axios from 'axios';
 
-function Login() {
+const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-  // const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // create the login data object with email and password
-    const loginData = {
+    // Create the user object with form data
+    const user = {
       email,
-      password
+      password,
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/login', { loginData });
+      const response = await axios.post('http://localhost:3000/api/v1/login', user);
 
       if (response.status === 200) {
-        // User login successful
-        console.log('User login successful');
+        // User login successful, navigate to the Dashboard component
         navigate('/dashboard');
       } else {
         console.error('Failed to login:', response.statusText);
@@ -33,16 +31,6 @@ function Login() {
       console.error('Error logging in:', error);
     }
   };
-
-  useEffect(() => {
-    // Check if the user is already logged in
-    // Implement your logic here (e.g., check if there is a valid session token)
-    // If the user is logged in, setLoggedIn(true)
-  }, []);
-
-  // if (loggedIn) {
-  //   return <Redirect to="/dashboard" />;
-  // }
 
   return (
     <>
