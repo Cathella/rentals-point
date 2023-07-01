@@ -130,11 +130,11 @@ const PropertyForm = () => {
                     className="form-select"
                     onChange={(e) => setPropertyType(e.target.value)}>
                     <option value="">-- Select Property Type --</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="House">House</option>
-                    <option value="Rental">Rental</option>
-                    <option value="Office">Office</option>
-                    <option value="Shop">Shop</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="rental">Rental</option>
+                    <option value="office">Office</option>
+                    <option value="shop">Shop</option>
                   </select>
                   <label>Property Type</label>
                 </div>

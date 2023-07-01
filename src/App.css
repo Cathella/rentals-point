@@ -76,13 +76,25 @@ nav {
 .login-links a {
   display: block;
   width: 100%;
-  background: #EBF2F0;
+  /* background: #EBF2F0; */
   height: 50px;
   text-decoration: none;
-  color: #8F8C8C;
+  color: #FFFFFF;
   line-height: 50px;
   font-size: 16px;
   border-radius: 35px;
+}
+
+#with-email {
+  background: #000000;
+}
+
+#with-google {
+  background: #E04F41;
+}
+
+#with-facebook {
+  background: #087BEA;
 }
 
 .custom-dark-green {

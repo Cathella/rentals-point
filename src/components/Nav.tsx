@@ -40,36 +40,29 @@ const Nav = () => {
                 <li className="nav-item">
                   <button className={`nav-link me-4 ${propertyType === '' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('')}>Listings</button>
                 </li>
-                <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === '' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('')}>Share a Rental</button>
+                {/* <li className="nav-item">
+                  <button className={`nav-link me-4 ${propertyType === 'house' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('House')}>Houses</button>
                 </li>
-                {/* <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'House' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('House')}>Houses</button>
-                </li> */}
-                {/* <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'Apartment' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Apartment')}>Apartments</button>
-                </li> */}
-                {/* <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'Rental' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Rental')}>Rentals</button>
-                </li> */}
-                {/* <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'Shop' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Shop')}>Shops</button>
-                </li> */}
-                {/* <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'Office' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Office')}>Offices</button>
+                <li className="nav-item">
+                  <button className={`nav-link me-4 ${propertyType === 'apartment' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Apartment')}>Apartments</button>
+                </li>
+                <li className="nav-item">
+                  <button className={`nav-link me-4 ${propertyType === 'rental' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Rental')}>Rentals</button>
+                </li>
+                <li className="nav-item">
+                  <button className={`nav-link me-4 ${propertyType === 'shop' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Shop')}>Shops</button>
+                </li>
+                <li className="nav-item">
+                  <button className={`nav-link me-4 ${propertyType === 'office' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Office')}>Offices</button>
                 </li> */}
               </ul>
               <ul className="navbar-nav mb-lg-0">
-                {/* <li className="nav-item">
-                  <Link className="nav-link me-3" to="/login">Login</Link>
-                </li> */}
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
                   <ul className="dropdown-menu">
                     <Link className='dropdown-item' to='/login'>Login</Link>
                     <li><hr className="dropdown-divider" /></li>
                     <Link className='dropdown-item' to='/signup'>Create Account</Link>
-                    {/* <li><a className="dropdown-item" href="#">New Account</a></li> */}
                   </ul>
                 </li>
               </ul>

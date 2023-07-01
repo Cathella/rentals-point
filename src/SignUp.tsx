@@ -16,7 +16,7 @@ function SignUp() {
             </div>
             <div className="text-center desc-ft-size custom-text-muted mt-5">Create a New Rentals Point Account.</div>
             <div className="mt-5 login-links">
-              <a href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">Signup with Email</a>
+              <a id='with-email' href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">Signup with Email</a>
               <div className="collapse wid-100" id="collapseExample">
                 <div className="border shadow-sm px-4 py-4 rounded-4">
                   <form>
@@ -48,8 +48,8 @@ function SignUp() {
                   </form>
                 </div>
               </div>
-              <a href="#">Signup with Google</a>
-              <a href="#">Signup with Facebook</a>
+              <a id='with-google' href="#">Signup with Google</a>
+              <a id='with-facebook' href="#">Signup with Facebook</a>
             </div>
             <div className="border-top text-center mt-5 pt-4">
               Already have an Account? <Link className="green-txt" to="/login">Login</Link>

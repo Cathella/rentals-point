@@ -42,11 +42,11 @@ function Contact() {
                       </span>
                       <div>
                         <h4>Email</h4>
-                        <div className="custom-text-muted phone">support@rentalspoint.com</div>
+                        <div className="custom-text-muted phone">rentalspoint@gmail.com</div>
                       </div>
                     </div>
                     <div>
-                      <a href="mailto:support@rentalspoint.com?subject=Hello%20Rentals%20Point!&body=I%20need%20looking%20for%20a%20rental." className="custom-button d-block custom-dark-green text-white">Email Now</a>
+                      <a href="mailto:rentalspoint@gmail.com?subject=Hello%20Rentals%20Point!&body=I%20need%20help%20looking%20for%20a%20rental." className="custom-button d-block custom-dark-green text-white">Email Now</a>
                     </div>
                   </div>
                 </div>
