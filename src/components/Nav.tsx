@@ -1,24 +1,7 @@
-import { Link, useMatch, useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
 
 const Nav = () => {
-  // const navigate = useNavigate();
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const propertyType = queryParams.get('propertyType') || '';
-  // const isActive = useMatch('/propertylist');
-
-  const handlePropertyTypeClick = (propertyType: string) => {
-    let url = '/propertylist';
-
-    if (propertyType !== '') {
-      url += `?propertyType=${propertyType}`;
-    }
-
-    // setSelectedPropertyType(propertyType);
-    // navigate(url);
-    window.location.href = url;
-  };
 
   return (
     <>
@@ -38,23 +21,11 @@ const Nav = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto mb-lg-0">
                 <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === '' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('')}>Listings</button>
-                </li>
-                {/* <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'house' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('House')}>Houses</button>
+                  <Link className='nav-link me-4' to='/propertylist'>Listings</Link>
                 </li>
                 <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'apartment' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Apartment')}>Apartments</button>
+                  <Link className='nav-link' to='/dashboard'>Dashboard</Link>
                 </li>
-                <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'rental' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Rental')}>Rentals</button>
-                </li>
-                <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'shop' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Shop')}>Shops</button>
-                </li>
-                <li className="nav-item">
-                  <button className={`nav-link me-4 ${propertyType === 'office' ? 'active' : ''}`} onClick={() => handlePropertyTypeClick('Office')}>Offices</button>
-                </li> */}
               </ul>
               <ul className="navbar-nav mb-lg-0">
                 <li className="nav-item dropdown">
