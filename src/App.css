@@ -101,6 +101,12 @@ nav {
   background: #53A0B1;
 }
 
+.h3-select {
+  border: 2px dashed #53A0B1;
+  padding: 0 15px;
+  font-family: 'Kanit';
+}
+
 .inline-contact {
   gap: 20px;
 }

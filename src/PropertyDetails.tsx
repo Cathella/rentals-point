@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Footer from './components/Footer';
 import LocationIcon from './assets/location.svg';
-import ArrowIcon from './assets/arrow-left.svg';
-import TopAlert from './components/TopAlert';
 
 interface Property {
   id: number;
@@ -59,16 +57,9 @@ const PropertyDetails = () => {
 
   return (
     <>
-      <TopAlert />
       <div className='pb-5'>
         <div className="container">
-          <div className='border-bottom mb-4 py-3 text-center'>
-            <Link id='backbtn' to='/propertylist' className='custom-button bg-black text-white px-4 py-2'>
-              <img src={ArrowIcon} alt="Icon" />
-              Back to Listings
-            </Link>
-          </div>
-          <h3 className='mb-3'>{property.title}</h3>
+          <h3 className='mt-5 mb-3'>{property.title}</h3>
           <div className="location mb-4">
             <img src={LocationIcon} alt="Icon" />
             <span>{property.location}</span>
@@ -171,13 +162,13 @@ const PropertyDetails = () => {
                       <div className='py-3'>
                         <h4>Broker Fees</h4>
                         <div className='pt-3'>
-                          <p>I need to take me to the property</p>
+                          {/* <p>I need to take me to the property</p> */}
                           <span className='fw-bold'>Ugx. 50,000</span>
                         </div>
-                        <div className='py-3'>
+                        {/* <div className='py-3'>
                           <p>Direct me to the property</p>
                           <span className='fw-bold'>Ugx. 20,000</span>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>

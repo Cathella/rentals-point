@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import TopLogo from './assets/logowhite.svg';
 import SideImage from './components/SideImage';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
@@ -38,11 +37,6 @@ const Login = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-5 col-lg-4 col-xl-3 mx-auto">
-              <div className="text-center mt-5">
-                <Link id='loginLogo' className="navbar-brand" to="/">
-                  <img src={TopLogo} alt="RentalsPoint" />
-                </Link>
-              </div>
               <div className="text-center desc-ft-size custom-text-muted mt-5">Sign into your Rentals Point Account.</div>
               <div className="mt-5 login-links">
                 <a id='with-email' href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">Continue with Email</a>

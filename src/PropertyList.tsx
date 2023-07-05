@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import Property from './components/Property';
-import Nav from './components/Nav';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import TopAlert from './components/TopAlert';
 import { useLocation } from 'react-router-dom';
 
 type Property = {
@@ -49,11 +47,9 @@ const PropertyList = () => {
 
   return (
     <>
-      <TopAlert />
-      <Nav />
-      
       <div className="pt-4 pb-5">
         <div className="container">
+          <h3 className='mb-5'>I want to find a nice <span className='green-txt h3-select'>Rental</span> in <span className='green-txt h3-select'>Namugongo</span></h3>
           <div className="row">
             {properties.map((property) => (
               <Property key={property.id} {...property} />

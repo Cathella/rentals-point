@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
@@ -6,11 +6,16 @@ import PropertyForm from './PropertyForm';
 import PropertyList from './PropertyList';
 import PropertyDetails from './PropertyDetails';
 import Dashboard from './Dashboard';
+import Nav from './components/Nav';
+import AuthProvider from './components/AuthProvider';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
+        <AuthProvider>
+          <Nav />
+        </AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/propertylist" element={<PropertyList />} />
@@ -21,7 +26,7 @@ function App() {
           <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   )
 }
 

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Footer from './components/Footer';
-import TopAlert from './components/TopAlert';
 import { Link } from 'react-router-dom';
 import ArrowIcon from './assets/arrow-left.svg';
 
@@ -100,8 +99,6 @@ const PropertyForm = () => {
 
   return (
     <>
-      <TopAlert />
-      {/* <Nav /> */}
       <div className='pb-5'>
         <div className="container">
           <div className='border-bottom mb-4 py-3 text-center'>

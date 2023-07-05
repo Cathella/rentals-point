@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
+import { useContext } from 'react';
+import AuthContext from './AuthContext';
 
 const Nav = () => {
+  const { isLoggedIn, handleLogout } = useContext(AuthContext);
 
   return (
     <>
@@ -23,19 +26,32 @@ const Nav = () => {
                 <li className="nav-item">
                   <Link className='nav-link me-4' to='/propertylist'>Listings</Link>
                 </li>
-                <li className="nav-item">
-                  <Link className='nav-link' to='/dashboard'>Dashboard</Link>
-                </li>
+                {isLoggedIn && (
+                  <li className="nav-item">
+                    <Link className='nav-link' to='/dashboard'>Dashboard</Link>
+                  </li>
+                )}
               </ul>
               <ul className="navbar-nav mb-lg-0">
-                <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
-                  <ul className="dropdown-menu">
-                    <Link className='dropdown-item' to='/login'>Login</Link>
-                    <li><hr className="dropdown-divider" /></li>
-                    <Link className='dropdown-item' to='/signup'>Create Account</Link>
-                  </ul>
-                </li>
+                {!isLoggedIn ? (
+                  <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
+                    <ul className="dropdown-menu">
+                      <Link className='dropdown-item' to='/login'>Login</Link>
+                      <li><hr className="dropdown-divider" /></li>
+                      <Link className='dropdown-item' to='/signup'>Create Account</Link>
+                    </ul>
+                  </li>
+                ) : (
+                  <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <button className='dropdown-item' onClick={handleLogout}>Logout</button>
+                      </li>
+                    </ul>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
