@@ -101,10 +101,12 @@ nav {
   background: #53A0B1;
 }
 
-.h3-select {
-  border: 2px dashed #53A0B1;
+h4 select {
+  background: #ebf2f0;
   padding: 0 15px;
-  font-family: 'Kanit';
+  border: 2px dashed #53A0B1;
+  margin: 0 10px;
+  color: #53A0B1;
 }
 
 .inline-contact {
