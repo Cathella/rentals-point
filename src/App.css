@@ -113,6 +113,19 @@ h4 select {
   gap: 20px;
 }
 
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-btn {
+  background: #EBF2F0;
+  border-radius: 35px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
 .dark-green-border {
   border: 2px solid #53A0B1;
 }

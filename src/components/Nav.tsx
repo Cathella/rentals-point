@@ -3,11 +3,27 @@ import TopLogo from '../assets/logowhite.svg';
 import { useContext } from 'react';
 import AuthContext from './AuthContext';
 
+interface AuthContextValue {
+  isLoggedIn: boolean;
+  handleLogout: () => void;
+}
+
 const Nav = () => {
-  const { isLoggedIn, handleLogout } = useContext(AuthContext);
+  const authContextValue = useContext(AuthContext) as AuthContextValue;
+
+  if (!authContextValue) {
+    // Handle the case when the context value is undefined
+    return null;
+  }
+
+  const { isLoggedIn, handleLogout } = authContextValue;
 
   return (
     <>
+      <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
+        Do you own property? <Link className="alert-link" id='top-link' to="/listingform">List it here</Link>
+        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       <nav className="navbar navbar-expand-lg bg-white">
         <div className="container">
           <Link id='logo' className="navbar-brand" to="/">

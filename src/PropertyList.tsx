@@ -3,6 +3,7 @@ import Property from './components/Property';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useLocation } from 'react-router-dom';
+import FilterIcon from './assets/filter.svg';
 
 type Property = {
   id: number;
@@ -49,26 +50,29 @@ const PropertyList = () => {
     <>
       <div className="pt-4 pb-5">
         <div className="container">
-          <h4 className='mb-5'>I want to find a nice 
-            <select name="" id="">
-              <option value="">property</option>
-              <option value="Rental">Rental</option>
-              <option value="Apartment">Apartment</option>
-              <option value="Office">Office</option>
-              <option value="Shop">Shop</option>
-              <option value="House">House</option>
-            </select>
-            in 
-            <select name="" id="">
-              <option value="">any location</option>
-              <option value="Namugongo">Namugongo</option>
-              <option value="Kireka">Kireka</option>
-              <option value="Kyaliwajjala">Kyaliwajjala</option>
-              <option value="Nalya">Nalya</option>
-              <option value="Kira">Kira</option>
-              <option value="Mukono">Mukono</option>
-            </select>
-          </h4>
+          <div className='mb-5 search-section'>
+            <h4 className=''>I want to find a nice 
+              <select name="" id="">
+                <option value="">property</option>
+                <option value="Rental">Rental</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Office">Office</option>
+                <option value="Shop">Shop</option>
+                <option value="House">House</option>
+              </select>
+              in 
+              <select name="" id="">
+                <option value="">any location</option>
+                <option value="Namugongo">Namugongo</option>
+                <option value="Kireka">Kireka</option>
+                <option value="Kyaliwajjala">Kyaliwajjala</option>
+                <option value="Nalya">Nalya</option>
+                <option value="Kira">Kira</option>
+                <option value="Mukono">Mukono</option>
+              </select>
+            </h4>
+            <span className='filter-btn'><img src={FilterIcon} alt="Filter Property" /></span>
+          </div>
           <div className="row">
             {properties.map((property) => (
               <Property key={property.id} {...property} />

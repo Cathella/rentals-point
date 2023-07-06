@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Footer from './components/Footer';
-import { Link } from 'react-router-dom';
-import ArrowIcon from './assets/arrow-left.svg';
 
 const PropertyForm = () => {
   const [title, setTitle] = useState('');
@@ -101,12 +99,6 @@ const PropertyForm = () => {
     <>
       <div className='pb-5'>
         <div className="container">
-          <div className='border-bottom mb-4 py-3 text-center'>
-            <Link id='backbtn' to='/propertylist' className='custom-button bg-black text-white px-4 py-2'>
-              <img src={ArrowIcon} alt="Icon" />
-              Back to Listings
-            </Link>
-          </div>
           <h3 className="text-center mb-5 mt-5">List your Property</h3>
           <div className="row">
             <div className="col-lg-6 mx-auto">
