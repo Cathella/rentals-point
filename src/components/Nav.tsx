@@ -3,13 +3,8 @@ import TopLogo from '../assets/logowhite.svg';
 import { useContext } from 'react';
 import AuthContext from './AuthContext';
 
-interface AuthContextValue {
-  isLoggedIn: boolean;
-  handleLogout: () => void;
-}
-
 const Nav = () => {
-  const authContextValue = useContext(AuthContext) as AuthContextValue;
+  const authContextValue = useContext(AuthContext);
 
   if (!authContextValue) {
     // Handle the case when the context value is undefined

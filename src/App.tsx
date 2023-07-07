@@ -12,10 +12,8 @@ import AuthProvider from './components/AuthProvider';
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <AuthProvider>
-          <Nav />
-        </AuthProvider>
+      <AuthProvider>
+        <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/propertylist" element={<PropertyList />} />
@@ -25,7 +23,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
-      </div>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
