@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
-import { useAuth } from './AuthProvider';
+import { connect } from 'react-redux';
+import { logout } from './actions';
 
-const Nav = () => {
-  const { isLoggedIn, handleLogout } = useAuth();
+const Nav = ({ isAuthenticated, logout }) => {
 
   return (
     <>
@@ -29,14 +29,14 @@ const Nav = () => {
                 <li className="nav-item">
                   <Link className='nav-link me-4' to='/propertylist'>Listings</Link>
                 </li>
-                {isLoggedIn && (
+                {isAuthenticated && (
                   <li className="nav-item">
                     <Link className='nav-link' to='/dashboard'>Dashboard</Link>
                   </li>
                 )}
               </ul>
               <ul className="navbar-nav mb-lg-0">
-                {!isLoggedIn ? (
+                {!isAuthenticated ? (
                   <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
                     <ul className="dropdown-menu">
@@ -50,7 +50,7 @@ const Nav = () => {
                     <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
                     <ul className="dropdown-menu">
                       <li>
-                        <button className='dropdown-item' onClick={handleLogout}>Logout</button>
+                        <button className='dropdown-item' onClick={logout}>Logout</button>
                       </li>
                     </ul>
                   </li>
@@ -64,4 +64,14 @@ const Nav = () => {
   );
 }
 
-export default Nav;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.isAuthenticated,
+  };
+};
+
+const mapDispatchToProps = {
+  logout,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
