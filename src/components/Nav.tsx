@@ -1,17 +1,9 @@
 import { Link } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
-import { useContext } from 'react';
-import AuthContext from './AuthContext';
+import { useAuth } from './AuthProvider';
 
 const Nav = () => {
-  const authContextValue = useContext(AuthContext);
-
-  if (!authContextValue) {
-    // Handle the case when the context value is undefined
-    return null;
-  }
-
-  const { isLoggedIn, handleLogout } = authContextValue;
+  const { isLoggedIn, handleLogout } = useAuth();
 
   return (
     <>
