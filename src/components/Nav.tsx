@@ -70,12 +70,6 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
   );
 }
 
-// const mapStateToProps = (state: { isAuthenticated: boolean }) => {
-//   return {
-//     isAuthenticated: state.isAuthenticated,
-//   };
-// };
-
 const mapStateToProps = (state: { isAuthenticated: boolean }) => {
   const { isAuthenticated } = state; // Destructure the isAuthenticated property from the state object
   console.log('isAuthenticated:', isAuthenticated); // Add a console log statement
