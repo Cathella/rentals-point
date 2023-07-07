@@ -1,8 +1,14 @@
-const initialState = {
+import { Action } from 'redux';
+
+interface AuthState {
+  isAuthenticated: boolean;
+}
+
+const initialState: AuthState = {
   isAuthenticated: false,
 };
 
-const authReducer = (state = initialState, action) => {
+const authReducer = (state: AuthState = initialState, action: Action<string>): AuthState => {
   switch (action.type) {
     case 'LOGIN':
       return {

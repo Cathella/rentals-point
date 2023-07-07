@@ -2,9 +2,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import SideImage from './components/SideImage';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { login } from './components/actions';
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,6 +21,9 @@ const Login = () => {
     };
 
     try {
+      // Dispatch the login action
+      dispatch(login());
+      
       const response = await axios.post('http://localhost:3000/api/v1/login', user);
 
       if (response.status === 200) {

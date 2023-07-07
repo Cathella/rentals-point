@@ -1,4 +1,3 @@
-// App.js
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
@@ -9,7 +8,7 @@ import PropertyDetails from './PropertyDetails';
 import Dashboard from './Dashboard';
 import Nav from './components/Nav';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './components/store';
 
 function App() {
   return (

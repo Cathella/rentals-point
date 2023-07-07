@@ -2,8 +2,14 @@ import { Link } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
 import { connect } from 'react-redux';
 import { logout } from './actions';
+import { Dispatch } from 'redux';
 
-const Nav = ({ isAuthenticated, logout }) => {
+interface NavProps {
+  isAuthenticated: boolean;
+  logout: () => void;
+}
+
+const Nav = ({ isAuthenticated, logout }: NavProps) => {
 
   return (
     <>
@@ -64,14 +70,26 @@ const Nav = ({ isAuthenticated, logout }) => {
   );
 }
 
-const mapStateToProps = (state) => {
+// const mapStateToProps = (state: { isAuthenticated: boolean }) => {
+//   return {
+//     isAuthenticated: state.isAuthenticated,
+//   };
+// };
+
+const mapStateToProps = (state: { isAuthenticated: boolean }) => {
+  const { isAuthenticated } = state; // Destructure the isAuthenticated property from the state object
+  console.log('isAuthenticated:', isAuthenticated); // Add a console log statement
+
   return {
     isAuthenticated: state.isAuthenticated,
   };
 };
 
-const mapDispatchToProps = {
-  logout,
+
+const mapDispatchToProps = (dispatch: Dispatch) => {
+  return {
+    logout: () => dispatch(logout()),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
