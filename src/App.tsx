@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, RouteProps } from 'react-router-dom';
+import React from 'react';
 import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
@@ -7,8 +8,18 @@ import PropertyList from './PropertyList';
 import PropertyDetails from './PropertyDetails';
 import Dashboard from './Dashboard';
 import Nav from './components/Nav';
-import { Provider } from 'react-redux';
-import store from './components/store';
+import { Provider, useSelector } from 'react-redux';
+import store, { RootState } from './components/store';
+
+const ProtectedRoute: React.FC<RouteProps> = ({ path, element, ...rest }) => {
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+
+  return isAuthenticated ? (
+    <Route path={path} element={element} {...rest} />
+  ) : (
+    <Navigate to="/login" replace />
+  );
+};
 
 function App() {
   return (
@@ -20,15 +31,21 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/propertylist" element={<PropertyList />} />
             <Route path="/propertylist/:propertyId" element={<PropertyDetails />} />
-            <Route path='/listingform' element={<PropertyForm />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path='/dashboard' element={<Dashboard />} />
+            <Route
+              path="/listingform"
+              element={<ProtectedRoute element={<PropertyForm />} />}
+            />
+            <Route
+              path="/dashboard"
+              element={<ProtectedRoute element={<Dashboard />} />}
+            />
           </Routes>
         </div>
       </BrowserRouter>
     </Provider>
-  )
+  );
 }
 
 export default App;
