@@ -3,6 +3,8 @@ import TopLogo from '../assets/logowhite.svg';
 import { connect } from 'react-redux';
 import { logout } from './actions';
 import { Dispatch } from 'redux';
+import { RootState } from '../components/store';
+
 
 interface NavProps {
   isAuthenticated: boolean;
@@ -70,14 +72,15 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
   );
 }
 
-const mapStateToProps = (state: { isAuthenticated: boolean }) => {
-  const { isAuthenticated } = state; // Destructure the isAuthenticated property from the state object
-  console.log('isAuthenticated:', isAuthenticated); // Add a console log statement
+const mapStateToProps = (state: RootState) => {
+  const { isAuthenticated } = state.auth;
+  console.log('isAuthenticated:', isAuthenticated); // Add a console log statement // Access isAuthenticated from the auth slice of the state
 
   return {
-    isAuthenticated: state.isAuthenticated,
+    isAuthenticated: isAuthenticated,
   };
 };
+
 
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
