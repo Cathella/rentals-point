@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate, RouteProps } from 'react-router-dom';
-import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import React, { ReactNode } from 'react';
 import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
@@ -11,14 +11,22 @@ import Nav from './components/Nav';
 import { Provider, useSelector } from 'react-redux';
 import store, { RootState } from './components/store';
 
-const ProtectedRoute: React.FC<RouteProps> = ({ path, element, ...rest }) => {
+interface ProtectedRouteProps {
+  redirectTo: string;
+  children: ReactNode;
+}
+
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
+  redirectTo,
+  children
+}) => {
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
-  return isAuthenticated ? (
-    <Route path={path} element={element} {...rest} />
-  ) : (
-    <Navigate to="/login" replace />
-  );
+  if (isAuthenticated) {
+    return <>{children}</>;
+  } else {
+    return <Navigate to={redirectTo} replace />;
+  }
 };
 
 function App() {
@@ -35,11 +43,19 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route
               path="/listingform"
-              element={<ProtectedRoute element={<PropertyForm />} />}
+              element={
+                <ProtectedRoute redirectTo="/login">
+                  <PropertyForm />
+                </ProtectedRoute>
+              }
             />
             <Route
               path="/dashboard"
-              element={<ProtectedRoute element={<Dashboard />} />}
+              element={
+                <ProtectedRoute redirectTo="/login">
+                  <Dashboard />
+                </ProtectedRoute>
+              }
             />
           </Routes>
         </div>
