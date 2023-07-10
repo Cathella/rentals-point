@@ -52,7 +52,7 @@ const PropertyList = () => {
         <div className="container">
           <div className='mb-4 search-section'>
             <div>
-              <a className="d-block px-4 custom-button custom-light-green text-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+              <a className="filter-btn d-block px-4 custom-button custom-light-green text-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                 <img src={FilterIcon} alt="Filter Property" /> Filter Property
               </a>
             </div>

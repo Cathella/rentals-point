@@ -115,18 +115,18 @@ h4 select {
 
 .search-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
 }
+
+/* .search-section img {
+  width: 24px;
+} */
 
 .filter-btn {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #EBF2F0;
-  border-radius: 35px;
-  padding: 10px 25px;
-  cursor: pointer;
 }
 
 .dark-green-border {

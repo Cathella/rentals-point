@@ -111,8 +111,8 @@ const PropertyDetails = () => {
                   {property.description}
                 </div>
                 <div className='updatelinks mb-4'>
-                  <button className='green-txt custom-button custom-light-green px-4'>Update Listing</button>
-                  <a href="#" className='bg-danger text-white custom-button custom-light-green px-4'>Delete Listing</a>
+                  <button className='green-txt border-0 custom-button custom-light-green px-4'>Update Listing</button>
+                  <button className='bg-danger border-0 text-white custom-button px-4'>Delete Listing</button>
                 </div>
               </div>
             </div>
