@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import Footer from './components/Footer';
 import LocationIcon from './assets/location.svg';
 
@@ -34,6 +34,11 @@ interface Property {
 const PropertyDetails = () => {
   const { propertyId } = useParams();
   const [property, setProperty] = useState<Property | null>(null);
+  const navigate = useNavigate();
+
+  const handleUpdateListing = (listingId) => {
+    navigate(`/listing/update/${listingId}`);
+  };
 
   useEffect(() => {
     const fetchPropertyDetails = async () => {
@@ -111,7 +116,7 @@ const PropertyDetails = () => {
                   {property.description}
                 </div>
                 <div className='updatelinks mb-4'>
-                  <a href="#" className='green-txt custom-button custom-light-green px-4'>Update Listing</a>
+                  <button onClick={() => handleUpdateListing(listing.id)} className='green-txt custom-button custom-light-green px-4'>Update Listing</button>
                   <a href="#" className='bg-danger text-white custom-button custom-light-green px-4'>Delete Listing</a>
                 </div>
               </div>

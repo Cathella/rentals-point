@@ -11,3 +11,9 @@ export const logout = () => {
     payload: false, // Set the payload to indicate the user is not authenticated
   };
 };
+
+export const updateListing = (listingId, updatedListing) => ({
+  type: 'UPDATE_LISTING',
+  payload: { listingId, updatedListing },
+});
+
