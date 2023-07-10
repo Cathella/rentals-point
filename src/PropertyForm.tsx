@@ -133,10 +133,12 @@ const PropertyForm = () => {
                     className="form-select"
                     onChange={(e) => setLocation(e.target.value)}>
                     <option value="">-- Select Location --</option>
-                    <option value="kampala">Kampala</option>
+                    <option value="kyaliwajjala">Kyaliwajjala</option>
                     <option value="namugongo">Namugongo</option>
                     <option value="kira">Kira</option>
-                    <option value="masaka">Masaka</option>
+                    <option value="mukono">Mukono</option>
+                    <option value="kireka">Kireka</option>
+                    <option value="nalya">Nalya</option>
                   </select>
                   <label>Location</label>
                 </div>

@@ -28,6 +28,7 @@ interface Property {
   owner_name: string;
   property_avail: string;
   video_url: string;
+  property_type: string;
 }
 
 const PropertyDetails = () => {
@@ -103,6 +104,7 @@ const PropertyDetails = () => {
                   <span>{property.bedrooms} Bedrooms</span>
                   <span>{property.baths} Baths</span>
                   <span>Parking: {property.parking}</span>
+                  <span>Type: {property.property_type}</span>
                 </div>
                 <div className='mb-3 green-txt fw-bold text-decoration-underline'>Ugx. {property.price} / month</div>
                 <div className='desc-ft-size custom-text-muted mb-5'>
@@ -162,13 +164,8 @@ const PropertyDetails = () => {
                       <div className='py-3'>
                         <h4>Broker Fees</h4>
                         <div className='pt-3'>
-                          {/* <p>I need to take me to the property</p> */}
                           <span className='fw-bold'>Ugx. 50,000</span>
                         </div>
-                        {/* <div className='py-3'>
-                          <p>Direct me to the property</p>
-                          <span className='fw-bold'>Ugx. 20,000</span>
-                        </div> */}
                       </div>
                     </div>
                   </div>
