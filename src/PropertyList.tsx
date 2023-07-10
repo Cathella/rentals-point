@@ -50,28 +50,11 @@ const PropertyList = () => {
     <>
       <div className="pt-4 pb-5">
         <div className="container">
-          <div className='mb-5 search-section'>
-            <h4 className=''>I want to find a nice 
-              <select name="" id="">
-                <option value="">property</option>
-                <option value="Rental">Rental</option>
-                <option value="Apartment">Apartment</option>
-                <option value="Office">Office</option>
-                <option value="Shop">Shop</option>
-                <option value="House">House</option>
-              </select>
-              in 
-              <select name="" id="">
-                <option value="">any location</option>
-                <option value="Namugongo">Namugongo</option>
-                <option value="Kireka">Kireka</option>
-                <option value="Kyaliwajjala">Kyaliwajjala</option>
-                <option value="Nalya">Nalya</option>
-                <option value="Kira">Kira</option>
-                <option value="Mukono">Mukono</option>
-              </select>
-            </h4>
-            <span className='filter-btn'><img src={FilterIcon} alt="Filter Property" /></span>
+          <div className='mb-4 search-section'>
+            <span className='filter-btn'>
+              <img src={FilterIcon} alt="Filter Property" />
+              Filter Property
+            </span>
           </div>
           <div className="row">
             {properties.map((property) => (

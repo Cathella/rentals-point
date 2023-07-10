@@ -120,9 +120,12 @@ h4 select {
 }
 
 .filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background: #EBF2F0;
   border-radius: 35px;
-  padding: 10px 10px;
+  padding: 10px 25px;
   cursor: pointer;
 }
 
@@ -348,7 +351,7 @@ input[type=number] {
 
 .updatelinks {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .more span {
