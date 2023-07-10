@@ -51,10 +51,51 @@ const PropertyList = () => {
       <div className="pt-4 pb-5">
         <div className="container">
           <div className='mb-4 search-section'>
-            <span className='filter-btn'>
-              <img src={FilterIcon} alt="Filter Property" />
-              Filter Property
-            </span>
+            <div>
+              <a className="d-block px-4 custom-button custom-light-green text-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <img src={FilterIcon} alt="Filter Property" /> Filter Property
+              </a>
+            </div>
+
+            <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+              <div className="offcanvas-header">
+                <h5 className="offcanvas-title" id="offcanvasExampleLabel">Filters</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div className="offcanvas-body">
+                <div>
+                  <form>
+                    <div className="mb-4">
+                      <label className='mb-2 fw-bold'>Location</label>
+                      <select className='form-select bg-light py-2'>
+                        <option value="">Select</option>
+                      </select>
+                    </div>
+                    <div className="mb-4">
+                      <label className='mb-2 fw-bold'>Bedrooms</label>
+                      <select className='form-select bg-light py-2'>
+                        <option value="">Select</option>
+                      </select>
+                    </div>
+                    <div className="mb-4">
+                      <label className='mb-2 fw-bold'>Property Availabity</label>
+                      <select className='form-select bg-light py-2'>
+                        <option value="">Select</option>
+                      </select>
+                    </div>
+                    <div className="mb-4">
+                      <label className='mb-2 fw-bold'>Property Type</label>
+                      <select className='form-select bg-light py-2'>
+                        <option value="">Select</option>
+                      </select>
+                    </div>
+                    <div className="mb-3">
+                      <button className='w-100 border-0 custom-button custom-dark-green text-white'>Apply Filters</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="row">
             {properties.map((property) => (

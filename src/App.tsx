@@ -10,7 +10,6 @@ import Dashboard from './Dashboard';
 import Nav from './components/Nav';
 import { Provider, useSelector } from 'react-redux';
 import store, { RootState } from './components/store';
-import ListingUpdateForm from './ListingUpdateForm';
 
 interface ProtectedRouteProps {
   redirectTo: string;
@@ -42,7 +41,6 @@ function App() {
             <Route path="/propertylist/:propertyId" element={<PropertyDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/listing/update/:listingId" element={<ListingUpdateForm />} />
             <Route
               path="/listingform"
               element={

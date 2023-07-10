@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import SideImage from './components/SideImage';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
 
@@ -45,7 +44,10 @@ const SignUp = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-5 col-lg-4 col-xl-3 mx-auto">
-            <div className="text-center desc-ft-size custom-text-muted mt-5">Create a New Rentals Point Account.</div>
+            <div className="text-center mt-5">
+              <h4>Get Started for Free.</h4>
+              <p className='custom-text-muted'>Already have an Account? <Link className="green-txt" to="/login">Login</Link></p>
+            </div>
             <div className="mt-5 login-links">
               <a id='with-email' href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">Signup with Email</a>
               <div className="collapse wid-100" id="collapseExample">
@@ -97,10 +99,9 @@ const SignUp = () => {
               <a id='with-facebook' href="#">Signup with Facebook</a>
             </div>
             <div className="border-top text-center mt-5 pt-4">
-              Already have an Account? <Link className="green-txt" to="/login">Login</Link>
+              By signing up, I agree to RentalsPoint Terms of Service & Privacy Policy.
             </div>
           </div>
-            <SideImage />
         </div>
       </div>
     </div>
