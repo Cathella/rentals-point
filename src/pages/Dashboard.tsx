@@ -1,5 +1,4 @@
-import Footer from "./components/Footer";
-import ArrowIcon from './assets/arrow-left.svg';
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 function Dashboard() {

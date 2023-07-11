@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Footer from './components/Footer';
-import LocationIcon from './assets/location.svg';
+import Footer from '../components/Footer';
+import LocationIcon from '../assets/location.svg';
 
 interface Property {
   id: number;
@@ -138,32 +138,36 @@ const PropertyDetails = () => {
                     </div>
                       
                     <div className="offcanvas-body">
-                      <div className='border-bottom pb-3'>
+                      <div className='pb-3'>
                         <h4>Availability</h4>
-                        {property.property_avail}
-                      </div>
-                      <div className='border-bottom py-3'>
-                        <h4 className='pb-3'>Property Owner</h4>
-                        <p>
-                          <span className='fw-bold'>Name: </span>
-                          <span>{property.owner_name}</span>
-                        </p>
-                        <p>
-                          <span className='fw-bold'>Gender: </span>
-                          <span>{property.owner_gender}</span>
-                        </p>
-                        <p>
-                          <span className='fw-bold'>Lives: </span>
-                          <span>{property.lives}</span>
-                        </p>
-                        <p>
-                          <span className='fw-bold'>Contact: </span>
-                          <span>{property.owner_contact}</span>
-                        </p>
+                        <div className="custom-light-green rounded-3 p-4">
+                          {property.property_avail}
+                        </div>
                       </div>
                       <div className='py-3'>
-                        <h4>Broker Fees</h4>
-                        <div className='pt-3'>
+                        <h4 className='pb-3'>Owner Details</h4>
+                        <div className="custom-light-green rounded-3 p-4">
+                          <p>
+                            <span className='fw-bold'>Name: </span>
+                            <span>{property.owner_name}</span>
+                          </p>
+                          <p>
+                            <span className='fw-bold'>Gender: </span>
+                            <span>{property.owner_gender}</span>
+                          </p>
+                          <p>
+                            <span className='fw-bold'>Lives: </span>
+                            <span>{property.lives}</span>
+                          </p>
+                          <p>
+                            <span className='fw-bold'>Contact: </span>
+                            <span>{property.owner_contact}</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className='py-3'>
+                        <h4 className='pb-3'>Broker Fees</h4>
+                        <div className="custom-light-green rounded-3 p-4">
                           <span className='fw-bold'>Ugx. 50,000</span>
                         </div>
                       </div>

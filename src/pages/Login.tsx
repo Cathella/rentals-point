@@ -2,9 +2,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { login } from './components/actions';
-import Facebook from './assets/facebook-white.svg';
-import Google from './assets/google.svg';
+import { login } from '../components/actions';
+import Facebook from '../assets/facebook-white.svg';
+import Google from '../assets/google.svg';
 
 const Login = () => {
   const navigate = useNavigate();

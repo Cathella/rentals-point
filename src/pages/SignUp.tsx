@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
-import Facebook from './assets/facebook-white.svg';
-import Google from './assets/google.svg';
+import Facebook from '../assets/facebook-white.svg';
+import Google from '../assets/google.svg';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');

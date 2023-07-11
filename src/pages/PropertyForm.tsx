@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Footer from './components/Footer';
+import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { createListing } from './components/actions';
+import { createListing } from '../components/actions';
 
 const PropertyForm = () => {
   const navigate = useNavigate();

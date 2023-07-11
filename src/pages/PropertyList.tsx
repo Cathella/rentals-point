@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import Property from './components/Property';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Property from '../components/Property';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 import { useLocation } from 'react-router-dom';
-import FilterIcon from './assets/filter.svg';
+import FilterIcon from '../assets/filter.svg';
 
 type Property = {
   id: number;

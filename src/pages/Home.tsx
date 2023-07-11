@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import Choose from "./components/Choose";
-import Categories from "./components/Categories";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Choose from "../components/Choose";
+import Categories from "../components/Categories";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
