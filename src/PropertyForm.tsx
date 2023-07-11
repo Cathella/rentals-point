@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Footer from './components/Footer';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { createListing } from './components/actions';
 
 const PropertyForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [imgUrl1, setImgUrl1] = useState('');
   const [imgUrl2, setImgUrl2] = useState('');
@@ -61,37 +66,13 @@ const PropertyForm = () => {
     };
 
     try {
+      // Dispatch the create listing action.
+      dispatch(createListing(propertyData));
       const response = await axios.post('http://localhost:3000/api/v1/properties', propertyData); // Replace with your API endpoint
-      console.log(response.data); // Handle the successful submission, e.g., show a success message or redirect
-
-      // Reset the form fields after successful submission
-      setTitle('');
-      setImgUrl1('');
-      setImgUrl2('');
-      setImgUrl3('');
-      setImgUrl4('');
-      setImgUrl5('');
-      setDescription('');
-      setPrice('');
-      setBedrooms('');
-      setBaths('');
-      setKitchen(false);
-      setStore(false);
-      setWater(false);
-      setElectricity(false);
-      setSecurity(false);
-      setParking('');
-      setLocation('');
-      setPaymentFreq('');
-      setPropertyType('');
-      setOwnerName('');
-      setOwnerContact('');
-      setOwnerGender('');
-      setPropertyAvail('');
-      setLives('');
-      setVideoUrl('');
+      navigate('/propertylist');
+      console.log(response.data); // Handle the successful submission, e.g., show a success message or redirect  
     } catch (error) {
-      console.error(error); // Handle the error, e.g., display an error message
+      console.error('Error creating a listing', error); // Handle the error, e.g., display an error message
     }
   };
 

@@ -116,7 +116,6 @@ h4 select {
 .search-section {
   display: flex;
   justify-content: end;
-  align-items: center;
 }
 
 /* .search-section img {
@@ -127,6 +126,13 @@ h4 select {
   display: flex;
   align-items: center;
   gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: #53A0B1;
+  background: #EBF2F0;
+  padding: 8px 25px;
+  border-radius: 35px;
+  border: 1px solid #53A0B1;
 }
 
 .dark-green-border {

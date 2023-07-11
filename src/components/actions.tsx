@@ -12,8 +12,9 @@ export const logout = () => {
   };
 };
 
-export const updateListing = (listingId, updatedListing) => ({
-  type: 'UPDATE_LISTING',
-  payload: { listingId, updatedListing },
-});
-
+export const createListing = (createdListing: any) => {
+  return {
+    type: 'CREATE_LISTING',
+    payload: { createdListing },
+  };
+};

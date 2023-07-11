@@ -1,4 +1,8 @@
 import BotLogo from '../assets/logoblack.svg';
+import Instagram from '../assets/instagram.svg';
+import Youtube from '../assets/youtube.svg';
+import Tiktok from '../assets/tiktok.svg';
+import Facebook from '../assets/facebook.svg'
 
 function Footer() {
   return (
@@ -8,12 +12,14 @@ function Footer() {
           <a id='logo' className="navbar-brand" href="#">
             <img src={BotLogo} alt="RentalsPoint" />
           </a>
-          {/* <div className="d-flex footer-links">
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Privacy Policy</a>
-          </div> */}
+          <div className="d-flex footer-links">
+            <a href="#"><img src={Instagram} alt="Instagram" /></a>
+            <a href="#"><img src={Youtube} alt="Youtube" /></a>
+            <a href="#"><img src={Tiktok} alt="Tiktok" /></a>
+            <a href="#"><img src={Facebook} alt="Facebook" /></a>
+          </div>
           <div className="rights">
-            &copy; 2023 Rentals Point. A product of <a href="#">AABEL group</a>
+            &copy; 2023 Rentals Point.
           </div>
         </div>
       </div>
