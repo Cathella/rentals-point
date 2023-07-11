@@ -18,3 +18,11 @@ export const createListing = (createdListing: any) => {
     payload: { createdListing },
   };
 };
+
+export const updateListing = (propertyId: number, updatedValues: any) => {
+  return {
+    type: 'UPDATE_LISTING',
+    payload: { propertyId, updatedValues },
+  };
+};
+

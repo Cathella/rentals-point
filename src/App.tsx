@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import PropertyForm from './pages/PropertyForm';
 import PropertyList from './pages/PropertyList';
+import PropertyUpdateForm from './pages/PropertyUpdateForm';
 import PropertyDetails from './pages/PropertyDetails';
 import Dashboard from './pages/Dashboard';
 import Nav from './components/Nav';
@@ -54,6 +55,14 @@ function App() {
               element={
                 <ProtectedRoute redirectTo="/login">
                   <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/propertylist/update/:propertyId"
+              element={
+                <ProtectedRoute redirectTo="/login">
+                  <PropertyUpdateForm />
                 </ProtectedRoute>
               }
             />
