@@ -67,34 +67,34 @@ nav {
 
 .login-links {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   text-align: center;
 }
 
 .login-links a {
-  display: block;
-  width: 100%;
-  /* background: #EBF2F0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #EBF2F0;
   height: 50px;
   text-decoration: none;
-  color: #FFFFFF;
-  line-height: 50px;
-  font-size: 16px;
-  border-radius: 35px;
-}
-
-#with-email {
-  background: #000000;
+  color: #53A0B1;
+  line-height: 50px; 
 }
 
 #with-google {
-  background: #E04F41;
+  padding: 0 25px;
+  border-radius: 35px;
+  width: 100%;
 }
 
 #with-facebook {
   background: #087BEA;
+  color: #FFFFFF;
+  border-radius: 12px;
+  padding: 0 10px;
 }
 
 .custom-dark-green {

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
+import Facebook from './assets/facebook-white.svg';
+import Google from './assets/google.svg';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
@@ -44,61 +46,59 @@ const SignUp = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-5 col-lg-4 col-xl-3 mx-auto">
-            <div className="text-center mt-5">
+            <div className="text-center mt-5 mb-4">
               <h4>Get Started for Free.</h4>
               <p className='custom-text-muted'>Already have an Account? <Link className="green-txt" to="/login">Login</Link></p>
             </div>
-            <div className="mt-5 login-links">
-              <a id='with-email' href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">Signup with Email</a>
-              <div className="collapse wid-100" id="collapseExample">
-                <div className="border shadow-sm px-4 py-4 rounded-4">
-                  <form onSubmit={handleSubmit}>
-                    <div className="form-floating mb-3">
-                      <input 
-                        type="text"
-                        placeholder=''
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        className='form-control' />
-                        <label>Username</label>
-                    </div>
-                    <div className="form-floating mb-3">
-                      <input 
-                        type="email"
-                        placeholder=''
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)} 
-                        className='form-control' />
-                        <label>Email</label>
-                    </div>
-                    <div className="form-floating mb-3">
-                      <input 
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder='' 
-                        className='form-control' />
-                        <label>Password</label>
-                    </div>
-                    <div className="form-floating mb-3">
-                      <select 
-                        value={account} 
-                        onChange={(e) => setAccount(e.target.value)}
-                        className="form-select">
-                        <option value="">-- Select Account --</option>
-                        <option value="tenant">I am a Tenant</option>
-                        <option value="landlord">I am a Landlord</option>
-                      </select>
-                      <label>Choose Account</label>
-                    </div>
-                    <button id='login-submit' className="custom-button form-control custom-dark-green text-white" type="submit">Create Account</button>
-                  </form>
-                </div>
-              </div>
-              <a id='with-google' href="#">Signup with Google</a>
-              <a id='with-facebook' href="#">Signup with Facebook</a>
+            <div className="mb-5 login-links">
+                <a id='with-google' href="#">
+                  <img src={Google} alt="" />
+                  Continue with Google
+                </a>
+                <a id='with-facebook' href="#"><img src={Facebook} alt="" /></a>
             </div>
-            <div className="border-top text-center mt-5 pt-4">
+            <form onSubmit={handleSubmit}>
+              <div className="form-floating mb-3">
+                <input 
+                  type="text"
+                  placeholder=''
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className='form-control' />
+                  <label>Username</label>
+              </div>
+              <div className="form-floating mb-3">
+                <input 
+                  type="email"
+                  placeholder=''
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)} 
+                  className='form-control' />
+                  <label>Email</label>
+              </div>
+              <div className="form-floating mb-3">
+                <input 
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder='' 
+                  className='form-control' />
+                  <label>Password</label>
+              </div>
+              <div className="form-floating mb-3">
+                <select 
+                  value={account} 
+                  onChange={(e) => setAccount(e.target.value)}
+                  className="form-select">
+                  <option value="">-- Select Account --</option>
+                  <option value="tenant">I am a Tenant</option>
+                  <option value="landlord">I am a Landlord</option>
+                </select>
+                <label>Choose Account</label>
+              </div>
+              <button id='login-submit' className="custom-button form-control custom-dark-green text-white" type="submit">Create Account</button>
+            </form>
+            <div className="text-center mt-4 mb-5">
               By signing up, I agree to RentalsPoint Terms of Service & Privacy Policy.
             </div>
           </div>

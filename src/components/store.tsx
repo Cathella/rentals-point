@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux';
 import authReducer from './authReducer';
-import listingReducer from './listingReducer';
+import listingsReducer from './listingsReducer';
 
 // Define the RootState type
 interface RootState {
@@ -12,7 +12,7 @@ interface RootState {
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  listing: listingReducer,
+  listing: listingsReducer,
   // Add other reducers if needed
 });
 
