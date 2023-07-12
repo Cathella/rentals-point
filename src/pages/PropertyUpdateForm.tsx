@@ -153,6 +153,13 @@ const PropertyUpdateForm = () => {
       }
 
       dispatch(updateListing(parseInt(propertyId || ''), updatedListing)); // Provide a default value or handle the error condition
+
+      // Log the update action from RootState
+      console.log('Property update action:', {
+        id: parseInt(propertyId || ''),
+        updatedListing,
+      });
+      
       navigate(`/propertylist/${propertyId}`);
     } catch (error) {
       console.error(error);

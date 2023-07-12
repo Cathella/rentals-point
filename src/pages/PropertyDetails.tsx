@@ -137,8 +137,8 @@ const PropertyDetails = () => {
                     <Link to={property.video_url} className='custom-button d-block green-txt custom-light-green'>Request Property Video</Link>
                   </div>
                   <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                    <div className="offcanvas-header border-bottom">
-                      <h5 className="offcanvas-title" id="offcanvasExampleLabel">Visiting Property</h5>
+                    <div className="offcanvas-header">
+                      <h5 className="offcanvas-title text-white" id="offcanvasExampleLabel">Visiting Property</h5>
                       <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                       

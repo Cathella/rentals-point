@@ -44,8 +44,6 @@ const PropertyList = () => {
     fetchProperties();
   }, [propertyType]);
 
-  console.log('Properties:', properties); // Add this logging statement
-
   return (
     <>
       <div className="pt-4 pb-5">
@@ -60,11 +58,12 @@ const PropertyList = () => {
 
             <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
               <div className="offcanvas-header">
-                <h5 className="offcanvas-title" id="offcanvasExampleLabel">Filters</h5>
+                <h5 className="offcanvas-title text-white" id="offcanvasExampleLabel">Filters</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               <div className="offcanvas-body">
                 <div>
+                  <h4 className='mb-4'>Filters</h4>
                   <form>
                     <div className="mb-4">
                       <label className='mb-2 fw-bold'>Location</label>
