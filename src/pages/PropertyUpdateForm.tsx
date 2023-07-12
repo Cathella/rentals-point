@@ -108,7 +108,7 @@ const PropertyUpdateForm = () => {
   }, [propertyId]);
   
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const updatedListing = {
@@ -139,8 +139,24 @@ const PropertyUpdateForm = () => {
       video_url: videoUrl,
     };
 
-    dispatch(updateListing(parseInt(propertyId || ''), updatedListing)); // Provide a default value or handle the error condition
-    navigate('/propertylist');
+    try {
+      const response = await fetch(`http://localhost:3000/api/v1/properties/${propertyId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedListing),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update property');
+      }
+
+      dispatch(updateListing(parseInt(propertyId || ''), updatedListing)); // Provide a default value or handle the error condition
+      navigate(`/propertylist/${propertyId}`);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
