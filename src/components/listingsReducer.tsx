@@ -2,7 +2,6 @@ interface Listing {
   id: number;
   title: string;
   description: string;
-  // Add other properties as needed
 }
 
 interface ListingState {
