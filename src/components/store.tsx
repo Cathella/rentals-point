@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunkMiddleware, { ThunkMiddleware } from 'redux-thunk';
 import authReducer from './authReducer';
 import listingsReducer from './listingsReducer';
 import { Listing } from '../pages/PropertyUpdateForm';
@@ -13,13 +14,14 @@ interface RootState {
   };
 }
 
+const thunk = thunkMiddleware as ThunkMiddleware<RootState>;
+
 const rootReducer = combineReducers({
   auth: authReducer,
   listings: listingsReducer,
-  // Add other reducers if needed
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk as any));
 
 export default store;
 export type { RootState }; // Export RootState type

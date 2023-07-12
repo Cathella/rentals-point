@@ -1,3 +1,7 @@
+import { Dispatch, AnyAction } from "redux";
+import { ThunkAction } from 'redux-thunk';
+import { RootState } from "./store";
+
 export const login = () => {
   return {
     type: 'LOGIN',
@@ -26,3 +30,19 @@ export const updateListing = (propertyId: number, updatedValues: any) => {
   };
 };
 
+export const deleteListing = (propertyId: number): ThunkAction<void, RootState, null, AnyAction> => {
+  return async (dispatch) => {
+    try {
+      // Make the API call to delete the property
+      await fetch(`http://localhost:3000/api/v1/properties/${propertyId}`, {
+        method: 'DELETE',
+      });
+
+      // Dispatch the DELETE_LISTING action
+      dispatch({ type: 'DELETE_LISTING', payload: propertyId });
+      console.log('Property deleted'); // Log a success message
+    } catch (error) {
+      console.error('Failed to delete property', error);
+    }
+  };
+};

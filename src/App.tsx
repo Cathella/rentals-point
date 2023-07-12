@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import Nav from './components/Nav';
 import { Provider, useSelector } from 'react-redux';
 import store, { RootState } from './components/store';
+import PropertyDelete from './pages/PropertyDelete';
 
 interface ProtectedRouteProps {
   redirectTo: string;
@@ -63,6 +64,14 @@ function App() {
               element={
                 <ProtectedRoute redirectTo="/login">
                   <PropertyUpdateForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/propertylist/:propertyId/delete"
+              element={
+                <ProtectedRoute redirectTo="/login">
+                  <PropertyDelete />
                 </ProtectedRoute>
               }
             />

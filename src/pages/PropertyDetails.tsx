@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import LocationIcon from '../assets/location.svg';
+import { deleteListing } from '../components/actions';
+import { useDispatch } from 'react-redux';
+import { AnyAction } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { RootState } from '../components/store';
 
 interface Property {
   id: number;
@@ -32,12 +37,20 @@ interface Property {
 }
 
 const PropertyDetails = () => {
-  const { propertyId } = useParams();
+  const { propertyId } = useParams<{ propertyId: string | undefined }>();
   const [property, setProperty] = useState<Property | null>(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, AnyAction>>();
 
   const handleEditListing = (propertyId: string | undefined) => {
     navigate(`/propertylist/update/${propertyId}`);
+  }
+
+  const handleDeleteListing = () => {
+    if (propertyId) {
+      dispatch(deleteListing(parseInt(propertyId))); // Provide a default value or handle the error condition
+      navigate('/propertylist');
+    }
   }
 
   useEffect(() => {
@@ -117,7 +130,7 @@ const PropertyDetails = () => {
                 </div>
                 <div className='updatelinks mb-4'>
                   <button onClick={() => handleEditListing(propertyId)} className='green-txt border-0 custom-button custom-light-green px-4'>Update Listing</button>
-                  <button className='bg-danger border-0 text-white custom-button px-4'>Delete Listing</button>
+                  <button onClick={handleDeleteListing} className='bg-danger border-0 text-white custom-button px-4'>Delete Listing</button>
                 </div>
               </div>
             </div>
