@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateListing } from '../components/actions';
 import { RootState } from '../components/store';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Listing {
   id: number;
@@ -65,6 +65,47 @@ const PropertyUpdateForm = () => {
   const [propertyAvail, setPropertyAvail] = useState(listing?.property_avail || '');
   const [lives, setLives] = useState(listing?.lives || '');
   const [videoUrl, setVideoUrl] = useState(listing?.video_url || '');
+
+  useEffect(() => {
+    const fetchPropertyDetails = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/api/v1/properties/${propertyId}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch property details');
+        }
+        const data = await response.json();
+        setTitle(data.title);
+        setImgUrl1(data.img_url1);
+        setImgUrl2(data.img_url2);
+        setImgUrl3(data.img_url3);
+        setImgUrl4(data.img_url4);
+        setImgUrl5(data.img_url5);
+        setDescription(data.description);
+        setPrice(data.price);
+        setBedrooms(data.bedrooms);
+        setBaths(data.baths);
+        setKitchen(data.kitchen);
+        setStore(data.store);
+        setWater(data.water);
+        setElectricity(data.electricity);
+        setSecurity(data.security);
+        setParking(data.parking);
+        setLocation(data.location);
+        setPaymentFreq(data.payment_freq);
+        setPropertyType(data.property_type);
+        setOwnerName(data.owner_name);
+        setOwnerContact(data.owner_contact);
+        setOwnerGender(data.owner_gender);
+        setPropertyAvail(data.property_avail);
+        setLives(data.lives);
+        setVideoUrl(data.video_url);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchPropertyDetails();
+  }, [propertyId]);
   
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -366,7 +407,7 @@ const PropertyUpdateForm = () => {
                     onChange={(e) => setVideoUrl(e.target.value)} />
                     <label>Video URL</label>
                 </div>
-                
+
                 <button id='login-submit' className="my-4 custom-button form-control custom-dark-green text-white" type="submit">Update Listing</button>
               </form>
             </div>
