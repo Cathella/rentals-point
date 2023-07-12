@@ -36,7 +36,7 @@ const PropertyDetails = () => {
   const [property, setProperty] = useState<Property | null>(null);
   const navigate = useNavigate();
 
-  const handleEditListing = (propertyId) => {
+  const handleEditListing = (propertyId: string | undefined) => {
     navigate(`/propertylist/update/${propertyId}`);
   }
 
@@ -116,7 +116,7 @@ const PropertyDetails = () => {
                   {property.description}
                 </div>
                 <div className='updatelinks mb-4'>
-                  <button onClick={handleEditListing} className='green-txt border-0 custom-button custom-light-green px-4'>Update Listing</button>
+                  <button onClick={() => handleEditListing(propertyId)} className='green-txt border-0 custom-button custom-light-green px-4'>Update Listing</button>
                   <button className='bg-danger border-0 text-white custom-button px-4'>Delete Listing</button>
                 </div>
               </div>
