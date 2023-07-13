@@ -4,6 +4,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FilterIcon from '../assets/filter.svg';
 import { fetchFilteredProperties } from '../components/apiUtils';
+import { Link } from 'react-router-dom';
 
 export type Property = {
   id: number;
@@ -130,7 +131,10 @@ const PropertyList = () => {
           </div>
           <div className="row">
             {properties.length === 0 ? (
-              <div>No properties found.</div>
+              <div className='text-center pb-5'>
+                <p>Sorry! No properties match your search.</p>
+                <Link className='green-txt' to='/propertylist'>Reload Listings to search again</Link>
+              </div>
             ) : (
               properties.map((property) => (
                 <Property key={property.id} {...property} />

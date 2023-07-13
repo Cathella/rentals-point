@@ -27,7 +27,7 @@ export const fetchFilteredProperties = async (
       property_avail: availability,
       property_type: propertyType
     });
-    const url = `http://localhost:3000/api/v1/properties/filter?${queryParams}`;
+    const url = `http://localhost:3000/api/v1/properties?${queryParams}`;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Failed to fetch filtered properties');
