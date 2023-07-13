@@ -16,6 +16,7 @@ export type Property = {
   location: string;
   payment_freq: string;
   property_avail: string;
+  property_type: string;
 };
 
 const PropertyList = () => {
@@ -103,8 +104,8 @@ const PropertyList = () => {
                     <div className="form-floating mb-4">
                       <select className='form-select' value={availabilityFilter} onChange={(e) => setAvailabilityFilter(e.target.value)}>
                         <option value="">-- Select Availability --</option>
-                        <option value="available">Still Available</option>
-                        <option value="taken">Not Available</option>
+                        <option value="Available">Available</option>
+                        <option value="Not Available">Not Available</option>
                       </select>
                       <label className='mb-2 fw-bold'>Property Availabity</label>
                     </div>
@@ -128,9 +129,13 @@ const PropertyList = () => {
             </div>
           </div>
           <div className="row">
-            {properties.map((property) => (
-              <Property key={property.id} {...property} />
-            ))}
+            {properties.length === 0 ? (
+              <div>No properties found.</div>
+            ) : (
+              properties.map((property) => (
+                <Property key={property.id} {...property} />
+              ))
+            )}
           </div>
         </div>
       </div>
