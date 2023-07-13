@@ -3,8 +3,9 @@ import Property from '../components/Property';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FilterIcon from '../assets/filter.svg';
+import { fetchFilteredProperties } from '../components/apiUtils';
 
-type Property = {
+export type Property = {
   id: number;
   title: string;
   description: string;
@@ -14,10 +15,29 @@ type Property = {
   baths: number;
   location: string;
   payment_freq: string;
+  property_avail: string;
 };
 
 const PropertyList = () => {
   const [properties, setProperties] = useState<Property[]>([]);
+  const [locationFilter, setLocationFilter] = useState('');
+  const [bedroomsFilter, setBedroomsFilter] = useState('');
+  const [availabilityFilter, setAvailabilityFilter] = useState('');
+  const [propertyTypeFilter, setPropertyTypeFilter] = useState('');
+
+  const handleFiltersSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    const filteredProperties = await fetchFilteredProperties(
+      locationFilter,
+      parseInt(bedroomsFilter),
+      availabilityFilter,
+      propertyTypeFilter
+    );
+  
+    setProperties(filteredProperties);
+  };
+  
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -55,9 +75,9 @@ const PropertyList = () => {
               <div className="offcanvas-body">
                 <div>
                   <h4 className='mb-4'>Filters</h4>
-                  <form>
+                  <form onSubmit={handleFiltersSubmit}>
                     <div className="form-floating mb-4">
-                      <select className='form-select'>
+                      <select className='form-select' value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)}>
                         <option value="">-- Select location --</option>
                         <option value="kyaliwajjala">Kyaliwajjala</option>
                         <option value="namugongo">Namugongo</option>
@@ -69,7 +89,7 @@ const PropertyList = () => {
                       <label className='mb-2 fw-bold'>Location</label>
                     </div>
                     <div className="form-floating mb-4">
-                      <select className='form-select'>
+                      <select className='form-select' value={bedroomsFilter} onChange={(e) => setBedroomsFilter(e.target.value)}>
                         <option value="">-- Select Bedrooms --</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -81,7 +101,7 @@ const PropertyList = () => {
                       <label className='mb-2 fw-bold'>Bedrooms</label>
                     </div>
                     <div className="form-floating mb-4">
-                      <select className='form-select'>
+                      <select className='form-select' value={availabilityFilter} onChange={(e) => setAvailabilityFilter(e.target.value)}>
                         <option value="">-- Select Availability --</option>
                         <option value="available">Still Available</option>
                         <option value="taken">Not Available</option>
@@ -89,7 +109,7 @@ const PropertyList = () => {
                       <label className='mb-2 fw-bold'>Property Availabity</label>
                     </div>
                     <div className="form-floating mb-4">
-                      <select className='form-select'>
+                      <select className='form-select' value={propertyTypeFilter} onChange={(e) => setPropertyTypeFilter(e.target.value)}>
                         <option value="">-- Select Type of property --</option>
                         <option value="apartment">Apartment</option>
                         <option value="house">House</option>
