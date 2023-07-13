@@ -172,10 +172,10 @@ const PropertyDetails = () => {
                       <div className='py-3'>
                         <h4 className='pb-3'>Owner Details</h4>
                         <div className="custom-light-green rounded-3 p-4">
-                          <p>
+                          {/* <p>
                             <span className='fw-bold'>Name: </span>
                             <span>{property.owner_name}</span>
-                          </p>
+                          </p> */}
                           <p>
                             <span className='fw-bold'>Gender: </span>
                             <span>{property.owner_gender}</span>
@@ -184,10 +184,10 @@ const PropertyDetails = () => {
                             <span className='fw-bold'>Lives: </span>
                             <span>{property.lives}</span>
                           </p>
-                          <p>
+                          {/* <p>
                             <span className='fw-bold'>Contact: </span>
                             <span>{property.owner_contact}</span>
-                          </p>
+                          </p> */}
                         </div>
                       </div>
                       <div className='py-3'>

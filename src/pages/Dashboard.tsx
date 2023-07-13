@@ -6,7 +6,7 @@ function Dashboard() {
     <>
       <div className="pt-4 pb-5">
         <div className="container">
-          <h3 className="text-center mb-5">Hello, You're Welcome!</h3>
+          <h4 className="mb-5">Hello!</h4>
           <div className="row">
             <div className="col-lg-4">
               <div className="text-center custom-light-green py-4 rounded-4">

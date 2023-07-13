@@ -42,6 +42,10 @@ const PropertyList = () => {
     resetFilters();
   };
 
+  const handleReloadProperties = () => {
+    window.location.reload();
+  };
+
   const resetFilters = () => {
     setLocationFilter('');
     setBedroomsFilter('');
@@ -142,9 +146,7 @@ const PropertyList = () => {
               <div className='text-center pb-5'>
                 <img src={SadFace} alt=":(" />
                 <p className='custom-text-muted mt-4 mb-5'>Sorry! No properties match your search.</p>
-                <div className='green-txt'>
-                  <img src={Info} alt="" /> Reload the page to see all Listings
-                </div>
+                <button className='btn green-txt custom-light-green ' onClick={handleReloadProperties}><img src={Info} alt="" /> Reload Properties</button>
               </div>
             ) : (
               properties.map((property) => (
