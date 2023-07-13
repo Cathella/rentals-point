@@ -21,13 +21,25 @@ export const fetchFilteredProperties = async (
   propertyType: string
 ): Promise<Property[]> => {
   try {
-    const queryParams = new URLSearchParams({
-      location: location,
-      bedrooms: String(bedrooms),
-      property_avail: availability,
-      property_type: propertyType
-    });
-    const url = `http://localhost:3000/api/v1/properties?${queryParams}`;
+    let queryParams = '';
+
+    if (location) {
+      queryParams = `?location=${encodeURIComponent(location)}`;
+    }
+
+    if (bedrooms) {
+      queryParams += `&bedrooms=${encodeURIComponent(String(bedrooms))}`;
+    }
+
+    if (availability) {
+      queryParams += `&property_avail=${encodeURIComponent(availability)}`;
+    }
+
+    if (propertyType) {
+      queryParams += `&property_type=${encodeURIComponent(propertyType)}`;
+    }
+
+    const url = `http://localhost:3000/api/v1/properties${queryParams}`;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Failed to fetch filtered properties');

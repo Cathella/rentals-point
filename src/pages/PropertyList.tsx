@@ -4,7 +4,8 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FilterIcon from '../assets/filter.svg';
 import { fetchFilteredProperties } from '../components/apiUtils';
-import { Link } from 'react-router-dom';
+import SadFace from '../assets/sad.svg';
+import Info from '../assets/info.svg';
 
 export type Property = {
   id: number;
@@ -38,8 +39,15 @@ const PropertyList = () => {
     );
   
     setProperties(filteredProperties);
+    resetFilters();
   };
-  
+
+  const resetFilters = () => {
+    setLocationFilter('');
+    setBedroomsFilter('');
+    setAvailabilityFilter('');
+    setPropertyTypeFilter('');
+  };
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -132,8 +140,11 @@ const PropertyList = () => {
           <div className="row">
             {properties.length === 0 ? (
               <div className='text-center pb-5'>
-                <p>Sorry! No properties match your search.</p>
-                <Link className='green-txt' to='/propertylist'>Reload Listings to search again</Link>
+                <img src={SadFace} alt=":(" />
+                <p className='custom-text-muted mt-4 mb-5'>Sorry! No properties match your search.</p>
+                <div className='green-txt'>
+                  <img src={Info} alt="" /> Reload the page to see all Listings
+                </div>
               </div>
             ) : (
               properties.map((property) => (
