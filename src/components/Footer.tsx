@@ -14,7 +14,7 @@ function Footer() {
           </a>
           <div className="d-flex footer-links">
             <a href="#"><img src={Instagram} alt="Instagram" /></a>
-            <a href="#"><img src={Youtube} alt="Youtube" /></a>
+            <a href="https://www.youtube.com/channel/UC8lTfKYRkob6K9qA6ii0zSw"><img src={Youtube} alt="Youtube" /></a>
             <a href="#"><img src={Tiktok} alt="Tiktok" /></a>
             <a href="#"><img src={Facebook} alt="Facebook" /></a>
           </div>

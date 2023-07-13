@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Property from '../components/Property';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import { useLocation } from 'react-router-dom';
 import FilterIcon from '../assets/filter.svg';
 
 type Property = {
@@ -19,19 +18,11 @@ type Property = {
 
 const PropertyList = () => {
   const [properties, setProperties] = useState<Property[]>([]);
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const propertyType = queryParams.get('propertyType') || 'all';
 
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        let url = 'http://localhost:3000/api/v1/properties';
-
-        if (propertyType !== 'all') {
-          url += `/${propertyType}`;
-        }
-
+        const url = 'http://localhost:3000/api/v1/properties';
         const response = await fetch(url);
         const data = await response.json();
         console.log('Fetched properties:', data);
@@ -42,7 +33,7 @@ const PropertyList = () => {
     };
 
     fetchProperties();
-  }, [propertyType]);
+  }, []);
 
   return (
     <>
@@ -65,29 +56,48 @@ const PropertyList = () => {
                 <div>
                   <h4 className='mb-4'>Filters</h4>
                   <form>
-                    <div className="mb-4">
+                    <div className="form-floating mb-4">
+                      <select className='form-select'>
+                        <option value="">-- Select location --</option>
+                        <option value="kyaliwajjala">Kyaliwajjala</option>
+                        <option value="namugongo">Namugongo</option>
+                        <option value="kira">Kira</option>
+                        <option value="mukono">Mukono</option>
+                        <option value="kireka">Kireka</option>
+                        <option value="nalya">Nalya</option>
+                      </select>
                       <label className='mb-2 fw-bold'>Location</label>
-                      <select className='form-select bg-light py-2'>
-                        <option value="">Select</option>
-                      </select>
                     </div>
-                    <div className="mb-4">
+                    <div className="form-floating mb-4">
+                      <select className='form-select'>
+                        <option value="">-- Select Bedrooms --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6 and more</option>
+                      </select>
                       <label className='mb-2 fw-bold'>Bedrooms</label>
-                      <select className='form-select bg-light py-2'>
-                        <option value="">Select</option>
-                      </select>
                     </div>
-                    <div className="mb-4">
+                    <div className="form-floating mb-4">
+                      <select className='form-select'>
+                        <option value="">-- Select Availability --</option>
+                        <option value="available">Still Available</option>
+                        <option value="taken">Not Available</option>
+                      </select>
                       <label className='mb-2 fw-bold'>Property Availabity</label>
-                      <select className='form-select bg-light py-2'>
-                        <option value="">Select</option>
-                      </select>
                     </div>
-                    <div className="mb-4">
-                      <label className='mb-2 fw-bold'>Property Type</label>
-                      <select className='form-select bg-light py-2'>
-                        <option value="">Select</option>
+                    <div className="form-floating mb-4">
+                      <select className='form-select'>
+                        <option value="">-- Select Type of property --</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="house">House</option>
+                        <option value="rental">Rental</option>
+                        <option value="office">Office</option>
+                        <option value="shop">Shop</option>
                       </select>
+                      <label className='mb-2 fw-bold'>Property Type</label>
                     </div>
                     <div className="mb-3">
                       <button className='w-100 border-0 custom-button custom-dark-green text-white'>Apply Filters</button>

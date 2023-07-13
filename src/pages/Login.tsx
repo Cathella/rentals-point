@@ -44,17 +44,17 @@ const Login = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-5 col-lg-4 col-xl-3 mx-auto">
-              <div className="text-center mt-5 mb-4">
-                <h4>Welcome Back!</h4>
-                <p className='custom-text-muted'>Dont have an account? <Link className="green-txt" to="/signup">Create One</Link></p>
+              <div className="mt-5 mb-5 text-center">
+                <h3>Welcome!</h3>
+                <p className='custom-text-muted'>Find a place you'll love.</p>
               </div>
-              <div className="login-links mb-5">
+              {/* <div className="login-links mb-5">
                 <a id='with-google' href="#">
                   <img src={Google} alt="" />
                   Continue with Google
                 </a>
                 <a id='with-facebook' href="#"><img src={Facebook} alt="" /></a>
-              </div>
+              </div> */}
               <form onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
                   <input 
@@ -78,6 +78,7 @@ const Login = () => {
               </form>
               <div className="text-center mt-4 pb-5">
                 <Link className="green-txt" to="/signup">Forgot Password?</Link>
+                <p className='custom-text-muted'>Dont have an account? <Link className="green-txt" to="/signup">Create One</Link></p>
               </div>
             </div>
           </div>

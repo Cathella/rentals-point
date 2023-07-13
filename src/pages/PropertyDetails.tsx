@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import LocationIcon from '../assets/location.svg';
 import { deleteListing } from '../components/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { RootState } from '../components/store';
@@ -41,6 +41,9 @@ const PropertyDetails = () => {
   const [property, setProperty] = useState<Property | null>(null);
   const navigate = useNavigate();
   const dispatch = useDispatch<ThunkDispatch<RootState, null, AnyAction>>();
+
+  // Retrieve the authentication state from the Redux store
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
   const handleEditListing = (propertyId: string | undefined) => {
     navigate(`/propertylist/update/${propertyId}`);
@@ -129,8 +132,12 @@ const PropertyDetails = () => {
                   {property.description}
                 </div>
                 <div className='updatelinks mb-4'>
-                  <button onClick={() => handleEditListing(propertyId)} className='green-txt border-0 custom-button custom-light-green px-4'>Update Listing</button>
-                  <button onClick={handleDeleteListing} className='bg-danger border-0 text-white custom-button px-4'>Delete Listing</button>
+                  {isAuthenticated && (
+                    <button onClick={() => handleEditListing(propertyId)} className='green-txt border-0 custom-button custom-light-green px-4'>Update Listing</button>
+                  )}
+                  {isAuthenticated && (
+                    <button onClick={handleDeleteListing} className='bg-danger border-0 text-white custom-button px-4'>Delete Listing</button>
+                  )}
                 </div>
               </div>
             </div>

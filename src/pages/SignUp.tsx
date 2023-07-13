@@ -46,17 +46,17 @@ const SignUp = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-5 col-lg-4 col-xl-3 mx-auto">
-            <div className="text-center mt-5 mb-4">
-              <h4>Get Started for Free.</h4>
-              <p className='custom-text-muted'>Already have an Account? <Link className="green-txt" to="/login">Login</Link></p>
+            <div className="text-center mt-5 mb-5">
+              <h3>Sign up, then Relax!</h3>
+              <p className='custom-text-muted'>Save time as we do the hard work for you.</p>
             </div>
-            <div className="mb-5 login-links">
+            {/* <div className="mb-5 login-links">
                 <a id='with-google' href="#">
                   <img src={Google} alt="" />
                   Continue with Google
                 </a>
                 <a id='with-facebook' href="#"><img src={Facebook} alt="" /></a>
-            </div>
+            </div> */}
             <form onSubmit={handleSubmit}>
               <div className="form-floating mb-3">
                 <input 
@@ -99,7 +99,7 @@ const SignUp = () => {
               <button id='login-submit' className="custom-button form-control custom-dark-green text-white" type="submit">Create Account</button>
             </form>
             <div className="text-center mt-4 mb-5">
-              By signing up, I agree to RentalsPoint Terms of Service & Privacy Policy.
+              <p className='custom-text-muted'>Already have an Account? <Link className="green-txt" to="/login">Login</Link></p>
             </div>
           </div>
         </div>
