@@ -6,7 +6,7 @@ interface CategoryProps {
 
 const Category: React.FC<CategoryProps> = ({ title, total, image }) => {
   return (
-    <div className="text-center col-lg-2 mb-4">
+    <div className="text-center col-lg-2 mb-5">
       <div className=" mb-3">
         <img src={image} alt={title} className='img-fluid apartments-img' />
       </div>

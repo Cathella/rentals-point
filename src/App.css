@@ -301,6 +301,13 @@ input[type=number] {
   position: relative;
 }
 
+.flex-arr {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
 .house-one {
   height: 200px;
   box-shadow: 2px 9px 27px -2px rgba(0, 0, 0, 0.04);
