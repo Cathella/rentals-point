@@ -154,7 +154,7 @@ const PropertyDetails = () => {
                   {property.security && <span>Armed Security</span>}
                 </div>
                 <div className="border-top mt-4 pt-4">
-                  <a href="#offcanvasExample" role="button" aria-controls="offcanvasExample" className='flex-arr custom-button custom-dark-green text-white' data-bs-toggle="offcanvas"><span>Book</span><img src={ArrowRight} alt="" /></a>
+                  <a href="#offcanvasExample" role="button" aria-controls="offcanvasExample" className='flex-arr custom-button custom-dark-green text-white' data-bs-toggle="offcanvas"><span>Guided Tour</span><img src={ArrowRight} alt="" /></a>
                   <div className='mt-3'>
                     <Link to={property.video_url} className='flex-arr custom-button green-txt custom-light-green'><img src={Video} alt="" /><span>Video Tour</span></Link>
                   </div>

@@ -75,72 +75,57 @@ const PropertyList = () => {
         <div className="container">
           <div className='mb-4 search-section'>
             <h3>Dream Place: <span className='green-txt'>Find Yours.</span></h3>
-            <div>
-              <a className="filter-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                <img src={FilterIcon} alt="Search Property" />
-                <span>Search</span>
-              </a>
-            </div>
-
-            <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-              <div className="offcanvas-header">
-                <h5 className="offcanvas-title text-white" id="offcanvasExampleLabel">Filters</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <form onSubmit={handleFiltersSubmit}>
+              <div className="form-floating mb-4">
+                <select className='form-select' value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)}>
+                  <option value="">-- Choose location --</option>
+                  <option value="kyaliwajjala">Kyaliwajjala</option>
+                  <option value="namugongo">Namugongo</option>
+                  <option value="kira">Kira</option>
+                  <option value="mukono">Mukono</option>
+                  <option value="kireka">Kireka</option>
+                  <option value="nalya">Nalya</option>
+                </select>
+                <label className='mb-2 fw-bold'>Location</label>
               </div>
-              <div className="offcanvas-body">
-                <div>
-                  <h4 className='mb-4'>Filters</h4>
-                  <form onSubmit={handleFiltersSubmit}>
-                    <div className="form-floating mb-4">
-                      <select className='form-select' value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)}>
-                        <option value="">-- Select location --</option>
-                        <option value="kyaliwajjala">Kyaliwajjala</option>
-                        <option value="namugongo">Namugongo</option>
-                        <option value="kira">Kira</option>
-                        <option value="mukono">Mukono</option>
-                        <option value="kireka">Kireka</option>
-                        <option value="nalya">Nalya</option>
-                      </select>
-                      <label className='mb-2 fw-bold'>Location</label>
-                    </div>
-                    <div className="form-floating mb-4">
-                      <select className='form-select' value={bedroomsFilter} onChange={(e) => setBedroomsFilter(e.target.value)}>
-                        <option value="">-- Select Bedrooms --</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6 and more</option>
-                      </select>
-                      <label className='mb-2 fw-bold'>Bedrooms</label>
-                    </div>
-                    <div className="form-floating mb-4">
-                      <select className='form-select' value={availabilityFilter} onChange={(e) => setAvailabilityFilter(e.target.value)}>
-                        <option value="">-- Select Availability --</option>
-                        <option value="Available">Available</option>
-                        <option value="Not Available">Not Available</option>
-                      </select>
-                      <label className='mb-2 fw-bold'>Property Availabity</label>
-                    </div>
-                    <div className="form-floating mb-4">
-                      <select className='form-select' value={propertyTypeFilter} onChange={(e) => setPropertyTypeFilter(e.target.value)}>
-                        <option value="">-- Select Type of property --</option>
-                        <option value="apartment">Apartment</option>
-                        <option value="house">House</option>
-                        <option value="rental">Rental</option>
-                        <option value="office">Office</option>
-                        <option value="shop">Shop</option>
-                      </select>
-                      <label className='mb-2 fw-bold'>Property Type</label>
-                    </div>
-                    <div className="mb-3">
-                      <button className='w-100 border-0 custom-button custom-dark-green text-white'>Apply Filters</button>
-                    </div>
-                  </form>
-                </div>
+              <div className="form-floating mb-4">
+                <select className='form-select' value={bedroomsFilter} onChange={(e) => setBedroomsFilter(e.target.value)}>
+                  <option value="">-- Choose Bedrooms --</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6 and more</option>
+                </select>
+                <label className='mb-2 fw-bold'>Bedrooms</label>
               </div>
-            </div>
+              <div className="form-floating mb-4">
+                <select className='form-select' value={availabilityFilter} onChange={(e) => setAvailabilityFilter(e.target.value)}>
+                  <option value="">-- Choose Availability --</option>
+                  <option value="Available">Available</option>
+                  <option value="Not Available">Not Available</option>
+                </select>
+                <label className='mb-2 fw-bold'>Availabity</label>
+              </div>
+              <div className="form-floating mb-4">
+                <select className='form-select' value={propertyTypeFilter} onChange={(e) => setPropertyTypeFilter(e.target.value)}>
+                  <option value="">-- Choose Category --</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="house">House</option>
+                  <option value="rental">Rental</option>
+                  <option value="office">Office</option>
+                  <option value="shop">Shop</option>
+                </select>
+                <label className='mb-2 fw-bold'>Category</label>
+              </div>
+              <div className="mb-3">
+                <button className='filter-btn'>
+                  <img src={FilterIcon} alt="Search Property" /> 
+                  <span>Search</span>
+                </button>
+              </div>
+            </form>
           </div>
           <div className="row">
             {properties.length === 0 ? (

@@ -119,12 +119,15 @@ h4 select {
 
 .search-section {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 30px;
 }
 
-/* .search-section img {
-  width: 24px;
-} */
+.search-section form {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
 
 .filter-btn {
   display: flex;
@@ -134,7 +137,7 @@ h4 select {
   text-decoration: none;
   color: #FFFFFF;
   background: #000000;
-  padding: 8px 25px;
+  padding: 15px 35px;
   border-radius: 35px;
   border: 1px solid #000000;
 }
