@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { login } from '../components/actions';
+import { loginSuccess } from '../components/authReducer';
 import Facebook from '../assets/facebook-white.svg';
 import Google from '../assets/google.svg';
 
@@ -22,13 +22,11 @@ const Login = () => {
     };
 
     try {
-      // Dispatch the login action
-      dispatch(login());
-      
       const response = await axios.post('http://localhost:3000/api/v1/login', user);
 
       if (response.status === 200) {
-        // User login successful, navigate to the Dashboard component
+        const { username, accountType } = response.data;
+        dispatch(loginSuccess(username, accountType));
         navigate('/dashboard');
       } else {
         console.error('Failed to login:', response.statusText);

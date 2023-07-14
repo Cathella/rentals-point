@@ -1,25 +1,44 @@
-import { Action } from 'redux';
+import { AuthState } from './store';
 
-interface AuthState {
-  isAuthenticated: boolean;
-}
-
+// Define the initial state
 const initialState: AuthState = {
   isAuthenticated: false,
+  loggedIn: false,
+  username: '',
+  accountType: '',
 };
 
-const authReducer = (state: AuthState = initialState, action: Action<string>): AuthState => {
+// Define the action types
+const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+
+// Define the action creators
+export const loginSuccess = (username: string, accountType: string) => ({
+  type: LOGIN_SUCCESS as typeof LOGIN_SUCCESS,
+  payload: {
+    loggedIn: true,
+    username,
+    accountType,
+  },
+});
+
+export const logoutSuccess = () => ({
+  type: LOGOUT_SUCCESS as typeof LOGOUT_SUCCESS,
+});
+
+// Define the reducer function
+const authReducer = (state: AuthState = initialState, action: any) => {
   switch (action.type) {
-    case 'LOGIN':
+    case LOGIN_SUCCESS:
       return {
         ...state,
         isAuthenticated: true,
+        loggedIn: true,
+        username: action.payload.username,
+        accountType: action.payload.accountType,
       };
-    case 'LOGOUT':
-      return {
-        ...state,
-        isAuthenticated: false,
-      };
+    case LOGOUT_SUCCESS:
+      return initialState;
     default:
       return state;
   }

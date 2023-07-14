@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import TopLogo from '../assets/logowhite.svg';
 import { connect } from 'react-redux';
-import { logout } from './actions';
+import { logoutSuccess } from './authReducer';
 import { Dispatch } from 'redux';
 import { RootState } from '../components/store';
 
@@ -73,11 +73,11 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
 }
 
 const mapStateToProps = (state: RootState) => {
-  const { isAuthenticated } = state.auth;
-  console.log('isAuthenticated:', isAuthenticated); // Add a console log statement // Access isAuthenticated from the auth slice of the state
+  // const { isAuthenticated } = state.auth;
+  console.log('loggedIn:', state.auth.loggedIn); // Add a console log statement // Access isAuthenticated from the auth slice of the state
 
   return {
-    isAuthenticated: isAuthenticated,
+    isAuthenticated: state.auth.loggedIn,
   };
 };
 
@@ -85,7 +85,7 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    logout: () => dispatch(logout()),
+    logout: () => dispatch(logoutSuccess()),
   };
 };
 

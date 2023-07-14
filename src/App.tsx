@@ -16,15 +16,19 @@ import PropertyDelete from './pages/PropertyDelete';
 interface ProtectedRouteProps {
   redirectTo: string;
   children: ReactNode;
+  loggedIn: boolean;
+  username: string;
+  accountType: string;
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   redirectTo,
-  children
+  children,
+  loggedIn,
+  username,
+  accountType
 }) => {
-  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-
-  if (isAuthenticated) {
+  if (loggedIn) {
     return <>{children}</>;
   } else {
     return <Navigate to={redirectTo} replace />;
@@ -32,54 +36,60 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 };
 
 function App() {
+  const { loggedIn, username, accountType } = useSelector((state: RootState) => state.auth);
+
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <div>
-          <Nav />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/propertylist" element={<PropertyList />} />
-            <Route path="/propertylist/:propertyId" element={<PropertyDetails />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route
-              path="/listingform"
-              element={
-                <ProtectedRoute redirectTo="/login">
-                  <PropertyForm />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute redirectTo="/login">
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/propertylist/update/:propertyId"
-              element={
-                <ProtectedRoute redirectTo="/login">
-                  <PropertyUpdateForm />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/propertylist/:propertyId/delete"
-              element={
-                <ProtectedRoute redirectTo="/login">
-                  <PropertyDelete />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/propertylist" element={<PropertyList />} />
+          <Route path="/propertylist/:propertyId" element={<PropertyDetails />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/listingform"
+            element={
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={accountType}>
+                <PropertyForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={accountType}>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/propertylist/update/:propertyId"
+            element={
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={accountType}>
+                <PropertyUpdateForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/propertylist/:propertyId/delete"
+            element={
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={accountType}>
+                <PropertyDelete />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const AppWithRedux = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+export default AppWithRedux;

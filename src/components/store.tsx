@@ -6,15 +6,22 @@ import { Listing } from '../pages/PropertyUpdateForm';
 
 // Define the RootState type
 interface RootState {
-  auth: {
-    isAuthenticated: boolean;
-  };
-  listings: {
-    listings: Listing[];
-  };
+  auth: AuthState;
+  listings: ListingsState;
 }
 
 const thunk = thunkMiddleware as ThunkMiddleware<RootState>;
+
+export interface AuthState {
+  isAuthenticated: boolean;
+  loggedIn: boolean;
+  username: string;
+  accountType: string;
+}
+
+export interface ListingsState {
+  listings: Listing[];
+}
 
 const rootReducer = combineReducers({
   auth: authReducer,
