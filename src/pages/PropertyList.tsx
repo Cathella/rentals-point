@@ -74,10 +74,11 @@ const PropertyList = () => {
       <div className="pt-4 pb-5">
         <div className="container">
           <div className='mb-4 search-section'>
+            <h3>Dream Place: <span className='green-txt'>Find Yours.</span></h3>
             <div>
               <a className="filter-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                <img src={FilterIcon} alt="Filter Property" />
-                <span>Filter Property</span>
+                <img src={FilterIcon} alt="Search Property" />
+                <span>Search</span>
               </a>
             </div>
 

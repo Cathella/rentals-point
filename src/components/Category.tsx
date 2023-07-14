@@ -6,14 +6,11 @@ interface CategoryProps {
 
 const Category: React.FC<CategoryProps> = ({ title, total, image }) => {
   return (
-    <div className="text-center col-lg-4">
+    <div className="text-center col-lg-2 mb-4">
       <div className=" mb-3">
         <img src={image} alt={title} className='img-fluid apartments-img' />
       </div>
-      <h4 className="mb-3">{title}</h4>
-        <div>
-          <a href="#" className="categories-button px-5">{total} Properties</a>
-        </div>
+      <p className="mb-3">{title} <span className="custom-text-muted">({total})</span></p>
     </div>
   );
 };

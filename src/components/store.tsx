@@ -16,7 +16,7 @@ export interface AuthState {
   isAuthenticated: boolean;
   loggedIn: boolean;
   username: string;
-  accountType: string;
+  account: string;
 }
 
 export interface ListingsState {
@@ -28,7 +28,10 @@ const rootReducer = combineReducers({
   listings: listingsReducer,
 });
 
-const store = createStore(rootReducer, applyMiddleware(thunk as any));
+const store = createStore(
+  rootReducer, 
+  applyMiddleware(thunk as any),
+);
 
 export default store;
 export type { RootState }; // Export RootState type

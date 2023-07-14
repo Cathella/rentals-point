@@ -73,7 +73,6 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
 }
 
 const mapStateToProps = (state: RootState) => {
-  // const { isAuthenticated } = state.auth;
   console.log('loggedIn:', state.auth.loggedIn); // Add a console log statement // Access isAuthenticated from the auth slice of the state
 
   return {

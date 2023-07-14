@@ -3,8 +3,9 @@ import { useState, FormEvent } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { loginSuccess } from '../components/authReducer';
-import Facebook from '../assets/facebook-white.svg';
-import Google from '../assets/google.svg';
+// import Facebook from '../assets/facebook-white.svg';
+// import Google from '../assets/google.svg';
+import store from '../components/store';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -28,6 +29,9 @@ const Login = () => {
         const { username, accountType } = response.data;
         dispatch(loginSuccess(username, accountType));
         navigate('/dashboard');
+        
+        // Log the state to the console
+        console.log('State after login:', store.getState());
       } else {
         console.error('Failed to login:', response.statusText);
       }

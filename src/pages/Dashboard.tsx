@@ -4,14 +4,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "../components/store";
 
 function Dashboard() {
-  const { username, accountType } = useSelector((state: RootState) => state.auth);
+  const { username, account } = useSelector((state: RootState) => state.auth);
 
   return (
     <>
       <div className="pt-4 pb-5">
         <div className="container">
-          <h4 className="mb-5">Hello, {username}!</h4>
-          <p>Account Type: {accountType}</p>
+          <h4 className="mb-5">Welcome, {username}! ({account})</h4>
           <div className="row">
             <div className="col-lg-4">
               <div className="text-center custom-light-green py-4 rounded-4">

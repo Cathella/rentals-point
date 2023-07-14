@@ -19,6 +19,10 @@ h3 {
   line-height: 56px;
 }
 
+h3 span {
+  font-family: 'Kanit';
+}
+
 h4 {
   font-size: 24px;
   line-height: 36px;
@@ -115,7 +119,7 @@ h4 select {
 
 .search-section {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 /* .search-section img {
@@ -128,11 +132,11 @@ h4 select {
   gap: 10px;
   align-items: center;
   text-decoration: none;
-  color: #53A0B1;
-  background: #EBF2F0;
+  color: #FFFFFF;
+  background: #000000;
   padding: 8px 25px;
   border-radius: 35px;
-  border: 1px solid #53A0B1;
+  border: 1px solid #000000;
 }
 
 .dark-green-border {
@@ -280,19 +284,8 @@ input[type=number] {
   font-size: 20px;
 }
 
-.categories-button {
-  height: 55px;
-  border: 2px solid #53A0B1;
-  border-radius: 30px;
-  color: #53A0B1;
-  display: inline-block;
-  text-decoration: none;
-  line-height: 55px;
-  font-size: 20px;
-}
-
 .apartments-img {
-  height: 400px;
+  height: 200px;
   width: 100%;
   border-radius: 30px;
 }

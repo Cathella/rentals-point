@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
 import Facebook from '../assets/facebook-white.svg';
 import Google from '../assets/google.svg';
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,6 +27,7 @@ const SignUp = () => {
 
       if (response.status === 201) {
         // User signup successful, perform any necessary actions (e.g., redirect, show success message)
+        navigate('/login');
         console.log('User signup successful');
 
         setUsername('');

@@ -5,7 +5,7 @@ const initialState: AuthState = {
   isAuthenticated: false,
   loggedIn: false,
   username: '',
-  accountType: '',
+  account: '',
 };
 
 // Define the action types
@@ -13,12 +13,12 @@ const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 
 // Define the action creators
-export const loginSuccess = (username: string, accountType: string) => ({
+export const loginSuccess = (username: string, account: string) => ({
   type: LOGIN_SUCCESS as typeof LOGIN_SUCCESS,
   payload: {
     loggedIn: true,
     username,
-    accountType,
+    account,
   },
 });
 
@@ -35,7 +35,7 @@ const authReducer = (state: AuthState = initialState, action: any) => {
         isAuthenticated: true,
         loggedIn: true,
         username: action.payload.username,
-        accountType: action.payload.accountType,
+        account: action.payload.account,
       };
     case LOGOUT_SUCCESS:
       return initialState;
