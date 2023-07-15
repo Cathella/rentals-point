@@ -73,57 +73,67 @@ const PropertyList = () => {
     <>
       <div className="pt-4 pb-5">
         <div className="container">
-          <div className='mb-4 search-section'>
+          <div className='mb-4'>
             <h3>Dream Place: <span className='green-txt'>Find Yours.</span></h3>
-            <form onSubmit={handleFiltersSubmit}>
-              <div className="form-floating mb-4">
-                <select className='form-select' value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)}>
-                  <option value="">-- Choose location --</option>
-                  <option value="kyaliwajjala">Kyaliwajjala</option>
-                  <option value="namugongo">Namugongo</option>
-                  <option value="kira">Kira</option>
-                  <option value="mukono">Mukono</option>
-                  <option value="kireka">Kireka</option>
-                  <option value="nalya">Nalya</option>
-                </select>
-                <label className='mb-2 fw-bold'>Location</label>
-              </div>
-              <div className="form-floating mb-4">
-                <select className='form-select' value={bedroomsFilter} onChange={(e) => setBedroomsFilter(e.target.value)}>
-                  <option value="">-- Choose Bedrooms --</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6 and more</option>
-                </select>
-                <label className='mb-2 fw-bold'>Bedrooms</label>
-              </div>
-              <div className="form-floating mb-4">
-                <select className='form-select' value={availabilityFilter} onChange={(e) => setAvailabilityFilter(e.target.value)}>
-                  <option value="">-- Choose Availability --</option>
-                  <option value="Available">Available</option>
-                  <option value="Not Available">Not Available</option>
-                </select>
-                <label className='mb-2 fw-bold'>Availabity</label>
-              </div>
-              <div className="form-floating mb-4">
-                <select className='form-select' value={propertyTypeFilter} onChange={(e) => setPropertyTypeFilter(e.target.value)}>
-                  <option value="">-- Choose Category --</option>
-                  <option value="apartment">Apartment</option>
-                  <option value="house">House</option>
-                  <option value="rental">Rental</option>
-                  <option value="office">Office</option>
-                  <option value="shop">Shop</option>
-                </select>
-                <label className='mb-2 fw-bold'>Category</label>
-              </div>
-              <div className="mb-3">
-                <button className='filter-btn'>
-                  <img src={FilterIcon} alt="Search Property" /> 
-                  <span>Search</span>
-                </button>
+            <form className='mt-4' onSubmit={handleFiltersSubmit}>
+              <div className="row">
+                <div className="col-lg-3">
+                  <div className="form-floating mb-3">
+                    <select className='form-select' value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)}>
+                      <option value="">Choose location</option>
+                      <option value="kyaliwajjala">Kyaliwajjala</option>
+                      <option value="namugongo">Namugongo</option>
+                      <option value="kira">Kira</option>
+                      <option value="mukono">Mukono</option>
+                      <option value="kireka">Kireka</option>
+                      <option value="nalya">Nalya</option>
+                    </select>
+                    <label className='custom-text-muted'>Location</label>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="form-floating mb-3">
+                    <select className='form-select' value={propertyTypeFilter} onChange={(e) => setPropertyTypeFilter(e.target.value)}>
+                      <option value="">Choose Category</option>
+                      <option value="apartment">Apartment</option>
+                      <option value="house">House</option>
+                      <option value="rental">Rental</option>
+                      <option value="office">Office</option>
+                      <option value="shop">Shop</option>
+                    </select>
+                    <label className='custom-text-muted'>Category</label>
+                  </div>
+                </div>
+                <div className="col-lg-2">
+                  <div className="form-floating mb-3">
+                    <select className='form-select' value={bedroomsFilter} onChange={(e) => setBedroomsFilter(e.target.value)}>
+                      <option value="">Choose Bedrooms</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6 and more</option>
+                    </select>
+                    <label className='custom-text-muted'>Bedrooms</label>
+                  </div>
+                </div>
+                <div className="col-lg-2">
+                  <div className="form-floating mb-3">
+                    <select className='form-select' value={availabilityFilter} onChange={(e) => setAvailabilityFilter(e.target.value)}>
+                      <option value="">Choose Availability</option>
+                      <option value="Available">Available</option>
+                      <option value="Not Available">Not Available</option>
+                    </select>
+                    <label className='custom-text-muted'>Availabity</label>
+                  </div>
+                </div>
+                <div className="col-lg-2">
+                  <button className='filter-btn'>
+                    <img src={FilterIcon} alt="Search Property" /> 
+                    <span>Search</span>
+                  </button>
+                </div>
               </div>
             </form>
           </div>

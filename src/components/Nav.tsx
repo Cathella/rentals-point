@@ -15,10 +15,6 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
 
   return (
     <>
-      <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
-        Do you own property? <Link className="alert-link" id='top-link' to="/listingform">Create a Listing</Link>
-        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
       <nav className="navbar navbar-expand-lg bg-white">
         <div className="container">
           <Link id='logo' className="navbar-brand" to="/">
@@ -45,22 +41,17 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
               </ul>
               <ul className="navbar-nav mb-lg-0">
                 {!isAuthenticated ? (
-                  <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
-                    <ul className="dropdown-menu">
-                      <Link className='dropdown-item' to='/login'>Login</Link>
-                      <li><hr className="dropdown-divider" /></li>
-                      <Link className='dropdown-item' to='/signup'>Create Account</Link>
-                    </ul>
-                  </li>
+                  <>
+                    <li className="nav-item">
+                      <Link className='nav-link me-4 green-txt' to='/login'>Login</Link>
+                    </li>
+                    <li>
+                      <Link className='nav-link rounded-5 custom-light-green green-txt py-2 px-4' to='/signup'>Sign up</Link>
+                    </li>
+                  </>
                 ) : (
-                  <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle green-txt text-decoration-underline" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">My Account</a>
-                    <ul className="dropdown-menu">
-                      <li>
-                        <button className='dropdown-item' onClick={logout}>Logout</button>
-                      </li>
-                    </ul>
+                  <li className="nav-item">
+                    <button className='nav-link green-txt' onClick={logout}>Logout</button>
                   </li>
                 )}
               </ul>
@@ -68,6 +59,10 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
           </div>
         </div>
       </nav>
+      <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
+        Do you own property? <Link className="text-white rounded px-3 py-2 text-decoration-none border ms-2" id='' to="/listingform">Create a Listing</Link>
+        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     </>
   );
 }

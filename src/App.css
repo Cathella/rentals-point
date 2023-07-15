@@ -134,10 +134,11 @@ h4 select {
   align-items: center;
   gap: 10px;
   align-items: center;
-  text-decoration: none;
+  justify-content: center;
   color: #FFFFFF;
   background: #000000;
-  padding: 15px 35px;
+  padding: 15px 0;
+  width: 100%;
   border-radius: 35px;
   border: 1px solid #000000;
 }
