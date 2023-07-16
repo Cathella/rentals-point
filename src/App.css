@@ -289,7 +289,7 @@ input[type=number] {
 }
 
 .apartments-img {
-  height: 200px;
+  height: 160px;
   width: 100%;
   border-radius: 30px;
 }
@@ -504,7 +504,7 @@ input[type=number] {
   .apartments-img,
   .houses-img,
   .commercial-img {
-    height: 350px;
+    /* height: 350px; */
   }
 
   .footer-content {

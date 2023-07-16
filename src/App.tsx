@@ -12,6 +12,7 @@ import Nav from './components/Nav';
 import { Provider, useSelector } from 'react-redux';
 import store, { RootState } from './components/store';
 import PropertyDelete from './pages/PropertyDelete';
+import RentShare from './pages/RentShare';
 
 interface ProtectedRouteProps {
   redirectTo: string;
@@ -25,8 +26,8 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   redirectTo,
   children,
   loggedIn,
-  username,
-  accountType
+  // username,
+  // account
 }) => {
   if (loggedIn) {
     return <>{children}</>;
@@ -36,7 +37,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 };
 
 function App() {
-  const { loggedIn, username, accountType } = useSelector((state: RootState) => state.auth);
+  const { loggedIn, username, account } = useSelector((state: RootState) => state.auth);
 
   return (
     <BrowserRouter>
@@ -48,10 +49,11 @@ function App() {
           <Route path="/propertylist/:propertyId" element={<PropertyDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/rentshare" element={<RentShare />} />
           <Route
             path="/listingform"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={accountType}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
                 <PropertyForm />
               </ProtectedRoute>
             }
@@ -59,7 +61,7 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={accountType}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
                 <Dashboard />
               </ProtectedRoute>
             }
@@ -67,7 +69,7 @@ function App() {
           <Route
             path="/propertylist/update/:propertyId"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={accountType}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
                 <PropertyUpdateForm />
               </ProtectedRoute>
             }
@@ -75,7 +77,7 @@ function App() {
           <Route
             path="/propertylist/:propertyId/delete"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={accountType}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
                 <PropertyDelete />
               </ProtectedRoute>
             }

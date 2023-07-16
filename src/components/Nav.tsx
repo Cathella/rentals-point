@@ -33,6 +33,12 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
                 <li className="nav-item">
                   <Link className='nav-link me-4' to='/propertylist'>Browse Listings</Link>
                 </li>
+                <li className="nav-item">
+                  <Link className='nav-link me-4' to='/rentshare'>Rent Share</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className='nav-link me-4' to='/propertylist'>Hire Movers</Link>
+                </li>
                 {isAuthenticated && (
                   <li className="nav-item">
                     <Link className='nav-link' to='/dashboard'>Dashboard</Link>
@@ -59,8 +65,14 @@ const Nav = ({ isAuthenticated, logout }: NavProps) => {
           </div>
         </div>
       </nav>
-      <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
+      {/* <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
         Do you own property? <Link className="text-white rounded px-3 py-2 text-decoration-none border ms-2" id='' to="/listingform">Create a Listing</Link>
+        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div> */}
+      <div id='list-alert' className="alert custom-dark-green alert-dismissible fade show rounded-0 text-center text-white" role="alert">
+        Do you own property? 
+        {/* <Link className="text-white rounded px-3 py-2 text-decoration-none border ms-2" id='' to="/listingform">Create a Listing</Link> */}
+        <a className="text-white rounded px-3 py-2 text-decoration-none border ms-2" href="https://api.whatsapp.com/send?phone=256782016535">Contact us</a>
         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     </>
