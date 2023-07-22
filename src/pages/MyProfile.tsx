@@ -1,10 +1,129 @@
+import Footer from "../components/Footer";
+
 const MyProfile = () => {
   return (
     <>
     <div className="pt-4 pb-5">
       <div className="container">
         <div className="row">
-          <div className="col-lg-2">
+          <div className="col-lg-9 mx-auto">
+            <div className="mt-5 mb-4 green-txt">Personal Information</div>
+            <div className="border rounded-3 shadow-sm px-5 py-4">
+              <div className="row">
+                <div className="col-lg-3">
+                  <div className="">
+                    Name: <br />
+                    <span className="custom-text-muted">Nakitto Catherine</span>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="">
+                    Gender: <br />
+                    <span className="custom-text-muted">Female</span>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="">
+                    Age: <br />
+                    <span className="custom-text-muted">25</span>
+                  </div>
+                </div>
+                <div className="col-lg-3">
+                  <div className="">
+                    Contact: <br />
+                    <span className="custom-text-muted">0782016535</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4">
+                Brief Bio: <br />
+                <span className="custom-text-muted">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi similique in 
+                  commodi doloremque delectus quo deserunt necessitatibus? Autem similique et 
+                  quisquam dicta? Ex veniam quae doloremque repudiandae perferendis temporibus ratione.
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-5 mb-4 green-txt">Housemate's Preferences</div>
+            <div className="border rounded-3 shadow-sm px-5 py-4">
+              <div className="row">
+                <div className="col-lg-4">
+                  <div className="">
+                    Preferred Gender: <br />
+                    <span className="custom-text-muted">Female</span>
+                  </div>
+                </div>
+                <div className="col-lg-4">
+                  <div className="">
+                    Age Range: <br />
+                    <span className="custom-text-muted">20 - 25</span>
+                  </div>
+                </div>
+                <div className="col-lg-4">
+                  <div className="">
+                    Lifestyle: <br />
+                    <span className="custom-text-muted">Outgoing</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4">
+                Specific Requirements: <br />
+                <span className="custom-text-muted">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi similique in 
+                  commodi doloremque delectus quo deserunt necessitatibus? Autem similique et 
+                  quisquam dicta? Ex veniam quae doloremque repudiandae perferendis temporibus ratione.
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-5 mb-4 green-txt">Rent Budget</div>
+            <div className="border rounded-3 shadow-sm px-5 py-4">
+              <div className="row">
+                <div className="col-lg-4">
+                  <div className="">
+                    Budget: <br />
+                    <h4 className="custom-text-muted">Ugx. 350,000</h4>
+                  </div>
+                </div>
+                <div className="col-lg-8">
+                  <div className="">
+                    Special Notes: <br />
+                    <span className="custom-text-muted">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi similique in 
+                      commodi doloremque delectus quo deserunt necessitatibus? Autem similique et 
+                      quisquam dicta?
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-5 mb-4 green-txt">Social Media Links</div>
+            <div className="mb-5 border rounded-3 shadow-sm px-5 py-4">
+              <div className="row">
+                <div className="col-lg-4">
+                  <div className="">
+                    Facebook: <br />
+                    <a className="green-txt" href="https://www.facebook.com/ncathie">https://www.facebook.com/ncathie</a>
+                  </div>
+                </div>
+                <div className="col-lg-4">
+                  <div className="">
+                    Twitter: <br />
+                    <a className="green-txt" href="https://twitter.com/cathella9">https://twitter.com/cathella9</a>
+                  </div>
+                </div>
+                <div className="col-lg-4">
+                  <div className="">
+                    Instagram: <br />
+                    <a className="green-txt" href="https://www.instagram.com/nakittodesignshop/">https://www.instagram.com/nakittodesignshop/</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="col-lg-2">
             <div className="border rounded-3 shadow-sm p-3">
               <div className="nav justify-content-center flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button className="nav-link mb-4 active" id="v-pills-info-tab" data-bs-toggle="pill" data-bs-target="#v-pills-info" type="button" role="tab" aria-controls="v-pills-info" aria-selected="true">Personal Info</button>
@@ -15,8 +134,8 @@ const MyProfile = () => {
                 <button className="nav-link mb-4" id="v-pills-privacy-tab" data-bs-toggle="pill" data-bs-target="#v-pills-privacy" type="button" role="tab" aria-controls="v-pills-privacy" aria-selected="false">Settings</button>
               </div>
             </div>
-          </div>
-          <div className="col-lg-9 mx-auto">
+          </div> */}
+          {/* <div className="col-lg-9 mx-auto">
             <div className="tab-content" id="v-pills-tabContent">
               <div className="tab-pane fade show active" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab">
                 <div className="mb-4">Profile picture</div>
@@ -47,10 +166,11 @@ const MyProfile = () => {
               <div className="tab-pane fade" id="v-pills-socials" role="tabpanel" aria-labelledby="v-pills-socials-tab">Social Links</div>
               <div className="tab-pane fade" id="v-pills-privacy" role="tabpanel" aria-labelledby="v-pills-privacy-tab">Privacy Settings</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
+    <Footer />
     </>
   );
 }
