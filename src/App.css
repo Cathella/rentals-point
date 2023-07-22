@@ -469,6 +469,14 @@ input[type=number] {
   color: #8F8C8C;
 }
 
+.nav-pills .nav-link.active {
+  background: #53A0B1;
+}
+
+.nav-pills .nav-link {
+  color: #595959;
+}
+
 @media screen and (max-width: 1400px) {
   .contact-content {
     flex-direction: column;
@@ -499,12 +507,6 @@ input[type=number] {
   .categories-button,
   .why {
     margin-bottom: 30px;
-  }
-
-  .apartments-img,
-  .houses-img,
-  .commercial-img {
-    /* height: 350px; */
   }
 
   .footer-content {

@@ -13,6 +13,7 @@ import { Provider, useSelector } from 'react-redux';
 import store, { RootState } from './components/store';
 import PropertyDelete from './pages/PropertyDelete';
 import RentShare from './pages/RentShare';
+import MyProfile from './pages/MyProfile';
 
 interface ProtectedRouteProps {
   redirectTo: string;
@@ -79,6 +80,14 @@ function App() {
             element={
               <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
                 <PropertyDelete />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/myprofile"
+            element={
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
+                <MyProfile />
               </ProtectedRoute>
             }
           />

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import Contact from "../components/Contact";
 
 const RentShare = () => {
 
@@ -14,12 +15,13 @@ const RentShare = () => {
                 <p className="text-muted desc-ft-size mb-5 mt-4">
                   Share a space or home, rent, bills with other interested people.
                 </p>
-                <Link to="/propertylist" className="custom-button custom-dark-green text-white px-5 py-3">Get Started</Link>
+                <Link to="/propertylist" className="custom-button custom-dark-green text-white px-5 py-3">Find Mates</Link>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Contact />
       <Footer />
     </>
   );

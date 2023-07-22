@@ -14,17 +14,17 @@ function Dashboard() {
           <div className="row">
             <div className="col-lg-4">
               <div className="text-center custom-light-green py-4 rounded-4">
+                <Link to='/myprofile'>My Profile</Link>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="text-center custom-light-green py-4 rounded-4">
                 <Link to='/listingform'>List your Property</Link>
               </div>
             </div>
             <div className="col-lg-4">
               <div className="text-center custom-light-green py-4 rounded-4">
                 <a href="#">My Properties</a>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="text-center custom-light-green py-4 rounded-4">
-                <a href="#">My Tenants</a>
               </div>
             </div>
           </div>
