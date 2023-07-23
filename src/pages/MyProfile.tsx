@@ -1,10 +1,20 @@
 import Footer from "../components/Footer";
+import SadFace from '../assets/sad.svg';
+import Info from '../assets/info.svg';
+import { Link } from "react-router-dom";
+
 
 const MyProfile = () => {
   return (
     <>
     <div className="pt-4 pb-5">
       <div className="container">
+        <div className='text-center pb-5 mt-5'>
+          <img src={SadFace} alt=":(" />
+          <p className='custom-text-muted mt-4 mb-5'>Sorry! You haven't completed your profile.</p>
+          <Link to='/createprofile' className='btn green-txt custom-light-green '><img src={Info} alt="" /> Update your Profile</Link>
+        </div>
+
         <div className="row">
           <div className="col-lg-9 mx-auto">
             <div className="mt-5 mb-4 green-txt">Personal Information</div>
@@ -83,7 +93,7 @@ const MyProfile = () => {
                 <div className="col-lg-4">
                   <div className="">
                     Budget: <br />
-                    <h4 className="custom-text-muted">Ugx. 350,000</h4>
+                    <h4 className="green-txt">Ugx. 350,000</h4>
                   </div>
                 </div>
                 <div className="col-lg-8">

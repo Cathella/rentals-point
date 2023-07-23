@@ -14,6 +14,7 @@ import store, { RootState } from './components/store';
 import PropertyDelete from './pages/PropertyDelete';
 import RentShare from './pages/RentShare';
 import MyProfile from './pages/MyProfile';
+import CreateProfile from './pages/CreateProfile';
 
 interface ProtectedRouteProps {
   redirectTo: string;
@@ -88,6 +89,14 @@ function App() {
             element={
               <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
                 <MyProfile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/createprofile"
+            element={
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
+                <CreateProfile />
               </ProtectedRoute>
             }
           />
