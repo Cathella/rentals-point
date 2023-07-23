@@ -21,7 +21,7 @@ interface ProtectedRouteProps {
   children: ReactNode;
   loggedIn: boolean;
   username: string;
-  accountType: string;
+  account: string;
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
@@ -55,7 +55,7 @@ function App() {
           <Route
             path="/listingform"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
                 <PropertyForm />
               </ProtectedRoute>
             }
@@ -63,7 +63,7 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
                 <Dashboard />
               </ProtectedRoute>
             }
@@ -71,7 +71,7 @@ function App() {
           <Route
             path="/propertylist/update/:propertyId"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
                 <PropertyUpdateForm />
               </ProtectedRoute>
             }
@@ -79,7 +79,7 @@ function App() {
           <Route
             path="/propertylist/:propertyId/delete"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
                 <PropertyDelete />
               </ProtectedRoute>
             }
@@ -87,7 +87,7 @@ function App() {
           <Route
             path="/myprofile"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
                 <MyProfile />
               </ProtectedRoute>
             }
@@ -95,7 +95,7 @@ function App() {
           <Route
             path="/createprofile"
             element={
-              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} accountType={account}>
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
                 <CreateProfile />
               </ProtectedRoute>
             }

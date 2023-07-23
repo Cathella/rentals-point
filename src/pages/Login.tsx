@@ -3,8 +3,6 @@ import { useState, FormEvent } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { loginSuccess } from '../components/authReducer';
-// import Facebook from '../assets/facebook-white.svg';
-// import Google from '../assets/google.svg';
 import store from '../components/store';
 
 const Login = () => {

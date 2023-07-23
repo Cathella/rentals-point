@@ -1,8 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, FormEvent } from 'react';
 import axios from 'axios';
-import Facebook from '../assets/facebook-white.svg';
-import Google from '../assets/google.svg';
 
 const SignUp = () => {
   const navigate = useNavigate();

@@ -2,6 +2,8 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../components/store";
+import ProfileIcon from '../assets/profile.svg';
+import PropertyIcon from '../assets/house.svg';
 
 function Dashboard() {
   const { username, account } = useSelector((state: RootState) => state.auth);
@@ -10,16 +12,24 @@ function Dashboard() {
     <>
       <div className="pt-4 pb-5">
         <div className="container">
-          <h4 className="mb-5">Welcome, {username}! ({account})</h4>
+          <h5 className="my-5 text-muted">Welcome, {username} ({account})</h5>
           <div className="row">
             <div className="col-lg-4">
-              <div className="text-center custom-light-green py-4 rounded-4">
-                <Link to='/myprofile'>My Profile</Link>
+              <div className="text-center custom-light-green py-5 rounded-4">
+                <Link className="green-txt text-decoration-none" to='/myprofile'>
+                  <img className="mb-2" src={ProfileIcon} alt="" />
+                  <br />
+                  My Profile
+                </Link>
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="text-center custom-light-green py-4 rounded-4">
-                <Link to='/listingform'>Create a Listing</Link>
+              <div className="text-center custom-light-green py-5 rounded-4">
+                <Link className="green-txt text-decoration-none" to='/listingform'>
+                  <img className="mb-2" src={PropertyIcon} alt="" />
+                  <br />
+                  Create a Listing
+                </Link>
               </div>
             </div>
           </div>
