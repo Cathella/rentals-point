@@ -19,7 +19,7 @@ const CreateProfile = () => {
     twitter: ''
   });
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
     setProfile((prevProfile) => ({
       ...prevProfile,
@@ -27,7 +27,7 @@ const CreateProfile = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     // Send the profile data to the backend API for creating a new profile
@@ -117,7 +117,7 @@ const CreateProfile = () => {
                     onChange={handleChange} />
                     <label>Housemate Age</label>
                 </div>
-                <div className="form-floating mb-5">
+                <div className="form-floating mb-4">
                   <select 
                     value={profile.lifestyle}
                     onChange={handleChange} 
@@ -127,6 +127,14 @@ const CreateProfile = () => {
                     <option value="introvert">Introvert</option>
                   </select>
                   <label>Lifestyle</label>
+                </div>
+                <div className="form-floating mb-5">
+                  <textarea 
+                    value={profile.special_notes} 
+                    onChange={handleChange}
+                    className="form-control"
+                    placeholder="" />
+                  <label>Specific Requirements</label>
                 </div>
 
                 <h5 className="border-top pt-5 green-txt text-center mb-5">Rent Budget</h5>
