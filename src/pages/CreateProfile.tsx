@@ -1,6 +1,37 @@
+import { useState } from 'react';
+import axios from 'axios';
 import Footer from "../components/Footer";
 
-const ProfileForm = () => {
+const CreateProfile = () => {
+  const [profile, setProfile] = useState({
+    name: '',
+    bio: '',
+    preferences: '',
+    budget: '',
+    // Add additional profile fields here
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Send the profile data to the backend API for creating a new profile
+    axios.post('/api/v1/user_profiles', profile)
+      .then(() => {
+        alert('Profile created successfully!');
+      })
+      .catch((error) => {
+        console.error('Error creating user profile:', error);
+      });
+  };
+  
   return (
     <>
       <div className='pb-5'>
@@ -8,7 +39,7 @@ const ProfileForm = () => {
           <h3 className="text-center mb-5 mt-5">Complete your Profile</h3>
           <div className="row">
             <div className="col-lg-6 mx-auto">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <h5 className="green-txt mb-5 text-center">Personal Information</h5>
                 <div className='form-floating mb-4'>
                     <input 
@@ -129,4 +160,4 @@ const ProfileForm = () => {
   );
 };
 
-export default ProfileForm;
+export default CreateProfile;

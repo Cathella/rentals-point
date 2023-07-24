@@ -14,8 +14,9 @@ import store, { RootState } from './components/store';
 import PropertyDelete from './pages/PropertyDelete';
 import RentShare from './pages/RentShare';
 import Profile from './pages/Profile';
-import ProfileForm from './pages/ProfileForm';
 import EditProfile from './pages/EditProfile';
+import CreateProfile from './pages/CreateProfile';
+import ListProfiles from './pages/ListProfiles';
 
 interface ProtectedRouteProps {
   redirectTo: string;
@@ -97,7 +98,7 @@ function App() {
             path="/profile/new"
             element={
               <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
-                <ProfileForm />
+                <CreateProfile />
               </ProtectedRoute>
             }
           />
@@ -106,6 +107,14 @@ function App() {
             element={
               <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
                 <EditProfile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profiles"
+            element={
+              <ProtectedRoute redirectTo="/login" loggedIn={loggedIn} username={username} account={account}>
+                <ListProfiles />
               </ProtectedRoute>
             }
           />
