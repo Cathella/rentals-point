@@ -16,10 +16,10 @@ function Dashboard() {
           <div className="row">
             <div className="col-lg-4">
               <div className="text-center custom-light-green py-5 rounded-4">
-                <Link className="green-txt text-decoration-none" to='/myprofile'>
+                <Link className="green-txt text-decoration-none" to='/profile/new'>
                   <img className="mb-2" src={ProfileIcon} alt="" />
                   <br />
-                  My Profile
+                  Rentshare Profile
                 </Link>
               </div>
             </div>

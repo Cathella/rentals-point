@@ -5,10 +5,18 @@ import Footer from "../components/Footer";
 const CreateProfile = () => {
   const [profile, setProfile] = useState({
     name: '',
+    phone: '',
+    gender: '',
+    age: '',
     bio: '',
-    preferences: '',
+    housemate_gender: '',
+    housemate_age: '',
+    lifestyle: '',
+    special_notes: '',
     budget: '',
-    // Add additional profile fields here
+    facebook: '',
+    instagram: '',
+    twitter: ''
   });
 
   const handleChange = (event) => {
@@ -46,7 +54,8 @@ const CreateProfile = () => {
                       type="text"
                       className='form-control' 
                       placeholder=''
-                      value='' />
+                      value={profile.name}
+                      onChange={handleChange} />
                       <label>Full Name</label>
                 </div>
                 <div className='form-floating mb-4'>
@@ -54,12 +63,14 @@ const CreateProfile = () => {
                       type="text"
                       className='form-control' 
                       placeholder=''
-                      value='' />
+                      value={profile.phone}
+                      onChange={handleChange} />
                       <label>Phone Number</label>
                 </div>
                 <div className="form-floating mb-4">
                   <select 
-                    value='' 
+                    value={profile.gender} 
+                    onChange={handleChange}
                     className="form-select">
                     <option value="">-- Select Gender --</option>
                     <option value="male">Male</option>
@@ -72,12 +83,14 @@ const CreateProfile = () => {
                     type="number" 
                     className="form-control"
                     placeholder=""
-                    value='' />
+                    value={profile.age}
+                    onChange={handleChange} />
                     <label>Age</label>
                 </div>
                 <div className="form-floating mb-5">
                   <textarea 
-                    value='' 
+                    value={profile.bio} 
+                    onChange={handleChange}
                     className="form-control"
                     placeholder="" />
                   <label>Bio</label>
@@ -86,7 +99,8 @@ const CreateProfile = () => {
                 <h5 className="border-top pt-5 green-txt text-center mb-5">Housemate Preferences</h5>
                 <div className="form-floating mb-4">
                   <select 
-                    value='' 
+                    value={profile.housemate_gender}
+                    onChange={handleChange} 
                     className="form-select">
                     <option value="">-- Select Gender --</option>
                     <option value="male">Male</option>
@@ -99,12 +113,14 @@ const CreateProfile = () => {
                     type="number" 
                     className="form-control"
                     placeholder=""
-                    value='' />
+                    value={profile.housemate_age}
+                    onChange={handleChange} />
                     <label>Housemate Age</label>
                 </div>
                 <div className="form-floating mb-5">
                   <select 
-                    value='' 
+                    value={profile.lifestyle}
+                    onChange={handleChange} 
                     className="form-select">
                     <option value="">-- Select Lifestyle --</option>
                     <option value="outgoing">Outgoing</option>
@@ -119,7 +135,8 @@ const CreateProfile = () => {
                     type="number" 
                     className="form-control"
                     placeholder=""
-                    value='' />
+                    value={profile.budget}
+                    onChange={handleChange} />
                     <label>Rent Budget</label>
                 </div>
 
@@ -129,7 +146,8 @@ const CreateProfile = () => {
                     type="text" 
                     className='form-control' 
                     placeholder=''
-                    value='' />
+                    value={profile.facebook}
+                    onChange={handleChange} />
                   <label>Facebook</label>
                 </div>
                 <div className="form-floating mb-4">
@@ -137,7 +155,8 @@ const CreateProfile = () => {
                     type="text" 
                     className='form-control' 
                     placeholder=''
-                    value='' />
+                    value={profile.twitter}
+                    onChange={handleChange} />
                     <label>Twitter</label>
                 </div>
                 <div className="form-floating mb-4">
@@ -145,11 +164,12 @@ const CreateProfile = () => {
                     type="text"
                     className='form-control' 
                     placeholder='' 
-                    value='' />
+                    value={profile.instagram}
+                    onChange={handleChange} />
                     <label>Instagram</label>
                 </div>
 
-                <button id='login-submit' className="my-4 custom-button form-control custom-dark-green text-white" type="submit">Update Profile</button>
+                <button id='login-submit' className="my-4 custom-button form-control custom-dark-green text-white" type="submit">Create Profile</button>
               </form>
             </div>
           </div>
