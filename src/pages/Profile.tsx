@@ -1,19 +1,38 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import Footer from "../components/Footer";
-import SadFace from '../assets/sad.svg';
-import Info from '../assets/info.svg';
-import { Link } from "react-router-dom";
+// import SadFace from '../assets/sad.svg';
+// import Info from '../assets/info.svg';
+// import { Link } from "react-router-dom";
 
 
-const MyProfile = () => {
+const Profile = () => {
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    // Fetch the user profile data from the backend API
+    axios.get('/api/v1/user_profile')
+      .then((response) => {
+        setProfile(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching user profile:', error);
+      });
+  }, []);
+
+  if (!profile) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
     <div className="pt-4 pb-5">
       <div className="container">
-        <div className='text-center pb-5 mt-5'>
+        {/* <div className='text-center pb-5 mt-5'>
           <img src={SadFace} alt=":(" />
           <p className='custom-text-muted mt-4 mb-5'>Sorry! You haven't completed your profile.</p>
           <Link to='/createprofile' className='btn green-txt custom-light-green '><img src={Info} alt="" /> Update your Profile</Link>
-        </div>
+        </div> */}
 
         <div className="row">
           <div className="col-lg-9 mx-auto">
@@ -185,4 +204,4 @@ const MyProfile = () => {
   );
 }
 
-export default MyProfile;
+export default Profile;

@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 
-const CreateProfile = () => {
+const ProfileForm = () => {
   return (
     <>
       <div className='pb-5'>
@@ -71,7 +71,7 @@ const CreateProfile = () => {
                     value='' />
                     <label>Housemate Age</label>
                 </div>
-                <div className="form-floating mb-4">
+                <div className="form-floating mb-5">
                   <select 
                     value='' 
                     className="form-select">
@@ -80,13 +80,6 @@ const CreateProfile = () => {
                     <option value="introvert">Introvert</option>
                   </select>
                   <label>Lifestyle</label>
-                </div>
-                <div className="form-floating mb-5">
-                  <textarea 
-                    value='' 
-                    className="form-control"
-                    placeholder="" />
-                  <label>Special Requirements</label>
                 </div>
 
                 <h5 className="border-top pt-5 green-txt text-center mb-5">Rent Budget</h5>
@@ -136,4 +129,4 @@ const CreateProfile = () => {
   );
 };
 
-export default CreateProfile;
+export default ProfileForm;
