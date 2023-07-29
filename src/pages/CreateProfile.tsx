@@ -27,17 +27,31 @@ const CreateProfile = () => {
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Send the profile data to the backend API for creating a new profile
-    axios.post('/api/v1/user_profiles', profile)
-      .then(() => {
-        alert('Profile created successfully!');
-      })
-      .catch((error) => {
-        console.error('Error creating user profile:', error);
+    try {
+      // Call the login function to obtain the JWT token
+      const response = await axios.post('http://localhost:3000/api/v1/login', {
+        email: 'your_email', // Replace with the user's email for login
+        password: 'your_password', // Replace with the user's password for login
       });
+
+      // Store the JWT token in the browser's local storage
+      localStorage.setItem('jwtToken', response.data.token);
+
+      // Send the profile data to the backend API for creating a new profile
+      const userToken = response.data.token;
+      await axios.post('http://localhost:3000/api/v1/user_profiles', profile, {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      });
+
+      alert('Profile created successfully!');
+    } catch (error) {
+      console.error('Error creating user profile:', error);
+    }
   };
   
   return (
@@ -55,6 +69,7 @@ const CreateProfile = () => {
                       className='form-control' 
                       placeholder=''
                       value={profile.name}
+                      name='name'
                       onChange={handleChange} />
                       <label>Full Name</label>
                 </div>
@@ -64,6 +79,7 @@ const CreateProfile = () => {
                       className='form-control' 
                       placeholder=''
                       value={profile.phone}
+                      name='phone'
                       onChange={handleChange} />
                       <label>Phone Number</label>
                 </div>
@@ -71,6 +87,7 @@ const CreateProfile = () => {
                   <select 
                     value={profile.gender} 
                     onChange={handleChange}
+                    name='gender'
                     className="form-select">
                     <option value="">-- Select Gender --</option>
                     <option value="male">Male</option>
@@ -84,12 +101,14 @@ const CreateProfile = () => {
                     className="form-control"
                     placeholder=""
                     value={profile.age}
+                    name='age'
                     onChange={handleChange} />
                     <label>Age</label>
                 </div>
                 <div className="form-floating mb-5">
                   <textarea 
-                    value={profile.bio} 
+                    value={profile.bio}
+                    name='bio' 
                     onChange={handleChange}
                     className="form-control"
                     placeholder="" />
@@ -100,6 +119,7 @@ const CreateProfile = () => {
                 <div className="form-floating mb-4">
                   <select 
                     value={profile.housemate_gender}
+                    name='housemate_gender'
                     onChange={handleChange} 
                     className="form-select">
                     <option value="">-- Select Gender --</option>
@@ -114,12 +134,14 @@ const CreateProfile = () => {
                     className="form-control"
                     placeholder=""
                     value={profile.housemate_age}
+                    name='housemate_age'
                     onChange={handleChange} />
                     <label>Housemate Age</label>
                 </div>
                 <div className="form-floating mb-4">
                   <select 
                     value={profile.lifestyle}
+                    name='lifestyle'
                     onChange={handleChange} 
                     className="form-select">
                     <option value="">-- Select Lifestyle --</option>
@@ -131,6 +153,7 @@ const CreateProfile = () => {
                 <div className="form-floating mb-5">
                   <textarea 
                     value={profile.special_notes} 
+                    name='special_notes'
                     onChange={handleChange}
                     className="form-control"
                     placeholder="" />
@@ -144,6 +167,7 @@ const CreateProfile = () => {
                     className="form-control"
                     placeholder=""
                     value={profile.budget}
+                    name='budget'
                     onChange={handleChange} />
                     <label>Rent Budget</label>
                 </div>
@@ -155,6 +179,7 @@ const CreateProfile = () => {
                     className='form-control' 
                     placeholder=''
                     value={profile.facebook}
+                    name='facebook'
                     onChange={handleChange} />
                   <label>Facebook</label>
                 </div>
@@ -164,6 +189,7 @@ const CreateProfile = () => {
                     className='form-control' 
                     placeholder=''
                     value={profile.twitter}
+                    name='twitter'
                     onChange={handleChange} />
                     <label>Twitter</label>
                 </div>
@@ -173,6 +199,7 @@ const CreateProfile = () => {
                     className='form-control' 
                     placeholder='' 
                     value={profile.instagram}
+                    name='instagram'
                     onChange={handleChange} />
                     <label>Instagram</label>
                 </div>
